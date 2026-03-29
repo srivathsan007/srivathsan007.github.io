@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Srivathsan Vivekanandhan | Agentic AI & Enterprise Security</title>
+  <meta name="description" content="IT Manager at JBS USA. CISSP. Building MCP servers, deploying DSPM, and governing AI at enterprise scale.">
+  <meta property="og:title" content="Srivathsan Vivekanandhan | Agentic AI & Enterprise Security">
+  <meta property="og:description" content="Building MCP servers, deploying Microsoft Purview DSPM, and governing AI agents at enterprise scale.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/profile.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg: #060810;
+      --bg2: #0c1018;
+      --surface: rgba(255,255,255,0.03);
+      --surface-hover: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(255,255,255,0.12);
+      --text: #c8ccd4;
+      --text-dim: #6b7280;
+      --text-bright: #f0f2f5;
+      --accent: #00d4ff;
+      --accent2: #7c3aed;
+      --accent-glow: rgba(0,212,255,0.15);
+      --gradient: linear-gradient(135deg, #00d4ff, #7c3aed);
+    }
+
+    html { scroll-behavior: smooth; }
+    
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: rgba(0,212,255,0.25); color: #fff; }
+    
+    /* ===== CANVAS BACKGROUND ===== */
+    #particle-canvas {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(6,8,16,0.8); backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    nav.scrolled { background: rgba(6,8,16,0.95); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--text-bright);
+    }
+    .nav-logo-mark {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: var(--gradient);
+      display: flex; align-items: center; justify-content: center;
+      font: 700 15px 'Fira Code', monospace; color: #fff;
+      box-shadow: 0 0 20px rgba(0,212,255,0.2);
+    }
+    .nav-logo-text { font-weight: 700; font-size: 16px; letter-spacing: -0.03em; }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--text-dim); text-decoration: none; font-size: 14px;
+      font-weight: 500; letter-spacing: 0.02em;
+      transition: color 0.3s; position: relative;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: var(--accent);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ===== SECTIONS ===== */
+    section { position: relative; z-index: 1; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 80px;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(0,212,255,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(124,58,237,0.04) 0%, transparent 50%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 420px; gap: 80px;
+      align-items: center; width: 100%;
+    }
+    .hero-label {
+      font: 500 13px 'Fira Code', monospace; color: var(--accent);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px; font-weight: 700; line-height: 1.08;
+      color: var(--text-bright); margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+    .hero h1 .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 18px; color: var(--text-dim); line-height: 1.8;
+      max-width: 520px; margin-bottom: 36px;
+      opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s;
+    }
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
+    }
+    .hero-tag {
+      font: 400 12px 'Fira Code', monospace; padding: 7px 16px;
+      border-radius: 6px; background: var(--surface);
+      border: 1px solid var(--border); color: var(--text-dim);
+      transition: all 0.3s;
+    }
+    .hero-tag:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-photo {
+      opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s;
+    }
+    .hero-photo-frame {
+      position: relative; width: 380px; height: 460px;
+      border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 60px rgba(0,212,255,0.08), 0 30px 80px rgba(0,0,0,0.5);
+    }
+    .hero-photo-frame img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(20%) contrast(1.05);
+      transition: filter 0.5s;
+    }
+    .hero-photo-frame:hover img { filter: grayscale(0%) contrast(1.1); }
+    .hero-photo-frame::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(6,8,16,0.6));
+    }
+    .hero-social {
+      display: flex; gap: 16px; margin-top: 28px;
+      opacity: 0; animation: fadeUp 0.8s ease forwards 1s;
+    }
+    .hero-social a {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dim); text-decoration: none; font-size: 18px;
+      transition: all 0.3s;
+    }
+    .hero-social a:hover {
+      border-color: var(--accent); color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-label {
+      font: 500 12px 'Fira Code', monospace; color: var(--accent);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px; font-weight: 700; color: var(--text-bright);
+      margin-bottom: 48px; line-height: 1.15;
+    }
+
+    /* ===== ABOUT ===== */
+    .about { padding: 120px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .about-text { font-size: 17px; color: var(--text); line-height: 1.9; }
+    .about-text p { margin-bottom: 20px; }
+    .about-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      align-content: start;
+    }
+    .stat-card {
+      padding: 28px; border-radius: 14px;
+      background: var(--surface); border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .stat-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    .stat-num {
+      font: 800 36px 'Outfit', sans-serif;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+    .stat-label { font-size: 14px; color: var(--text-dim); }
+
+    /* ===== BLOG ===== */
+    .blog { padding: 120px 0; background: var(--bg2); }
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .blog-card {
+      border-radius: 14px; overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border);
+      transition: all 0.4s; cursor: pointer;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .blog-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.4);
+    }
+    .blog-card-img {
+      height: 200px; overflow: hidden; background: #111;
+    }
+    .blog-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+    .blog-card-body { padding: 24px; }
+    .blog-card-tag {
+      font: 500 11px 'Fira Code', monospace; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    .blog-card-title {
+      font-size: 18px; font-weight: 700; color: var(--text-bright);
+      line-height: 1.4; margin-bottom: 10px;
+    }
+    .blog-card-excerpt {
+      font-size: 14px; color: var(--text-dim); line-height: 1.6;
+    }
+    .blog-card-link {
+      display: inline-block; margin-top: 16px;
+      font: 500 13px 'Fira Code', monospace; color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ===== CERTIFICATIONS ===== */
+    .certs { padding: 120px 0; }
+    .cert-timeline { position: relative; padding-left: 40px; }
+    .cert-timeline::before {
+      content: ''; position: absolute; left: 14px; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(180deg, var(--accent), var(--accent2), transparent);
+    }
+    .cert-item {
+      position: relative; margin-bottom: 32px;
+      padding: 24px 28px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .cert-item:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .cert-item::before {
+      content: ''; position: absolute; left: -33px; top: 28px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 3px solid var(--bg);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    .cert-name { font-size: 17px; font-weight: 700; color: var(--text-bright); margin-bottom: 4px; }
+    .cert-date { font: 400 13px 'Fira Code', monospace; color: var(--text-dim); }
+
+    /* ===== PROJECTS ===== */
+    .projects { padding: 120px 0; background: var(--bg2); }
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .project-card {
+      padding: 32px; border-radius: 14px;
+      background: var(--surface); border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+    .project-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--accent-glow); border: 1px solid rgba(0,212,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 18px;
+    }
+    .project-name { font-size: 19px; font-weight: 700; color: var(--text-bright); margin-bottom: 10px; }
+    .project-desc { font-size: 14px; color: var(--text-dim); line-height: 1.7; margin-bottom: 16px; }
+    .project-tech {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .project-tech span {
+      font: 400 11px 'Fira Code', monospace; padding: 4px 10px;
+      border-radius: 4px; background: rgba(0,212,255,0.06);
+      border: 1px solid rgba(0,212,255,0.1); color: var(--accent);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact { padding: 120px 0; text-align: center; }
+    .contact-desc {
+      font-size: 18px; color: var(--text-dim); max-width: 560px;
+      margin: 0 auto 40px; line-height: 1.8;
+    }
+    .contact-links { display: flex; justify-content: center; gap: 16px; }
+    .contact-btn {
+      padding: 14px 32px; border-radius: 10px; font-size: 15px;
+      font-weight: 600; text-decoration: none;
+      transition: all 0.3s;
+    }
+    .contact-btn.primary {
+      background: var(--gradient); color: #fff;
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+    .contact-btn.primary:hover {
+      box-shadow: 0 0 50px rgba(0,212,255,0.3);
+      transform: translateY(-2px);
+    }
+    .contact-btn.secondary {
+      background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    }
+    .contact-btn.secondary:hover {
+      border-color: var(--accent); color: var(--accent);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 40px; text-align: center;
+      font-size: 13px; color: var(--text-dim);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero h1 { font-size: 42px; }
+      .hero-photo-frame { width: 280px; height: 340px; margin: 0 auto; }
+      .hero-desc { margin: 0 auto 36px; }
+      .hero-tags { justify-content: center; }
+      .hero-social { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .container { padding: 0 24px; }
+      .section-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Particle Background -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- Navigation -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">SV</div>
+      <span class="nav-logo-text">srivathsan.dev</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#blog">Articles</a></li>
+      <li><a href="#certs">Credentials</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-label">Practical AI · Production Ready</p>
+        <h1>Building the<br>Future of<br><span class="gradient-text">Enterprise AI<br>Security</span></h1>
+        <p class="hero-desc">
+          IT Manager at JBS USA. CISSP certified. I build MCP servers on Azure, 
+          deploy Microsoft Purview DSPM, and govern AI agents at enterprise scale. 
+          These are my field notes from production.
+        </p>
+        <div class="hero-tags">
+          <span class="hero-tag">MCP Architecture</span>
+          <span class="hero-tag">DSPM for AI</span>
+          <span class="hero-tag">Copilot Governance</span>
+          <span class="hero-tag">Claude Code</span>
+          <span class="hero-tag">Sentinel</span>
+          <span class="hero-tag">Zero Trust</span>
+        </div>
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/srivathsanv7" target="_blank" title="LinkedIn">in</a>
+          <a href="https://github.com/srivathsan007" target="_blank" title="GitHub">gh</a>
+          <a href="mailto:srivathsanv7@gmail.com" title="Email">@</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-frame">
+          <img src="assets/img/profile.jpeg" alt="Srivathsan Vivekanandhan">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// About</p>
+      <h2 class="section-title">Cloud Security Architect &<br>AI Infrastructure Builder</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          With 10+ years of enterprise IT leadership, I architect and secure Microsoft 365, Azure, 
+          and AWS environments for a global enterprise. My focus is on the intersection of AI adoption 
+          and security governance — making sure organizations can deploy Copilot, MCP servers, and 
+          AI agents without compromising their security posture.
+        </p>
+        <p>
+          At JBS USA, I lead Zero Trust architecture across Entra ID, Conditional Access, Microsoft 
+          Purview (DLP, DSPM), Defender, and Sentinel. I built a custom MCP server on Azure Container 
+          Apps that handles helpdesk operations — license management, user provisioning, service desk 
+          integration — serving Copilot Studio, Claude Desktop, and any MCP-compatible client.
+        </p>
+        <p>
+          I hold a Master's from Colorado State University (3.93 GPA) and guest lecture on AI security 
+          topics. Currently pursuing Microsoft MVP recognition for my contributions to the MCP and 
+          AI governance community.
+        </p>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-card">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years Enterprise IT</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Global M365 Tenants</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Industry Certifications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3.93</div>
+          <div class="stat-label">Master's GPA (CSU)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// Articles</p>
+      <h2 class="section-title">Field Notes from<br>Production</h2>
+    </div>
+    <div class="blog-grid" id="blog-grid">
+      <!-- Posts loaded dynamically from dashboard API -->
+    </div>
+    <p id="blog-loading" style="text-align:center;color:var(--text-dim);font-size:14px;padding:40px 0;">Loading articles...</p>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section class="certs" id="certs">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// Credentials</p>
+      <h2 class="section-title">Certifications & Awards</h2>
+    </div>
+    <div class="cert-timeline reveal">
+      <div class="cert-item">
+        <div class="cert-name">Technical Rockstar Award — JBS USA</div>
+        <div class="cert-date">December 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Microsoft Cybersecurity Architect Expert</div>
+        <div class="cert-date">November 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Microsoft Identity and Access Administrator Associate</div>
+        <div class="cert-date">November 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">CISSP — Certified Information Systems Security Professional</div>
+        <div class="cert-date">September 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Microsoft Azure Architect Technologies</div>
+        <div class="cert-date">September 2020</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">AWS Certified Developer — Associate</div>
+        <div class="cert-date">January 2019</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name">Certified Associate in Project Management (CAPM)</div>
+        <div class="cert-date">March 2016</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">// Projects</p>
+      <h2 class="section-title">What I'm Building</h2>
+    </div>
+    <div class="project-grid">
+      <div class="project-card reveal">
+        <div class="project-icon">⚡</div>
+        <div class="project-name">Helpdesk MCP Server</div>
+        <div class="project-desc">
+          Production MCP server on Azure Container Apps handling license management, 
+          user provisioning, distribution group management, and service desk integration. 
+          Serves Copilot Studio, Claude Desktop, and any MCP client.
+        </div>
+        <div class="project-tech">
+          <span>TypeScript</span><span>Azure Container Apps</span><span>Graph API</span>
+          <span>Exchange REST</span><span>MCP SDK</span>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-icon">🛡</div>
+        <div class="project-name">HR Offboarding Automation</div>
+        <div class="project-desc">
+          Zero-touch employee offboarding via MCP tools + Azure Logic Apps. 
+          Converts mailboxes, removes licenses, archives data, and closes tickets 
+          automatically. 375+ hours recovered annually.
+        </div>
+        <div class="project-tech">
+          <span>MCP</span><span>Logic Apps</span><span>Hybrid Worker</span>
+          <span>Active Directory</span><span>Azure Arc</span>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-icon">📊</div>
+        <div class="project-name">M365 Message Center Pipeline</div>
+        <div class="project-desc">
+          Automated pipeline that converts Microsoft 365 Message Center announcements 
+          into branded SharePoint news articles with 7 visual templates and a 
+          Copilot Studio approval workflow.
+        </div>
+        <div class="project-tech">
+          <span>Power Automate</span><span>SharePoint</span><span>Copilot Studio</span>
+          <span>Adaptive Cards</span>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-icon">🔍</div>
+        <div class="project-name">LinkedIn Content Pipeline</div>
+        <div class="project-desc">
+          Automated publishing pipeline with Next.js dashboard, Vercel KV storage, 
+          weekly cron jobs, and LinkedIn API integration. Posts surface automatically 
+          every Tuesday for review and one-click publishing.
+        </div>
+        <div class="project-tech">
+          <span>Next.js</span><span>Vercel</span><span>Upstash Redis</span>
+          <span>LinkedIn API</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container reveal">
+    <p class="section-label">// Connect</p>
+    <h2 class="section-title">Let's Talk</h2>
+    <p class="contact-desc">
+      Interested in MCP architecture, AI governance, or enterprise security? 
+      I'm always open to connecting with fellow practitioners, sharing insights, 
+      and collaborating on the future of AI in the enterprise.
+    </p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/srivathsanv7" target="_blank" class="contact-btn primary">Connect on LinkedIn</a>
+      <a href="mailto:srivathsanv7@gmail.com" class="contact-btn secondary">Send Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Srivathsan Vivekanandhan · Built with conviction, deployed with confidence.</p>
+</footer>
+
+<script>
+// ===== PARTICLE CANVAS =====
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let mouse = { x: 0, y: 0 };
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 1.5 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.3;
+    this.speedY = (Math.random() - 0.5) * 0.3;
+    this.opacity = Math.random() * 0.3 + 0.1;
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(0, 212, 255, ${this.opacity})`;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  
+  // Draw connections
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(0, 212, 255, ${0.03 * (1 - dist / 120)})`;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+// ===== NAV SCROLL =====
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ===== LOAD BLOG POSTS =====
+async function loadPosts() {
+  const grid = document.getElementById('blog-grid');
+  const loading = document.getElementById('blog-loading');
+  
+  try {
+    const res = await fetch('https://linkedin-dashboard-nu-nine.vercel.app/api/posts');
+    const posts = await res.json();
+    
+    // Show published posts first, then approved, then pending
+    const sorted = posts.sort((a, b) => {
+      const order = { published: 0, approved: 1, pending: 2, draft: 3, rejected: 4 };
+      return (order[a.status] || 5) - (order[b.status] || 5);
+    });
+
+    const display = sorted.slice(0, 9);
+    
+    if (display.length === 0) {
+      loading.textContent = 'Articles coming soon.';
+      return;
+    }
+
+    loading.style.display = 'none';
+    
+    display.forEach(post => {
+      const excerpt = post.content.substring(0, 120).replace(/\n/g, ' ') + '...';
+      const tag = post.id.toUpperCase();
+      const imgHtml = post.imageUrl 
+        ? `<div class="blog-card-img"><img src="${post.imageUrl}" alt="${post.title}" loading="lazy"></div>` 
+        : '';
+      
+      const card = document.createElement('a');
+      card.href = `blog/${post.id}.html`;
+      card.className = 'blog-card reveal visible';
+      card.innerHTML = `
+        ${imgHtml}
+        <div class="blog-card-body">
+          <div class="blog-card-tag">${tag}</div>
+          <div class="blog-card-title">${post.title}</div>
+          <div class="blog-card-excerpt">${excerpt}</div>
+          <span class="blog-card-link">Read article &rarr;</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  } catch (err) {
+    loading.textContent = 'Articles coming soon.';
+  }
+}
+
+loadPosts();
+</script>
+</body>
+</html>
