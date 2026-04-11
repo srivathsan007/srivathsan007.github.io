@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the four foundational security principles essential for deploying agentic AI systems safely in enterprise environments. Learn how Cloud Security Architects can implement Zero Trust, least privilege, and continuous monitoring for autonomous AI agents.">
+  <meta property="og:title" content="Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence">
+  <meta property="og:description" content="Discover the four foundational security principles essential for deploying agentic AI systems safely in enterprise environments. Learn how Cloud Security Architects can implement Zero Trust, least privilege, and continuous monitoring for autonomous AI agents.">
+  <meta property="og:image" content="https://srivathsan007.github.io/blog/images/placeholder.png">
+  <meta property="og:type" content="article">
+  <title>Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence — Srivathsan Vivekanandhan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #060810; --bg2: #0a0c14;
+      --surface: rgba(255,255,255,0.025);
+      --border: rgba(255,255,255,0.06);
+      --text: #b8bcc8; --dim: #5e6374; --bright: #eef0f6;
+      --accent: #00e0ff; --accent2: #a855f7;
+      --glow: rgba(0,224,255,0.12);
+      --grad: linear-gradient(135deg, #00e0ff 0%, #a855f7 100%);
+      --green: #10B981;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Libre Baskerville', Georgia, serif; line-height: 1.8; overflow-x: hidden; }
+    ::selection { background: rgba(0,224,255,0.2); color: #fff; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(6,8,16,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-mark { width: 36px; height: 36px; border-radius: 9px; background: var(--grad); display: flex; align-items: center; justify-content: center; font: 700 13px 'Fira Code', monospace; color: #000; box-shadow: 0 0 16px var(--glow); }
+    .nav-brand { font: 800 18px 'Playfair Display', serif; color: var(--bright); font-style: italic; }
+    .back-link { font: 500 11px 'Space Grotesk', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); text-decoration: none; transition: color 0.3s; }
+    .back-link:hover { color: var(--accent); }
+
+    .hero-wrap { width: 100%; height: 460px; overflow: hidden; position: relative; }
+    .hero-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(6,8,16,0.1) 0%, rgba(6,8,16,0.5) 60%, rgba(6,8,16,0.95) 100%); }
+
+    article { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 8rem; }
+    .post-meta { font: 400 11px 'Fira Code', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; }
+    h1 { font: 700 clamp(1.8rem, 4vw, 3rem) 'Space Grotesk', sans-serif; line-height: 1.15; color: var(--bright); margin-bottom: 1.25rem; letter-spacing: -0.03em; }
+    .excerpt { font: 400 1rem 'Libre Baskerville', serif; line-height: 1.9; color: var(--dim); margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 3rem; }
+    .tag { font: 400 10px 'Fira Code', monospace; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; background: var(--surface); color: var(--dim); border: 1px solid var(--border); border-radius: 20px; }
+
+    .blog-section { margin-bottom: 3.5rem; }
+    .blog-section h2 { font: 700 1.3rem 'Space Grotesk', sans-serif; color: var(--bright); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); letter-spacing: -0.02em; }
+    .section-body p { font: 400 0.95rem 'Libre Baskerville', serif; line-height: 2; color: var(--text); margin-bottom: 1.25rem; }
+    .section-body strong { color: var(--bright); font-weight: 700; }
+    .section-body em { color: var(--accent); font-style: normal; }
+    .section-body code { font: 400 0.8rem 'Fira Code', monospace; background: rgba(0,224,255,0.06); color: var(--accent); padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(0,224,255,0.12); }
+    .section-body h3 { font: 600 1.05rem 'Space Grotesk', sans-serif; color: var(--bright); margin: 2rem 0 0.75rem; }
+    .section-body ul { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .section-body li { font: 400 0.92rem 'Libre Baskerville', serif; line-height: 1.9; color: var(--text); margin-bottom: 0.4rem; }
+
+    .infobox { border-left: 2px solid var(--accent); padding: 1.25rem 1.75rem; background: rgba(0,224,255,0.04); margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .infobox-title { font: 600 11px 'Fira Code', monospace; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .infobox p { font: 400 0.88rem 'Libre Baskerville', serif; line-height: 1.85; color: var(--dim); margin: 0; }
+
+    .blog-infographic { margin: 2.5rem 0; padding: 2rem; background: var(--bg2); border: 1px solid var(--border); border-left: 2px solid var(--accent2); border-radius: 0 12px 12px 0; }
+    .infographic-wrap { width: 100%; overflow-x: auto; }
+    .infographic-wrap svg { width: 100%; height: auto; max-width: 100%; }
+
+    .blog-diagram { margin: 2.5rem 0; padding: 2rem; background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; }
+    .diagram-label { font: 400 11px 'Fira Code', monospace; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1.5rem; }
+    .mermaid { background: transparent; }
+
+    .key-takeaways { background: var(--bg2); border: 1px solid var(--border); border-left: 2px solid var(--green); padding: 2.5rem; margin: 3rem 0; border-radius: 0 12px 12px 0; }
+    .key-takeaways h3 { font: 600 11px 'Fira Code', monospace; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 1.5rem; }
+    .key-takeaways ul { list-style: none; padding: 0; }
+    .key-takeaways li { font: 400 0.92rem 'Libre Baskerville', serif; line-height: 1.9; color: var(--text); padding: 0.6rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.75rem; align-items: flex-start; }
+    .key-takeaways li:last-child { border-bottom: none; }
+    .arrow { color: var(--green); flex-shrink: 0; font-weight: 700; }
+
+    .post-footer { margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .author-name { font: 700 1rem 'Space Grotesk', sans-serif; color: var(--bright); margin-bottom: 4px; }
+    .author-title { font: 400 12px 'Fira Code', monospace; color: var(--dim); }
+    .linkedin-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--grad); color: #000; padding: 12px 24px; border-radius: 10px; text-decoration: none; font: 600 13px 'Space Grotesk', sans-serif; box-shadow: 0 0 20px var(--glow); transition: all 0.3s; }
+    .linkedin-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--glow); }
+
+    .back-to-top { display: block; text-align: center; margin-top: 3rem; padding: 1rem; font: 400 11px 'Fira Code', monospace; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dim); text-decoration: none; transition: color 0.3s; border-top: 1px solid var(--border); }
+    .back-to-top:hover { color: var(--accent); }
+
+    @media (max-width: 700px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-brand { display: none; }
+      article { padding: 2rem 1.25rem 5rem; }
+      .hero-wrap { height: 240px; }
+      .post-footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="https://srivathsan007.github.io/" class="nav-logo">
+      <div class="nav-mark">SV</div>
+      <span class="nav-brand">Srivathsan</span>
+    </a>
+    <a href="https://srivathsan007.github.io/#blog" class="back-link">← All Articles</a>
+  </nav>
+
+  <div class="hero-wrap">
+    <img src="https://srivathsan007.github.io/blog/images/placeholder.png" alt="Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence" loading="eager"
+      onerror="this.parentElement.style.background='#0a0c14';this.style.display='none'">
+  </div>
+
+  <article>
+    <div class="post-meta">April 11, 2026 &nbsp;·&nbsp; 8 min read</div>
+    <h1>Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence</h1>
+    <p class="excerpt">Discover the four foundational security principles essential for deploying agentic AI systems safely in enterprise environments. Learn how Cloud Security Architects can implement Zero Trust, least privilege, and continuous monitoring for autonomous AI agents.</p>
+    <div class="tags"><span class="tag">Agentic AI Security</span><span class="tag">Zero Trust</span><span class="tag">AI Governance</span><span class="tag">Cloud Security</span><span class="tag">Enterprise AI</span></div>
+
+    
+    <section class="blog-section">
+      <h2>The Rise of Agentic AI and Why Security Principles Matter</h2>
+      
+        <div class="infobox">
+          <div class="infobox-title">What Makes AI 'Agentic'?</div>
+          <p>Agentic AI systems possess autonomy, goal-directed behavior, environmental interaction capabilities, and the ability to take actions that affect systems, data, and processes without human approval for each step.</p>
+        </div>
+      <div class="section-body"><p>We are witnessing a fundamental shift in how AI systems operate within enterprise environments. <strong>Agentic AI systems</strong> represent autonomous agents capable of planning, reasoning, and executing complex multi-step tasks without constant human intervention. Unlike traditional AI models that simply respond to prompts, these agents can browse the web, execute code, interact with APIs, manage cloud resources, and make decisions that have real-world consequences. This autonomy introduces unprecedented security challenges that demand a principled approach to governance.</p>
+<p>As enterprises race to deploy AI agents for customer service, DevOps automation, security operations, and business process optimization, the attack surface expands exponentially. Each autonomous action an AI agent takes represents a potential security decision point. Without foundational security principles, organizations risk <strong>unauthorized data access</strong>, <strong>privilege escalation</strong>, <strong>unintended actions</strong>, and <strong>compliance violations</strong>. The recent industry guidance on agentic AI security couldn't come at a more critical time, as Cloud Security Architects must now architect trust boundaries around systems that inherently push against traditional security paradigms.</p></div>
+    </section>
+
+    <section class="blog-section">
+      <h2>Principle 1: Enforce Least Privilege Access for AI Agents</h2>
+      
+        <div class="infobox">
+          <div class="infobox-title">Implementation Tip</div>
+          <p>Create dedicated service principals for AI agents with custom roles that explicitly enumerate allowed actions. Use conditional access policies to restrict agent operations based on time, location, and resource sensitivity.</p>
+        </div>
+      <div class="section-body"><p>The cornerstone of agentic AI security is <strong>rigorous least privilege enforcement</strong>. This principle, while foundational in traditional security, takes on new complexity when applied to autonomous AI systems. An AI agent should only have access to the specific resources, data, and capabilities required to complete its designated task—nothing more. This requires granular permission scoping that adapts dynamically based on context and task requirements.</p>
+<p>Implementing least privilege for AI agents means moving beyond static role assignments. Consider an AI agent designed to assist with cloud cost optimization. This agent needs read access to billing data and usage metrics, but should it have the ability to terminate instances or modify reservations? The answer depends on the specific task context. <strong>Just-in-time privilege elevation</strong> becomes essential, where agents request elevated permissions for specific actions and those permissions expire immediately after task completion.</p>
+<p>Cloud Security Architects should implement permission boundaries using cloud-native identity services, custom scope definitions, and explicit deny policies for sensitive operations. Every permission granted to an AI agent should be documented, justified, and regularly reviewed. The principle extends to data access as well—AI agents should only retrieve and process the minimum data necessary, implementing data masking and tokenization where full access isn't required.</p></div>
+    </section>
+
+    <section class="blog-section">
+      <h2>Principle 2: Establish Strong Identity and Authentication for Agent Actions</h2>
+      
+        <div class="infobox">
+          <div class="infobox-title">Critical Consideration</div>
+          <p>Implement separate identity chains for AI agents versus human users. This enables distinct monitoring, alerting, and response procedures while maintaining clear accountability for all autonomous actions.</p>
+        </div>
+      <div class="section-body"><p>Every action an agentic AI system takes must be <strong>cryptographically attributable</strong> to a verified identity. This goes beyond simply assigning a service account to an AI agent. True identity security for agentic systems requires establishing the complete chain of trust from the human user who initiated the agent, through the agent itself, to every downstream system the agent interacts with.</p>
+<p>Implementing strong identity for AI agents involves several critical components. First, <strong>agent attestation</strong> ensures the AI system itself hasn't been tampered with and is running approved code in a trusted execution environment. Second, <strong>delegated authentication</strong> must clearly preserve the original user context while granting the agent its own distinct identity for audit purposes. This creates a dual-identity model where actions are logged as "Agent X acting on behalf of User Y."</p>
+<p><strong>Workload identity federation</strong> is essential for AI agents operating across cloud environments. Rather than static credentials, agents should authenticate using short-lived tokens bound to specific tasks. Managed identities and workload identity pools eliminate the risk of credential exposure while enabling seamless cross-service authentication. Additionally, implement mutual TLS for agent-to-service communication, ensuring both parties verify identity before any data exchange occurs. The identity layer must also support <strong>scope narrowing</strong>, where an agent's effective permissions decrease as it moves further from the original authorization context.</p></div>
+    </section>
+
+    <section class="blog-section">
+      <h2>Principle 3: Implement Continuous Monitoring and Behavioral Analysis</h2>
+      
+        <div class="infobox">
+          <div class="infobox-title">Monitoring Must-Haves</div>
+          <p>Deploy real-time dashboards showing active AI agents, current permissions, actions in progress, and anomaly scores. Integrate with SIEM/SOAR platforms for automated response to high-severity deviations.</p>
+        </div>
+      <div class="section-body"><p>Agentic AI systems require <strong>real-time behavioral monitoring</strong> that goes far beyond traditional log aggregation. Because these systems can rapidly execute complex action chains, security teams need visibility into not just what actions occurred, but whether those actions align with expected behavior patterns. Anomaly detection becomes critical when an autonomous system might execute hundreds of API calls in minutes.</p>
+<p>Effective monitoring for AI agents encompasses multiple dimensions. <strong>Action pattern analysis</strong> establishes baselines for normal agent behavior—typical API calls, resource access patterns, data volumes processed, and interaction frequencies. Deviations from these baselines should trigger immediate alerts and potentially automatic intervention. <strong>Intent verification</strong> compares the agent's declared goals against its actual actions, flagging situations where behavior diverges from stated objectives.</p>
+<p>Cloud Security Architects should deploy dedicated monitoring pipelines for AI agent activity, separate from human user monitoring. This enables tuned alerting thresholds and specialized detection rules. Implement <strong>semantic logging</strong> that captures not just technical details but the business context of agent actions—why the agent accessed a resource, what decision led to a specific action, and what alternative paths were considered. This contextual data proves invaluable for incident investigation and security improvement. Consider implementing <strong>tripwires</strong>—sensitive resources or actions that should never be accessed by AI agents under normal circumstances, providing early warning of compromise or misconfiguration.</p></div>
+    </section>
+
+    <section class="blog-section">
+      <h2>Principle 4: Require Human Oversight for High-Impact Decisions</h2>
+      
+        <div class="infobox">
+          <div class="infobox-title">Building Approval Workflows</div>
+          <p>Integrate AI agent approval requests with existing workflow tools (Teams, Slack, ticketing systems). Include one-click approve/deny with mandatory justification capture for audit trails.</p>
+        </div>
+      <div class="section-body"><p>The fourth principle establishes <strong>mandatory human checkpoints</strong> for actions that could cause significant harm, expose sensitive data, or create irreversible changes. This principle acknowledges that while agentic AI provides tremendous efficiency gains, certain decisions remain too consequential for fully autonomous execution. The challenge lies in defining where these boundaries exist without creating friction that negates the benefits of automation.</p>
+<p>Implementing human oversight requires a <strong>tiered action classification system</strong>. Low-risk actions (reading non-sensitive data, generating reports, sending notifications) can proceed autonomously. Medium-risk actions (modifying configurations, accessing confidential data, interacting with external systems) might require post-action review or soft confirmation. High-risk actions (deleting data, financial transactions, security policy changes, accessing privileged systems) must halt for explicit human approval before proceeding.</p>
+<p><strong>Approval workflows</strong> for AI agent actions should be designed for speed and clarity. When an agent requires human oversight, the approval request must include full context: what action is requested, why the agent determined it necessary, what data or systems are affected, and what the consequences of approval or denial will be. Implement <strong>time-bound approvals</strong> that expire if not acted upon, preventing stale authorizations. Additionally, create <strong>escalation paths</strong> for situations where initial approvers are unavailable, ensuring agents don't remain blocked indefinitely while maintaining security oversight. The goal is enabling velocity while preserving human judgment for consequential decisions.</p></div>
+    </section>
+
+    <section class="blog-section">
+      <h2>Implementing Zero Trust Architecture for Agentic AI</h2>
+      
+        <div class="infobox">
+          <div class="infobox-title">Zero Trust Checklist for AI Agents</div>
+          <p>✓ Verify agent identity per-request ✓ Validate action against current policy ✓ Check user session validity ✓ Assess real-time risk signals ✓ Log decision with full context ✓ Enforce network segmentation ✓ Monitor for behavioral anomalies</p>
+        </div>
+      <div class="section-body"><p>These four principles naturally align with and extend <strong>Zero Trust architecture</strong> for the AI era. Zero Trust's core tenet—never trust, always verify—applies with even greater force to autonomous systems that can rapidly traverse network boundaries and access diverse resources. Implementing Zero Trust for AI agents requires treating every agent action as potentially hostile until verified against policy.</p>
+<p><strong>Micro-segmentation</strong> becomes essential for containing AI agent blast radius. Even agents with legitimate access should be constrained to specific network segments, resource groups, and data stores relevant to their immediate task. Network policies should explicitly deny agent communication paths that aren't required, preventing lateral movement in case of agent compromise. Combine network controls with <strong>runtime security</strong> that monitors agent processes for signs of injection, prompt manipulation, or unauthorized code execution.</p>
+<p><strong>Continuous authorization</strong> extends beyond initial authentication. Each significant action an AI agent takes should be re-verified against current policy, user session state, and risk signals. If the human user who initiated an AI agent signs out, the agent's authorization should immediately terminate. If threat intelligence indicates compromise of a connected system, agents with access to that system should be automatically suspended pending review. This dynamic, context-aware authorization ensures security posture adapts in real-time to changing conditions. Finally, implement <strong>immutable audit trails</strong> using cryptographically signed logs that capture every authorization decision, action attempt, and outcome for comprehensive forensic capability.</p></div>
+    </section>
+
+    <section class="blog-section">
+      <h2>Building a Governance Framework: Practical Next Steps</h2>
+      
+        <div class="infobox">
+          <div class="infobox-title">Governance Quick Wins</div>
+          <p>Start with mandatory security review for any AI agent with write access to production systems. Implement agent inventory in your CMDB. Add AI agent-specific detections to your SIEM within 30 days.</p>
+        </div>
+      <div class="section-body"><p>Translating these security principles into operational reality requires a <strong>comprehensive governance framework</strong> that spans technology, process, and people. Start by conducting an inventory of all AI agents operating within your environment—you cannot secure what you don't know exists. Shadow AI agents deployed by business units without security review represent significant uncontrolled risk.</p>
+<p>Establish an <strong>AI Agent Security Review Board</strong> that evaluates new agent deployments against the four principles before production deployment. This review should assess permission requirements, identity architecture, monitoring integration, and human oversight mechanisms. Create standardized templates and patterns that development teams can follow, reducing friction while ensuring consistent security implementation. Develop <strong>runbooks</strong> for AI agent security incidents that address scenarios unique to autonomous systems: prompt injection attacks, agent hijacking, unauthorized action chains, and data exfiltration through agent actions.</p>
+<p><strong>Training and awareness</strong> programs must evolve to address AI agent security. Developers building agentic systems need to understand secure agent design patterns. Security operations teams need skills in monitoring and responding to AI-specific threats. Business stakeholders approving AI agent deployments must understand the risk implications of the autonomous capabilities they're authorizing. Finally, plan for continuous improvement—the agentic AI security landscape evolves rapidly, and your governance framework must include mechanisms for incorporating new threats, techniques, and best practices as they emerge.</p></div>
+    </section>
+
+    
+
+    
+    <div class="blog-diagram">
+      <div class="diagram-label">// Architecture Diagram</div>
+      <div class="mermaid">graph TD
+  A[Agentic AI Request] --> B{Identity Verification}
+  B -->|Verified| C[Least Privilege Scope]
+  B -->|Failed| Z[Access Denied]
+  C --> D{Action Authorization}
+  D -->|Approved| E[Scoped Resource Access]
+  D -->|Denied| Z
+  E --> F[Continuous Monitoring]
+  F --> G{Behavior Analysis}
+  G -->|Normal| H[Action Execution]
+  G -->|Anomaly| I[Human Oversight Trigger]
+  H --> J[Audit Logging]
+  I --> K[Review & Remediate]
+  K --> J</div>
+    </div>
+
+    <div class="key-takeaways">
+      <h3>// Key Takeaways</h3>
+      <ul><li><span class="arrow">→</span><span>Agentic AI systems require security principles that address autonomous decision-making, implementing just-in-time privilege elevation and explicit permission boundaries for every agent action</span></li><li><span class="arrow">→</span><span>Strong identity for AI agents means cryptographic attribution with dual-identity models that preserve both agent and delegating user context for complete accountability</span></li><li><span class="arrow">→</span><span>Continuous behavioral monitoring must establish baselines for normal agent behavior and trigger alerts when actions deviate from expected patterns or stated objectives</span></li><li><span class="arrow">→</span><span>Human oversight checkpoints are mandatory for high-risk actions—implement tiered classification systems with time-bound approvals and clear escalation paths</span></li></ul>
+    </div>
+
+    <div class="post-footer">
+      <div>
+        <div class="author-name">Srivathsan Vivekanandhan</div>
+        <div class="author-title">Cloud Security Architect · AI Security Specialist</div>
+      </div>
+      <a href="https://linkedin.com/in/srivathsanvivekanandhan"
+        class="linkedin-btn" target="_blank">
+        Follow on LinkedIn →
+      </a>
+    </div>
+
+    <a href="https://srivathsan007.github.io/#blog" class="back-to-top">
+      ↑ Back to all articles
+    </a>
+  </article>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true, theme: 'dark',
+      themeVariables: {
+        background: '#0a0c14', primaryColor: '#0a0c14',
+        primaryTextColor: '#eef0f6',
+        primaryBorderColor: 'rgba(255,255,255,0.06)',
+        lineColor: '#5e6374', secondaryColor: '#060810',
+        tertiaryColor: '#060810', fontSize: '13px'
+      }
+    });
+  </script>
+</body>
+</html>
