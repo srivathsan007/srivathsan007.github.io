@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the four foundational security principles essential for deploying agentic AI systems safely in enterprise environments. Learn how Cloud Security Architects can implement Zero Trust, least privilege, and continuous monitoring for autonomous AI agents.">
+  <meta name="description" content="Explore the four foundational security principles essential for deploying agentic AI systems in enterprise environments. Learn how to establish robust guardrails that align with Zero Trust Architecture while enabling autonomous AI capabilities.">
   <meta property="og:title" content="Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence">
-  <meta property="og:description" content="Discover the four foundational security principles essential for deploying agentic AI systems safely in enterprise environments. Learn how Cloud Security Architects can implement Zero Trust, least privilege, and continuous monitoring for autonomous AI agents.">
-  <meta property="og:image" content="https://srivathsan007.github.io/blog/images/placeholder.png">
+  <meta property="og:description" content="Explore the four foundational security principles essential for deploying agentic AI systems in enterprise environments. Learn how to establish robust guardrails that align with Zero Trust Architecture while enabling autonomous AI capabilities.">
+  <meta property="og:image" content="https://srivathsan007.github.io/blog/images/four-security-principles-agentic-ai-systems-hero.svg?v=1775968551779">
   <meta property="og:type" content="article">
   <title>Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence — Srivathsan Vivekanandhan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,98 +104,94 @@
   </nav>
 
   <div class="hero-wrap">
-    <img src="https://srivathsan007.github.io/blog/images/placeholder.png" alt="Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence" loading="eager"
+    <img src="https://srivathsan007.github.io/blog/images/four-security-principles-agentic-ai-systems-hero.svg?v=1775968551779" alt="Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence" loading="eager"
       onerror="this.parentElement.style.background='#0a0c14';this.style.display='none'">
   </div>
 
   <article>
-    <div class="post-meta">April 11, 2026 &nbsp;·&nbsp; 8 min read</div>
+    <div class="post-meta">April 12, 2026 &nbsp;·&nbsp; 8 min read</div>
     <h1>Four Security Principles for Agentic AI Systems: Building Trust in Autonomous Intelligence</h1>
-    <p class="excerpt">Discover the four foundational security principles essential for deploying agentic AI systems safely in enterprise environments. Learn how Cloud Security Architects can implement Zero Trust, least privilege, and continuous monitoring for autonomous AI agents.</p>
-    <div class="tags"><span class="tag">Agentic AI Security</span><span class="tag">Zero Trust</span><span class="tag">AI Governance</span><span class="tag">Cloud Security</span><span class="tag">Enterprise AI</span></div>
+    <p class="excerpt">Explore the four foundational security principles essential for deploying agentic AI systems in enterprise environments. Learn how to establish robust guardrails that align with Zero Trust Architecture while enabling autonomous AI capabilities.</p>
+    <div class="tags"><span class="tag">Agentic AI Security</span><span class="tag">Zero Trust Architecture</span><span class="tag">AI Governance</span><span class="tag">Enterprise Security</span><span class="tag">Cloud Security</span></div>
 
     
     <section class="blog-section">
       <h2>The Rise of Agentic AI and Why Security Principles Matter</h2>
       
         <div class="infobox">
-          <div class="infobox-title">What Makes AI 'Agentic'?</div>
-          <p>Agentic AI systems possess autonomy, goal-directed behavior, environmental interaction capabilities, and the ability to take actions that affect systems, data, and processes without human approval for each step.</p>
+          <div class="infobox-title">Critical Context</div>
+          <p>Gartner predicts that by 2028, 33% of enterprise software applications will include agentic AI capabilities, up from less than 1% in 2024. Security frameworks must evolve now to prepare for this transformation.</p>
         </div>
-      <div class="section-body"><p>We are witnessing a fundamental shift in how AI systems operate within enterprise environments. <strong>Agentic AI systems</strong> represent autonomous agents capable of planning, reasoning, and executing complex multi-step tasks without constant human intervention. Unlike traditional AI models that simply respond to prompts, these agents can browse the web, execute code, interact with APIs, manage cloud resources, and make decisions that have real-world consequences. This autonomy introduces unprecedented security challenges that demand a principled approach to governance.</p>
-<p>As enterprises race to deploy AI agents for customer service, DevOps automation, security operations, and business process optimization, the attack surface expands exponentially. Each autonomous action an AI agent takes represents a potential security decision point. Without foundational security principles, organizations risk <strong>unauthorized data access</strong>, <strong>privilege escalation</strong>, <strong>unintended actions</strong>, and <strong>compliance violations</strong>. The recent industry guidance on agentic AI security couldn't come at a more critical time, as Cloud Security Architects must now architect trust boundaries around systems that inherently push against traditional security paradigms.</p></div>
+      <div class="section-body"><p>Agentic AI represents a paradigm shift from traditional AI systems that simply respond to queries. These autonomous agents can <strong>plan, execute, and iterate</strong> on complex tasks with minimal human intervention. They browse the web, execute code, manage files, interact with APIs, and make decisions that impact enterprise systems in real-time. This autonomy introduces attack surfaces that traditional security models were never designed to address.</p>
+<p>As enterprises race to deploy AI agents for productivity gains, the security implications are profound. An AI agent with excessive permissions could exfiltrate sensitive data, modify critical configurations, or serve as a pivot point for adversaries. The challenge lies in <strong>enabling innovation while maintaining control</strong>. We cannot simply lock down these systems entirely—doing so defeats their purpose. Instead, we need principled approaches that balance capability with security, autonomy with accountability.</p>
+<p>Recent industry guidance has crystallized around four foundational principles that provide a framework for securing agentic AI deployments. These principles align naturally with Zero Trust Architecture concepts while addressing the unique characteristics of autonomous AI systems.</p></div>
     </section>
 
     <section class="blog-section">
-      <h2>Principle 1: Enforce Least Privilege Access for AI Agents</h2>
+      <h2>Principle 1: Establish Explicit Trust Boundaries for Every Agent</h2>
       
         <div class="infobox">
           <div class="infobox-title">Implementation Tip</div>
-          <p>Create dedicated service principals for AI agents with custom roles that explicitly enumerate allowed actions. Use conditional access policies to restrict agent operations based on time, location, and resource sensitivity.</p>
+          <p>Create agent identity certificates with embedded claims that define trust boundaries. Use short-lived tokens (minutes, not hours) that force continuous re-evaluation of trust boundaries against current security posture.</p>
         </div>
-      <div class="section-body"><p>The cornerstone of agentic AI security is <strong>rigorous least privilege enforcement</strong>. This principle, while foundational in traditional security, takes on new complexity when applied to autonomous AI systems. An AI agent should only have access to the specific resources, data, and capabilities required to complete its designated task—nothing more. This requires granular permission scoping that adapts dynamically based on context and task requirements.</p>
-<p>Implementing least privilege for AI agents means moving beyond static role assignments. Consider an AI agent designed to assist with cloud cost optimization. This agent needs read access to billing data and usage metrics, but should it have the ability to terminate instances or modify reservations? The answer depends on the specific task context. <strong>Just-in-time privilege elevation</strong> becomes essential, where agents request elevated permissions for specific actions and those permissions expire immediately after task completion.</p>
-<p>Cloud Security Architects should implement permission boundaries using cloud-native identity services, custom scope definitions, and explicit deny policies for sensitive operations. Every permission granted to an AI agent should be documented, justified, and regularly reviewed. The principle extends to data access as well—AI agents should only retrieve and process the minimum data necessary, implementing data masking and tokenization where full access isn't required.</p></div>
+      <div class="section-body"><p>The first principle focuses on <strong>defining and enforcing explicit trust boundaries</strong> for each AI agent deployed in your environment. Unlike human users who have inherent contextual understanding of appropriate behavior, AI agents operate based on their training and instructions. Without explicit boundaries, they may take actions that are technically within their capabilities but outside acceptable operational parameters.</p>
+<p>Trust boundaries must be established at multiple levels. At the <strong>identity layer</strong>, each agent should have a unique, cryptographically verifiable identity that distinguishes it from other agents and human users. This identity becomes the anchor for all subsequent authorization decisions. At the <strong>operational layer</strong>, boundaries define what resources the agent can access, what actions it can perform, and under what conditions it can operate autonomously versus requiring human approval.</p>
+<p>Implementing trust boundaries requires robust policy engines that can evaluate agent requests in real-time. These policies should be <strong>declarative, version-controlled, and auditable</strong>. Consider implementing agent manifests—formal declarations of an agent's intended purpose, required permissions, and operational constraints. Any deviation from this manifest should trigger alerts and potential automatic remediation.</p>
+<p>Trust boundaries should also account for <strong>temporal constraints</strong>. An agent might be authorized for specific tasks during business hours but restricted during off-hours. Similarly, boundaries should adapt based on threat intelligence—when elevated risk conditions are detected, agent autonomy should automatically decrease.</p></div>
     </section>
 
     <section class="blog-section">
-      <h2>Principle 2: Establish Strong Identity and Authentication for Agent Actions</h2>
+      <h2>Principle 2: Implement Granular, Context-Aware Least Privilege</h2>
       
         <div class="infobox">
-          <div class="infobox-title">Critical Consideration</div>
-          <p>Implement separate identity chains for AI agents versus human users. This enables distinct monitoring, alerting, and response procedures while maintaining clear accountability for all autonomous actions.</p>
+          <div class="infobox-title">Zero Trust Alignment</div>
+          <p>Context-aware least privilege directly implements Zero Trust's 'never trust, always verify' mandate. Every agent action should be evaluated against current context, not historical trust decisions.</p>
         </div>
-      <div class="section-body"><p>Every action an agentic AI system takes must be <strong>cryptographically attributable</strong> to a verified identity. This goes beyond simply assigning a service account to an AI agent. True identity security for agentic systems requires establishing the complete chain of trust from the human user who initiated the agent, through the agent itself, to every downstream system the agent interacts with.</p>
-<p>Implementing strong identity for AI agents involves several critical components. First, <strong>agent attestation</strong> ensures the AI system itself hasn't been tampered with and is running approved code in a trusted execution environment. Second, <strong>delegated authentication</strong> must clearly preserve the original user context while granting the agent its own distinct identity for audit purposes. This creates a dual-identity model where actions are logged as "Agent X acting on behalf of User Y."</p>
-<p><strong>Workload identity federation</strong> is essential for AI agents operating across cloud environments. Rather than static credentials, agents should authenticate using short-lived tokens bound to specific tasks. Managed identities and workload identity pools eliminate the risk of credential exposure while enabling seamless cross-service authentication. Additionally, implement mutual TLS for agent-to-service communication, ensuring both parties verify identity before any data exchange occurs. The identity layer must also support <strong>scope narrowing</strong>, where an agent's effective permissions decrease as it moves further from the original authorization context.</p></div>
+      <div class="section-body"><p>The principle of least privilege is foundational to security, but agentic AI demands a <strong>more sophisticated implementation</strong> than traditional role-based access control. AI agents often need dynamic permissions that vary based on the specific task they're executing, the data they're processing, and the context of their operation. Static permission sets are insufficient.</p>
+<p>Context-aware least privilege for AI agents requires understanding the <strong>intent behind each action</strong>. When an agent requests access to a customer database, the authorization decision should consider: What task is the agent performing? Is this data necessary for that task? What is the minimum subset of data required? Has the agent's behavior pattern been consistent with its stated purpose? This moves beyond simple allow/deny decisions to nuanced, risk-aware authorization.</p>
+<p>Implement <strong>just-in-time (JIT) privilege elevation</strong> for agents requiring temporary elevated access. Rather than granting standing permissions, agents should request specific privileges for specific durations with specific justifications. These requests should be logged, analyzed, and potentially require human approval for sensitive operations. The privilege should automatically expire once the task completes or the time window closes.</p>
+<p>Consider implementing <strong>privilege decay mechanisms</strong> where agents lose permissions they haven't used recently. If an agent was granted access to a system six months ago but hasn't accessed it since, that permission should be automatically revoked. This reduces the blast radius of a compromised agent and encourages precise permission grants rather than overly broad access.</p></div>
     </section>
 
     <section class="blog-section">
-      <h2>Principle 3: Implement Continuous Monitoring and Behavioral Analysis</h2>
+      <h2>Principle 3: Maintain Continuous Human Oversight and Control</h2>
       
         <div class="infobox">
-          <div class="infobox-title">Monitoring Must-Haves</div>
-          <p>Deploy real-time dashboards showing active AI agents, current permissions, actions in progress, and anomaly scores. Integrate with SIEM/SOAR platforms for automated response to high-severity deviations.</p>
+          <div class="infobox-title">Governance Requirement</div>
+          <p>Document your human oversight mechanisms thoroughly. Regulators increasingly expect demonstrable human control over AI systems, particularly for decisions affecting individuals or critical infrastructure.</p>
         </div>
-      <div class="section-body"><p>Agentic AI systems require <strong>real-time behavioral monitoring</strong> that goes far beyond traditional log aggregation. Because these systems can rapidly execute complex action chains, security teams need visibility into not just what actions occurred, but whether those actions align with expected behavior patterns. Anomaly detection becomes critical when an autonomous system might execute hundreds of API calls in minutes.</p>
-<p>Effective monitoring for AI agents encompasses multiple dimensions. <strong>Action pattern analysis</strong> establishes baselines for normal agent behavior—typical API calls, resource access patterns, data volumes processed, and interaction frequencies. Deviations from these baselines should trigger immediate alerts and potentially automatic intervention. <strong>Intent verification</strong> compares the agent's declared goals against its actual actions, flagging situations where behavior diverges from stated objectives.</p>
-<p>Cloud Security Architects should deploy dedicated monitoring pipelines for AI agent activity, separate from human user monitoring. This enables tuned alerting thresholds and specialized detection rules. Implement <strong>semantic logging</strong> that captures not just technical details but the business context of agent actions—why the agent accessed a resource, what decision led to a specific action, and what alternative paths were considered. This contextual data proves invaluable for incident investigation and security improvement. Consider implementing <strong>tripwires</strong>—sensitive resources or actions that should never be accessed by AI agents under normal circumstances, providing early warning of compromise or misconfiguration.</p></div>
+      <div class="section-body"><p>Autonomous doesn't mean unsupervised. The third principle establishes that <strong>humans must maintain meaningful oversight</strong> and the ability to intervene in AI agent operations at any time. This isn't about slowing down AI capabilities—it's about ensuring accountability and maintaining appropriate control over systems that can take consequential actions.</p>
+<p>Implement <strong>tiered autonomy levels</strong> based on action sensitivity. Low-risk, routine actions (reading non-sensitive data, generating reports) can proceed autonomously with logging. Medium-risk actions (modifying configurations, accessing sensitive data) might require asynchronous human review within defined timeframes. High-risk actions (privileged operations, financial transactions, security configuration changes) should require <strong>real-time human approval</strong> before execution.</p>
+<p>Design <strong>circuit breakers</strong> that automatically pause agent operations when anomalies are detected. If an agent's behavior deviates significantly from its baseline—unusual access patterns, unexpected resource consumption, or actions outside its normal scope—operations should halt pending human review. These circuit breakers should be tunable based on risk tolerance and should err on the side of caution.</p>
+<p>Human oversight must be <strong>meaningful, not theatrical</strong>. Avoid approval fatigue by ensuring humans review manageable volumes of genuinely significant decisions. Use AI-assisted triage to surface the most critical decisions while providing summaries of routine operations. Invest in tooling that gives human reviewers sufficient context to make informed decisions quickly. The goal is informed human judgment, not rubber-stamping.</p></div>
     </section>
 
     <section class="blog-section">
-      <h2>Principle 4: Require Human Oversight for High-Impact Decisions</h2>
+      <h2>Principle 4: Embed Comprehensive Audit, Observability, and Accountability</h2>
       
         <div class="infobox">
-          <div class="infobox-title">Building Approval Workflows</div>
-          <p>Integrate AI agent approval requests with existing workflow tools (Teams, Slack, ticketing systems). Include one-click approve/deny with mandatory justification capture for audit trails.</p>
+          <div class="infobox-title">Technical Consideration</div>
+          <p>Use cryptographically signed, append-only log structures for agent audit trails. Consider blockchain-based or Merkle tree implementations to ensure log integrity and detect tampering.</p>
         </div>
-      <div class="section-body"><p>The fourth principle establishes <strong>mandatory human checkpoints</strong> for actions that could cause significant harm, expose sensitive data, or create irreversible changes. This principle acknowledges that while agentic AI provides tremendous efficiency gains, certain decisions remain too consequential for fully autonomous execution. The challenge lies in defining where these boundaries exist without creating friction that negates the benefits of automation.</p>
-<p>Implementing human oversight requires a <strong>tiered action classification system</strong>. Low-risk actions (reading non-sensitive data, generating reports, sending notifications) can proceed autonomously. Medium-risk actions (modifying configurations, accessing confidential data, interacting with external systems) might require post-action review or soft confirmation. High-risk actions (deleting data, financial transactions, security policy changes, accessing privileged systems) must halt for explicit human approval before proceeding.</p>
-<p><strong>Approval workflows</strong> for AI agent actions should be designed for speed and clarity. When an agent requires human oversight, the approval request must include full context: what action is requested, why the agent determined it necessary, what data or systems are affected, and what the consequences of approval or denial will be. Implement <strong>time-bound approvals</strong> that expire if not acted upon, preventing stale authorizations. Additionally, create <strong>escalation paths</strong> for situations where initial approvers are unavailable, ensuring agents don't remain blocked indefinitely while maintaining security oversight. The goal is enabling velocity while preserving human judgment for consequential decisions.</p></div>
+      <div class="section-body"><p>The fourth principle demands <strong>complete observability</strong> into AI agent operations with audit trails that support forensic analysis, compliance reporting, and continuous improvement. When an AI agent takes actions autonomously, every decision point, data access, and external interaction must be recorded in immutable, queryable logs.</p>
+<p>Audit logging for agentic AI must capture more than traditional access logs. Record the <strong>full decision chain</strong>: What input triggered the agent? What context was considered? What options were evaluated? Why was a particular action chosen? What was the outcome? This decision provenance is essential for understanding agent behavior, debugging issues, and demonstrating compliance to auditors and regulators.</p>
+<p>Implement <strong>real-time behavioral analytics</strong> that establish baselines and detect anomalies. Machine learning models can identify when an agent's behavior shifts unexpectedly—accessing new data sources, interacting with unfamiliar systems, or operating at unusual times. These detections should feed into your security operations center for investigation and potential response.</p>
+<p>Establish clear <strong>accountability chains</strong> that trace from agent actions back to responsible humans. When an agent takes an inappropriate action, there must be clarity about who deployed the agent, who configured its permissions, who approved its operational parameters, and who was responsible for oversight. This accountability ensures that autonomous agents don't create accountability gaps where no human is responsible for outcomes.</p>
+<p>Retention and protection of audit data requires careful consideration. Agent audit logs may contain sensitive information about decisions, data accessed, and business operations. Protect these logs with <strong>appropriate access controls, encryption, and integrity verification</strong>. Retain them long enough to support incident investigation and compliance requirements.</p></div>
     </section>
 
     <section class="blog-section">
-      <h2>Implementing Zero Trust Architecture for Agentic AI</h2>
+      <h2>Implementing These Principles in Practice</h2>
       
         <div class="infobox">
-          <div class="infobox-title">Zero Trust Checklist for AI Agents</div>
-          <p>✓ Verify agent identity per-request ✓ Validate action against current policy ✓ Check user session validity ✓ Assess real-time risk signals ✓ Log decision with full context ✓ Enforce network segmentation ✓ Monitor for behavioral anomalies</p>
+          <div class="infobox-title">Quick Win</div>
+          <p>Start with a pilot implementation on a single, well-understood AI agent. Perfect your controls and processes before scaling across the enterprise. Document lessons learned to accelerate subsequent deployments.</p>
         </div>
-      <div class="section-body"><p>These four principles naturally align with and extend <strong>Zero Trust architecture</strong> for the AI era. Zero Trust's core tenet—never trust, always verify—applies with even greater force to autonomous systems that can rapidly traverse network boundaries and access diverse resources. Implementing Zero Trust for AI agents requires treating every agent action as potentially hostile until verified against policy.</p>
-<p><strong>Micro-segmentation</strong> becomes essential for containing AI agent blast radius. Even agents with legitimate access should be constrained to specific network segments, resource groups, and data stores relevant to their immediate task. Network policies should explicitly deny agent communication paths that aren't required, preventing lateral movement in case of agent compromise. Combine network controls with <strong>runtime security</strong> that monitors agent processes for signs of injection, prompt manipulation, or unauthorized code execution.</p>
-<p><strong>Continuous authorization</strong> extends beyond initial authentication. Each significant action an AI agent takes should be re-verified against current policy, user session state, and risk signals. If the human user who initiated an AI agent signs out, the agent's authorization should immediately terminate. If threat intelligence indicates compromise of a connected system, agents with access to that system should be automatically suspended pending review. This dynamic, context-aware authorization ensures security posture adapts in real-time to changing conditions. Finally, implement <strong>immutable audit trails</strong> using cryptographically signed logs that capture every authorization decision, action attempt, and outcome for comprehensive forensic capability.</p></div>
-    </section>
-
-    <section class="blog-section">
-      <h2>Building a Governance Framework: Practical Next Steps</h2>
-      
-        <div class="infobox">
-          <div class="infobox-title">Governance Quick Wins</div>
-          <p>Start with mandatory security review for any AI agent with write access to production systems. Implement agent inventory in your CMDB. Add AI agent-specific detections to your SIEM within 30 days.</p>
-        </div>
-      <div class="section-body"><p>Translating these security principles into operational reality requires a <strong>comprehensive governance framework</strong> that spans technology, process, and people. Start by conducting an inventory of all AI agents operating within your environment—you cannot secure what you don't know exists. Shadow AI agents deployed by business units without security review represent significant uncontrolled risk.</p>
-<p>Establish an <strong>AI Agent Security Review Board</strong> that evaluates new agent deployments against the four principles before production deployment. This review should assess permission requirements, identity architecture, monitoring integration, and human oversight mechanisms. Create standardized templates and patterns that development teams can follow, reducing friction while ensuring consistent security implementation. Develop <strong>runbooks</strong> for AI agent security incidents that address scenarios unique to autonomous systems: prompt injection attacks, agent hijacking, unauthorized action chains, and data exfiltration through agent actions.</p>
-<p><strong>Training and awareness</strong> programs must evolve to address AI agent security. Developers building agentic systems need to understand secure agent design patterns. Security operations teams need skills in monitoring and responding to AI-specific threats. Business stakeholders approving AI agent deployments must understand the risk implications of the autonomous capabilities they're authorizing. Finally, plan for continuous improvement—the agentic AI security landscape evolves rapidly, and your governance framework must include mechanisms for incorporating new threats, techniques, and best practices as they emerge.</p></div>
+      <div class="section-body"><p>Translating these principles into operational security controls requires a systematic approach. Start by <strong>inventorying all AI agents</strong> in your environment, including shadow AI deployments that business units may have introduced. Classify each agent by risk level based on its autonomy, the sensitivity of data it can access, and the criticality of systems it can affect.</p>
+<p>Develop an <strong>agentic AI security architecture</strong> that incorporates dedicated components: an agent identity provider, a policy decision point for authorization, a behavioral analytics engine, and a comprehensive logging infrastructure. These components should integrate with your existing security stack—SIEM, SOAR, IAM, and data protection platforms—rather than operating in isolation.</p>
+<p>Create a <strong>governance framework</strong> that defines roles and responsibilities for AI agent security. Who approves new agent deployments? Who reviews agent permissions periodically? Who responds to agent-related security incidents? Who maintains the policies that govern agent behavior? Clear ownership prevents gaps and ensures accountability.</p>
+<p>Invest in <strong>security testing specific to agentic AI</strong>. Traditional penetration testing doesn't adequately address AI agent attack surfaces. Develop test scenarios that probe trust boundary enforcement, privilege escalation resistance, human oversight effectiveness, and audit trail completeness. Include adversarial testing that attempts to manipulate agents through prompt injection, context manipulation, and other AI-specific attack vectors.</p>
+<p>Finally, recognize that agentic AI security is <strong>an evolving discipline</strong>. Threat actors will develop new techniques to exploit AI agents. Capabilities of AI systems will continue to expand. Regulations will mature. Build adaptive security programs that can evolve alongside these changes rather than static controls that quickly become outdated.</p></div>
     </section>
 
     
@@ -205,23 +201,23 @@
       <div class="diagram-label">// Architecture Diagram</div>
       <div class="mermaid">graph TD
   A[Agentic AI Request] --> B{Identity Verification}
-  B -->|Verified| C[Least Privilege Scope]
-  B -->|Failed| Z[Access Denied]
-  C --> D{Action Authorization}
-  D -->|Approved| E[Scoped Resource Access]
-  D -->|Denied| Z
-  E --> F[Continuous Monitoring]
-  F --> G{Behavior Analysis}
-  G -->|Normal| H[Action Execution]
-  G -->|Anomaly| I[Human Oversight Trigger]
-  H --> J[Audit Logging]
-  I --> K[Review & Remediate]
-  K --> J</div>
+  B -->|Verified| C[Least Privilege Check]
+  B -->|Failed| X[Access Denied]
+  C --> D{Scope Validation}
+  D -->|Within Bounds| E[Action Authorization]
+  D -->|Out of Scope| X
+  E --> F{Human Oversight Required?}
+  F -->|Yes| G[Human Approval Loop]
+  F -->|No| H[Execute Action]
+  G -->|Approved| H
+  G -->|Rejected| X
+  H --> I[Audit & Monitor]
+  I --> J[Continuous Evaluation]</div>
     </div>
 
     <div class="key-takeaways">
       <h3>// Key Takeaways</h3>
-      <ul><li><span class="arrow">→</span><span>Agentic AI systems require security principles that address autonomous decision-making, implementing just-in-time privilege elevation and explicit permission boundaries for every agent action</span></li><li><span class="arrow">→</span><span>Strong identity for AI agents means cryptographic attribution with dual-identity models that preserve both agent and delegating user context for complete accountability</span></li><li><span class="arrow">→</span><span>Continuous behavioral monitoring must establish baselines for normal agent behavior and trigger alerts when actions deviate from expected patterns or stated objectives</span></li><li><span class="arrow">→</span><span>Human oversight checkpoints are mandatory for high-risk actions—implement tiered classification systems with time-bound approvals and clear escalation paths</span></li></ul>
+      <ul><li><span class="arrow">→</span><span>Establish explicit trust boundaries with unique agent identities, operational constraints, and declarative policies that define acceptable behavior for each AI agent</span></li><li><span class="arrow">→</span><span>Implement context-aware least privilege with just-in-time privilege elevation and automatic privilege decay for unused permissions</span></li><li><span class="arrow">→</span><span>Maintain meaningful human oversight through tiered autonomy levels and circuit breakers that pause operations when anomalies are detected</span></li><li><span class="arrow">→</span><span>Embed comprehensive audit trails that capture full decision provenance, enable behavioral analytics, and establish clear accountability chains</span></li></ul>
     </div>
 
     <div class="post-footer">
