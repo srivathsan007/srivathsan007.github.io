@@ -6,17 +6,17 @@
     <filter id="blur1"><feGaussianBlur stdDeviation="40"/></filter>
     <filter id="blur2"><feGaussianBlur stdDeviation="60"/></filter>
     <linearGradient id="fade" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#05020d" stop-opacity="0.1"/><stop offset="100%" stop-color="#05020d" stop-opacity="0.9"/></linearGradient>
-    <style>@keyframes p1{0%,100%{opacity:.6}50%{opacity:1}}@keyframes p2{0%,100%{opacity:.4}50%{opacity:.8}}@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(-5px,8px)}}.g1{animation:p1 4s ease-in-out infinite}.g2{animation:p2 8s ease-in-out infinite 0.54s}.dr{animation:dr 7s ease-in-out infinite}</style>
+    <style>@keyframes p1{0%,100%{opacity:.6}50%{opacity:1}}@keyframes p2{0%,100%{opacity:.4}50%{opacity:.8}}@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(-9px,7px)}}.g1{animation:p1 3s ease-in-out infinite}.g2{animation:p2 8s ease-in-out infinite 0.16s}.dr{animation:dr 9s ease-in-out infinite}</style>
   </defs>
   <rect width="1200" height="460" fill="#05020d"/>
   <rect width="1200" height="460" fill="url(#bg1)"/>
-  <polygon points="600,60 780,150 780,310 600,400 420,310 420,150" fill="none" stroke="#a855f7" stroke-opacity="0.12" stroke-width="2"/><polygon points="600,100 750,175 750,295 600,370 450,295 450,175" fill="none" stroke="#a855f7" stroke-opacity="0.08" stroke-width="1"/>
-  <ellipse class="g1 dr" cx="408" cy="374" rx="300" ry="200" fill="url(#glow1)" filter="url(#blur1)"/>
-  <ellipse class="g2" cx="586" cy="115" rx="250" ry="180" fill="url(#glow2)" filter="url(#blur2)"/>
-  <circle cx="90" cy="89" r="3" fill="#a855f7" fill-opacity="0.6"/>
-  <circle cx="110" cy="74" r="2" fill="#00e0ff" fill-opacity="0.4"/>
-  <circle cx="1132" cy="361" r="4" fill="#a855f7" fill-opacity="0.5"/>
-  <line x1="104" y1="0" x2="296" y2="460" stroke="#a855f7" stroke-opacity="0.06" stroke-width="1"/>
-  <line x1="1016" y1="0" x2="654" y2="460" stroke="#00e0ff" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="-300" y1="0" x2="160" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="-200" y1="0" x2="260" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="-100" y1="0" x2="360" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="0" y1="0" x2="460" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="100" y1="0" x2="560" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="200" y1="0" x2="660" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="300" y1="0" x2="760" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="400" y1="0" x2="860" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="500" y1="0" x2="960" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="600" y1="0" x2="1060" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="700" y1="0" x2="1160" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="800" y1="0" x2="1260" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="900" y1="0" x2="1360" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="1000" y1="0" x2="1460" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="1100" y1="0" x2="1560" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="1200" y1="0" x2="1660" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="1300" y1="0" x2="1760" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="1400" y1="0" x2="1860" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/><line x1="1500" y1="0" x2="1960" y2="460" stroke="#a855f7" stroke-opacity="0.07" stroke-width="1.5"/>
+  <ellipse class="g1 dr" cx="232" cy="356" rx="300" ry="200" fill="url(#glow1)" filter="url(#blur1)"/>
+  <ellipse class="g2" cx="244" cy="309" rx="250" ry="180" fill="url(#glow2)" filter="url(#blur2)"/>
+  <circle cx="82" cy="88" r="3" fill="#a855f7" fill-opacity="0.6"/>
+  <circle cx="102" cy="73" r="2" fill="#00e0ff" fill-opacity="0.4"/>
+  <circle cx="1110" cy="393" r="4" fill="#a855f7" fill-opacity="0.5"/>
+  <line x1="16" y1="0" x2="284" y2="460" stroke="#a855f7" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="864" y1="0" x2="816" y2="460" stroke="#00e0ff" stroke-opacity="0.06" stroke-width="1"/>
   <rect width="1200" height="460" fill="url(#fade)"/>
 </svg>
