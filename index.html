@@ -109,7 +109,9 @@
       transition: all 0.5s;
       text-decoration: none; color: inherit;
       display: block; cursor: pointer;
+      
     }
+    .blog-card * { pointer-events: none; }
     .blog-card:hover { border-color: var(--border-h); transform: translateY(-5px); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 24px var(--glow); }
     /* Children don't intercept clicks — the <a> tag handles everything */
     .blog-card * { pointer-events: none; }
@@ -351,7 +353,7 @@
 
 <footer>
   <span>© 2026 Srivathsan Vivekanandhan</span>
-  <span>Built with conviction. Deployed with confidence.</span>
+  <span id="site-views" style="font:400 11px 'Fira Code',monospace;color:#5e6374;"></span>
   <span><a href="https://www.linkedin.com/in/srivathsanvivekanandhan/" target="_blank">LinkedIn</a> · <a href="https://github.com/srivathsan007" target="_blank">GitHub</a></span>
 </footer>
 
@@ -404,6 +406,14 @@ async function loadPosts() {
   } catch (e) { loader.textContent = 'Articles coming soon.'; }
 }
 loadPosts();
+
+// Site total view counter
+fetch('https://linkedin-dashboard-nu-nine.vercel.app/api/views/total')
+  .then(r => r.json())
+  .then(d => {
+    const el = document.getElementById('site-views');
+    if (el && d.total) el.textContent = d.total.toLocaleString() + ' total visits';
+  }).catch(() => {});
 </script>
 </body>
 </html>
