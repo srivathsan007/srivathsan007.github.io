@@ -8,136 +8,112 @@
       </feMerge>
     </filter>
     <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feFlood flood-color="#a855f7" flood-opacity="0.5"/>
-      <feComposite in2="blur" operator="in"/>
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
       <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feFlood flood-color="#00e0ff" flood-opacity="0.5"/>
-      <feComposite in2="blur" operator="in"/>
-      <feMerge>
-        <feMergeNode/>
+        <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.2"/>
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.3"/>
       <stop offset="100%" style="stop-color:#05020d;stop-opacity:1"/>
     </linearGradient>
     <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00e0ff;stop-opacity:0.2"/>
+      <stop offset="0%" style="stop-color:#00e0ff;stop-opacity:0.3"/>
       <stop offset="100%" style="stop-color:#05020d;stop-opacity:1"/>
     </linearGradient>
   </defs>
   
   <rect width="900" height="900" fill="#05020d"/>
   
-  <text x="450" y="55" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">Four Security Principles for Agentic AI Systems:</text>
-  <text x="450" y="90" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#a855f7" text-anchor="middle">Building Trust in Autonomous Intelligence</text>
+  <text x="450" y="55" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="26" font-weight="bold">Four Security Principles for Agentic AI Systems</text>
+  <text x="450" y="85" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16">Building Trust in Autonomous Enterprise Workflows</text>
+  
+  <!-- Connecting arrows -->
+  <path d="M420 320 L480 320" stroke="#a855f7" stroke-width="2" fill="none" filter="url(#glow1)" marker-end="url(#arrow1)"/>
+  <path d="M420 580 L480 580" stroke="#00e0ff" stroke-width="2" fill="none" filter="url(#glow1)"/>
+  <path d="M230 420 L230 460" stroke="#a855f7" stroke-width="2" fill="none" filter="url(#glow1)"/>
+  <path d="M670 420 L670 460" stroke="#00e0ff" stroke-width="2" fill="none" filter="url(#glow1)"/>
   
   <!-- Card 1 - Top Left -->
   <rect x="50" y="130" width="380" height="280" rx="16" fill="url(#grad1)" stroke="#a855f7" stroke-width="2" filter="url(#glow2)"/>
-  <circle cx="90" cy="175" r="28" fill="none" stroke="#a855f7" stroke-width="2"/>
-  <path d="M80 175 L100 175 M90 165 L90 185 M82 168 L98 182 M82 182 L98 168" stroke="#a855f7" stroke-width="2" fill="none"/>
-  <path d="M85 190 L95 190 L100 200 L90 205 L80 200 Z" fill="#a855f7" opacity="0.5"/>
-  <text x="130" y="180" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">Cryptographic Identity</text>
-  <text x="70" y="230" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">
-    <tspan x="70" dy="0">AI agents require cryptographically</tspan>
-    <tspan x="70" dy="22">verifiable identities with unique keys</tspan>
-    <tspan x="70" dy="22">and certificates to establish trust</tspan>
-    <tspan x="70" dy="22">and enable secure authentication</tspan>
-    <tspan x="70" dy="22">across distributed systems.</tspan>
+  <circle cx="90" cy="170" r="24" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <path d="M80 170 L100 170 M90 160 L90 180 M85 165 L95 165 M85 175 L95 175" stroke="#a855f7" stroke-width="2" fill="none"/>
+  <path d="M90 155 L90 145 M90 195 L90 185" stroke="#a855f7" stroke-width="1.5" fill="none"/>
+  <text x="130" y="178" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Least Privilege</text>
+  <text x="70" y="220" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">
+    <tspan x="70" dy="0">Implement least privilege with</tspan>
+    <tspan x="70" dy="22">just-in-time permission elevation.</tspan>
+    <tspan x="70" dy="22">Grant minimal access rights and</tspan>
+    <tspan x="70" dy="22">elevate only when necessary for</tspan>
+    <tspan x="70" dy="22">specific autonomous operations.</tspan>
   </text>
+  <text x="70" y="380" fill="#a855f7" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">JIT ACCESS</text>
   
   <!-- Card 2 - Top Right -->
-  <rect x="470" y="130" width="380" height="280" rx="16" fill="url(#grad2)" stroke="#00e0ff" stroke-width="2" filter="url(#glow3)"/>
-  <rect x="485" y="155" width="40" height="50" rx="4" fill="none" stroke="#00e0ff" stroke-width="2"/>
-  <path d="M495 175 L515 175 M495 185 L515 185 M495 195 L505 195" stroke="#00e0ff" stroke-width="2"/>
-  <path d="M520 165 L530 175 L520 185" stroke="#00e0ff" stroke-width="2" fill="none"/>
-  <text x="550" y="180" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">Dynamic Permissions</text>
-  <text x="490" y="230" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">
-    <tspan x="490" dy="0">Implement just-in-time, just-enough</tspan>
-    <tspan x="490" dy="22">permissions that dynamically adjust</tspan>
-    <tspan x="490" dy="22">based on context, risk assessment,</tspan>
-    <tspan x="490" dy="22">and operational requirements for</tspan>
-    <tspan x="490" dy="22">minimal privilege exposure.</tspan>
+  <rect x="470" y="130" width="380" height="280" rx="16" fill="url(#grad2)" stroke="#00e0ff" stroke-width="2" filter="url(#glow2)"/>
+  <path d="M510 155 L530 175 L510 195 M530 155 L550 175 L530 195" stroke="#00e0ff" stroke-width="2" fill="none"/>
+  <circle cx="520" cy="175" r="5" fill="#00e0ff"/>
+  <text x="570" y="178" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Continuous Verification</text>
+  <text x="490" y="220" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">
+    <tspan x="490" dy="0">Continuous verification must include</tspan>
+    <tspan x="490" dy="22">both identity and intent validation.</tspan>
+    <tspan x="490" dy="22">Verify not just who is acting, but</tspan>
+    <tspan x="490" dy="22">what they intend to accomplish</tspan>
+    <tspan x="490" dy="22">at every decision point.</tspan>
   </text>
+  <text x="490" y="380" fill="#00e0ff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">IDENTITY + INTENT</text>
   
   <!-- Card 3 - Bottom Left -->
-  <rect x="50" y="450" width="380" height="280" rx="16" fill="url(#grad2)" stroke="#00e0ff" stroke-width="2" filter="url(#glow3)"/>
-  <rect x="72" y="480" width="50" height="35" rx="3" fill="none" stroke="#00e0ff" stroke-width="2"/>
-  <path d="M80 490 L115 490 M80 500 L110 500 M80 510 L105 510" stroke="#00e0ff" stroke-width="1.5"/>
-  <path d="M97 520 L97 530 L107 530" stroke="#00e0ff" stroke-width="2" fill="none"/>
-  <circle cx="112" cy="530" r="5" fill="#00e0ff" opacity="0.5"/>
-  <text x="135" y="502" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">Immutable Audit Logs</text>
-  <text x="70" y="550" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">
-    <tspan x="70" dy="0">Capture chain-of-thought reasoning</tspan>
-    <tspan x="70" dy="22">in immutable logs to enable complete</tspan>
-    <tspan x="70" dy="22">forensic analysis, compliance audits,</tspan>
-    <tspan x="70" dy="22">and transparent decision tracking</tspan>
-    <tspan x="70" dy="22">for accountability.</tspan>
+  <rect x="50" y="450" width="380" height="280" rx="16" fill="url(#grad2)" stroke="#00e0ff" stroke-width="2" filter="url(#glow2)"/>
+  <rect x="75" y="485" width="40" height="30" rx="4" fill="none" stroke="#00e0ff" stroke-width="2"/>
+  <rect x="80" y="490" width="30" height="20" rx="2" fill="none" stroke="#00e0ff" stroke-width="1"/>
+  <path d="M85 500 L100 500 M85 505 L95 505" stroke="#00e0ff" stroke-width="1" fill="none"/>
+  <text x="130" y="508" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Bounded Autonomy</text>
+  <text x="70" y="550" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">
+    <tspan x="70" dy="0">Bounded autonomy requires multi-</tspan>
+    <tspan x="70" dy="22">layer guardrails at model, agent,</tspan>
+    <tspan x="70" dy="22">and system levels. Define clear</tspan>
+    <tspan x="70" dy="22">operational boundaries and enforce</tspan>
+    <tspan x="70" dy="22">them through layered controls.</tspan>
   </text>
+  <text x="70" y="700" fill="#00e0ff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">MULTI-LAYER GUARDRAILS</text>
   
   <!-- Card 4 - Bottom Right -->
   <rect x="470" y="450" width="380" height="280" rx="16" fill="url(#grad1)" stroke="#a855f7" stroke-width="2" filter="url(#glow2)"/>
-  <circle cx="510" cy="495" r="20" fill="none" stroke="#a855f7" stroke-width="2"/>
-  <circle cx="510" cy="490" r="6" fill="#a855f7"/>
-  <path d="M500 502 L510 510 L520 502" stroke="#a855f7" stroke-width="2" fill="none"/>
-  <path d="M495 515 L510 505 L525 515" stroke="#a855f7" stroke-width="2" fill="none"/>
-  <text x="545" y="502" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">Human Oversight Tiers</text>
-  <text x="490" y="550" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8">
-    <tspan x="490" dy="0">Design tiered human oversight</tspan>
-    <tspan x="490" dy="22">workflows where autonomy scales</tspan>
-    <tspan x="490" dy="22">with demonstrated reliability and</tspan>
-    <tspan x="490" dy="22">risk tolerance, maintaining human</tspan>
-    <tspan x="490" dy="22">control over critical decisions.</tspan>
+  <circle cx="520" cy="500" r="18" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <path d="M512 500 L520 508 L532 492" stroke="#a855f7" stroke-width="2" fill="none"/>
+  <path d="M520 482 L520 475 M520 518 L520 525 M502 500 L495 500 M538 500 L545 500" stroke="#a855f7" stroke-width="1.5" fill="none"/>
+  <text x="555" y="508" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Complete Observability</text>
+  <text x="490" y="550" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">
+    <tspan x="490" dy="0">Complete observability demands full</tspan>
+    <tspan x="490" dy="22">decision chain transparency. Track</tspan>
+    <tspan x="490" dy="22">every action, decision, and data</tspan>
+    <tspan x="490" dy="22">access with immutable audit trails</tspan>
+    <tspan x="490" dy="22">for forensics and compliance.</tspan>
   </text>
+  <text x="490" y="700" fill="#a855f7" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">DECISION CHAIN TRANSPARENCY</text>
   
-  <!-- Connecting Arrows -->
-  <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#a855f7"/>
-    </marker>
-    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#00e0ff"/>
-    </marker>
-  </defs>
+  <!-- Connecting arrows with arrowheads -->
+  <polygon points="478,316 468,320 478,324" fill="#a855f7"/>
+  <polygon points="478,576 468,580 478,584" fill="#00e0ff"/>
+  <polygon points="226,458 230,468 234,458" fill="#a855f7"/>
+  <polygon points="666,458 670,468 674,458" fill="#00e0ff"/>
   
-  <!-- Horizontal arrow top -->
-  <path d="M435 270 L465 270" stroke="#a855f7" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow1)"/>
+  <!-- Center diamond connector -->
+  <polygon points="450,400 470,420 450,440 430,420" fill="none" stroke="#a855f7" stroke-width="2" filter="url(#glow1)"/>
+  <polygon points="450,400 470,420 450,440 430,420" fill="#05020d"/>
+  <circle cx="450" cy="420" r="8" fill="#a855f7" opacity="0.5"/>
   
-  <!-- Horizontal arrow bottom -->
-  <path d="M435 590 L465 590" stroke="#00e0ff" stroke-width="2" marker-end="url(#arrowhead2)" filter="url(#glow1)"/>
+  <!-- Tag pills -->
+  <rect x="280" y="780" width="100" height="28" rx="14" fill="none" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="330" y="799" text-anchor="middle" fill="#a855f7" font-family="system-ui, sans-serif" font-size="12">agentic-ai</text>
   
-  <!-- Vertical arrow left -->
-  <path d="M240 415 L240 445" stroke="#a855f7" stroke-width="2" marker-end="url(#arrowhead)" filter="url(#glow1)"/>
+  <rect x="395" y="780" width="100" height="28" rx="14" fill="none" stroke="#00e0ff" stroke-width="1.5"/>
+  <text x="445" y="799" text-anchor="middle" fill="#00e0ff" font-family="system-ui, sans-serif" font-size="12">ai-security</text>
   
-  <!-- Vertical arrow right -->
-  <path d="M660 415 L660 445" stroke="#00e0ff" stroke-width="2" marker-end="url(#arrowhead2)" filter="url(#glow1)"/>
-  
-  <!-- Diagonal arrows -->
-  <path d="M420 400 L480 460" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
-  <path d="M480 400 L420 460" stroke="#00e0ff" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
-  
-  <!-- Center connection circle -->
-  <circle cx="450" cy="430" r="15" fill="#05020d" stroke="#a855f7" stroke-width="1.5" filter="url(#glow2)"/>
-  <circle cx="450" cy="430" r="8" fill="#a855f7" opacity="0.3"/>
-  <circle cx="450" cy="430" r="4" fill="#00e0ff"/>
-  
-  <!-- Tag Pills -->
-  <rect x="145" y="780" width="180" height="36" rx="18" fill="none" stroke="#a855f7" stroke-width="1.5" filter="url(#glow2)"/>
-  <text x="235" y="803" font-family="system-ui, sans-serif" font-size="13" fill="#a855f7" text-anchor="middle">Agentic AI Security</text>
-  
-  <rect x="355" y="780" width="190" height="36" rx="18" fill="none" stroke="#00e0ff" stroke-width="1.5" filter="url(#glow3)"/>
-  <text x="450" y="803" font-family="system-ui, sans-serif" font-size="13" fill="#00e0ff" text-anchor="middle">Zero Trust Architecture</text>
-  
-  <rect x="575" y="780" width="160" height="36" rx="18" fill="none" stroke="#a855f7" stroke-width="1.5" filter="url(#glow2)"/>
-  <text x="655" y="803" font-family="system-ui, sans-serif" font-size="13" fill="#a855f7" text-anchor="middle">AI Governance</text>
+  <rect x="510" y="780" width="100" height="28" rx="14" fill="none" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="560" y="799" text-anchor="middle" fill="#a855f7" font-family="system-ui, sans-serif" font-size="12">zero-trust</text>
   
   <!-- Decorative elements -->
   <circle cx="50" cy="850" r="3" fill="#a855f7" opacity="0.5"/>
@@ -145,7 +121,7 @@
   <circle cx="830" cy="850" r="3" fill="#00e0ff" opacity="0.5"/>
   <circle cx="850" cy="845" r="2" fill="#a855f7" opacity="0.5"/>
   
-  <!-- Subtle grid lines -->
-  <line x1="450" y1="120" x2="450" y2="130" stroke="#a855f7" stroke-width="1" opacity="0.3"/>
-  <line x1="450" y1="730" x2="450" y2="760" stroke="#a855f7" stroke-width="1" opacity="0.3"/>
+  <!-- Bottom line -->
+  <line x1="100" y1="870" x2="800" y2="870" stroke="#94a3b8" stroke-width="1" opacity="0.3"/>
+  <text x="450" y="890" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10" opacity="0.6">Enterprise Security Framework for Autonomous AI Systems</text>
 </svg>
