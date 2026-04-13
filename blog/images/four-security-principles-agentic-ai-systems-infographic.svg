@@ -26,102 +26,107 @@
   
   <rect width="900" height="900" fill="#05020d"/>
   
-  <text x="450" y="55" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="26" font-weight="bold">Four Security Principles for Agentic AI Systems</text>
-  <text x="450" y="85" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16">Building Trust in Autonomous Enterprise Workflows</text>
+  <!-- Title -->
+  <text x="450" y="55" font-family="system-ui, sans-serif" font-size="26" font-weight="bold" fill="white" text-anchor="middle">Four Security Principles for Agentic AI Systems</text>
+  <text x="450" y="85" font-family="system-ui, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">A Cloud Security Architect's Framework</text>
   
-  <!-- Connecting arrows -->
-  <path d="M420 320 L480 320" stroke="#a855f7" stroke-width="2" fill="none" filter="url(#glow1)" marker-end="url(#arrow1)"/>
-  <path d="M420 580 L480 580" stroke="#00e0ff" stroke-width="2" fill="none" filter="url(#glow1)"/>
-  <path d="M230 420 L230 460" stroke="#a855f7" stroke-width="2" fill="none" filter="url(#glow1)"/>
-  <path d="M670 420 L670 460" stroke="#00e0ff" stroke-width="2" fill="none" filter="url(#glow1)"/>
+  <!-- Connecting Arrows -->
+  <path d="M435 330 L465 330" stroke="#a855f7" stroke-width="2" fill="none" filter="url(#glow1)" marker-end="url(#arrow1)"/>
+  <path d="M435 580 L465 580" stroke="#00e0ff" stroke-width="2" fill="none" filter="url(#glow1)"/>
+  <path d="M230 420 L230 450" stroke="#a855f7" stroke-width="2" fill="none" filter="url(#glow1)"/>
+  <path d="M670 420 L670 450" stroke="#00e0ff" stroke-width="2" fill="none" filter="url(#glow1)"/>
+  <circle cx="450" cy="455" r="8" fill="none" stroke="#a855f7" stroke-width="2" filter="url(#glow2)"/>
   
-  <!-- Card 1 - Top Left -->
-  <rect x="50" y="130" width="380" height="280" rx="16" fill="url(#grad1)" stroke="#a855f7" stroke-width="2" filter="url(#glow2)"/>
-  <circle cx="90" cy="170" r="24" fill="none" stroke="#a855f7" stroke-width="2"/>
-  <path d="M80 170 L100 170 M90 160 L90 180 M85 165 L95 165 M85 175 L95 175" stroke="#a855f7" stroke-width="2" fill="none"/>
-  <path d="M90 155 L90 145 M90 195 L90 185" stroke="#a855f7" stroke-width="1.5" fill="none"/>
-  <text x="130" y="178" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Least Privilege</text>
-  <text x="70" y="220" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">
-    <tspan x="70" dy="0">Implement least privilege with</tspan>
-    <tspan x="70" dy="22">just-in-time permission elevation.</tspan>
-    <tspan x="70" dy="22">Grant minimal access rights and</tspan>
-    <tspan x="70" dy="22">elevate only when necessary for</tspan>
-    <tspan x="70" dy="22">specific autonomous operations.</tspan>
+  <!-- Card 1: Top Left -->
+  <rect x="50" y="130" width="370" height="280" rx="16" fill="url(#grad1)" stroke="#a855f7" stroke-width="2" filter="url(#glow1)"/>
+  <circle cx="90" cy="170" r="25" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <path d="M80 170 L100 170 M90 160 L90 180 M85 165 L95 175 M95 165 L85 175" stroke="#a855f7" stroke-width="2" fill="none"/>
+  <path d="M90 150 L90 145 M90 195 L90 190 M70 170 L65 170 M115 170 L110 170" stroke="#a855f7" stroke-width="1.5" fill="none"/>
+  <text x="130" y="178" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">DYNAMIC LEAST PRIVILEGE</text>
+  <text x="70" y="220" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="70" dy="0">Implement dynamic, context-aware</tspan>
+    <tspan x="70" dy="22">least privilege for AI agents.</tspan>
+    <tspan x="70" dy="22">Permissions adapt based on task</tspan>
+    <tspan x="70" dy="22">context, risk level, and real-time</tspan>
+    <tspan x="70" dy="22">behavioral analysis.</tspan>
   </text>
-  <text x="70" y="380" fill="#a855f7" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">JIT ACCESS</text>
+  <text x="70" y="375" font-family="system-ui, sans-serif" font-size="11" fill="#a855f7">01</text>
   
-  <!-- Card 2 - Top Right -->
-  <rect x="470" y="130" width="380" height="280" rx="16" fill="url(#grad2)" stroke="#00e0ff" stroke-width="2" filter="url(#glow2)"/>
-  <path d="M510 155 L530 175 L510 195 M530 155 L550 175 L530 195" stroke="#00e0ff" stroke-width="2" fill="none"/>
-  <circle cx="520" cy="175" r="5" fill="#00e0ff"/>
-  <text x="570" y="178" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Continuous Verification</text>
-  <text x="490" y="220" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">
-    <tspan x="490" dy="0">Continuous verification must include</tspan>
-    <tspan x="490" dy="22">both identity and intent validation.</tspan>
-    <tspan x="490" dy="22">Verify not just who is acting, but</tspan>
-    <tspan x="490" dy="22">what they intend to accomplish</tspan>
-    <tspan x="490" dy="22">at every decision point.</tspan>
+  <!-- Card 2: Top Right -->
+  <rect x="480" y="130" width="370" height="280" rx="16" fill="url(#grad2)" stroke="#00e0ff" stroke-width="2" filter="url(#glow1)"/>
+  <rect x="505" y="150" width="40" height="40" rx="6" fill="none" stroke="#00e0ff" stroke-width="2"/>
+  <path d="M515 170 L535 170 M515 160 L515 180 L535 180" stroke="#00e0ff" stroke-width="2" fill="none"/>
+  <circle cx="525" cy="170" r="8" fill="none" stroke="#00e0ff" stroke-width="1.5"/>
+  <text x="560" y="178" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">EXPLICIT CONSENT BOUNDARIES</text>
+  <text x="500" y="220" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="500" dy="0">Establish explicit consent boundaries</tspan>
+    <tspan x="500" dy="22">that translate natural language</tspan>
+    <tspan x="500" dy="22">permissions into enforceable</tspan>
+    <tspan x="500" dy="22">technical controls and policy</tspan>
+    <tspan x="500" dy="22">constraints.</tspan>
   </text>
-  <text x="490" y="380" fill="#00e0ff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">IDENTITY + INTENT</text>
+  <text x="500" y="375" font-family="system-ui, sans-serif" font-size="11" fill="#00e0ff">02</text>
   
-  <!-- Card 3 - Bottom Left -->
-  <rect x="50" y="450" width="380" height="280" rx="16" fill="url(#grad2)" stroke="#00e0ff" stroke-width="2" filter="url(#glow2)"/>
-  <rect x="75" y="485" width="40" height="30" rx="4" fill="none" stroke="#00e0ff" stroke-width="2"/>
-  <rect x="80" y="490" width="30" height="20" rx="2" fill="none" stroke="#00e0ff" stroke-width="1"/>
-  <path d="M85 500 L100 500 M85 505 L95 505" stroke="#00e0ff" stroke-width="1" fill="none"/>
-  <text x="130" y="508" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Bounded Autonomy</text>
-  <text x="70" y="550" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">
-    <tspan x="70" dy="0">Bounded autonomy requires multi-</tspan>
-    <tspan x="70" dy="22">layer guardrails at model, agent,</tspan>
-    <tspan x="70" dy="22">and system levels. Define clear</tspan>
-    <tspan x="70" dy="22">operational boundaries and enforce</tspan>
-    <tspan x="70" dy="22">them through layered controls.</tspan>
+  <!-- Card 3: Bottom Left -->
+  <rect x="50" y="460" width="370" height="280" rx="16" fill="url(#grad2)" stroke="#00e0ff" stroke-width="2" filter="url(#glow1)"/>
+  <circle cx="90" cy="500" r="20" fill="none" stroke="#00e0ff" stroke-width="2"/>
+  <path d="M82 500 L88 506 L100 494" stroke="#00e0ff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M90 475 L90 480 M90 520 L90 525 M65 500 L70 500 M110 500 L115 500" stroke="#00e0ff" stroke-width="1.5" fill="none"/>
+  <text x="130" y="508" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">HUMAN-IN-THE-LOOP</text>
+  <text x="70" y="550" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="70" dy="0">Mandate human-in-the-loop approval</tspan>
+    <tspan x="70" dy="22">workflows for high-impact actions.</tspan>
+    <tspan x="70" dy="22">Critical operations require explicit</tspan>
+    <tspan x="70" dy="22">human authorization before</tspan>
+    <tspan x="70" dy="22">execution proceeds.</tspan>
   </text>
-  <text x="70" y="700" fill="#00e0ff" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">MULTI-LAYER GUARDRAILS</text>
+  <text x="70" y="705" font-family="system-ui, sans-serif" font-size="11" fill="#00e0ff">03</text>
   
-  <!-- Card 4 - Bottom Right -->
-  <rect x="470" y="450" width="380" height="280" rx="16" fill="url(#grad1)" stroke="#a855f7" stroke-width="2" filter="url(#glow2)"/>
-  <circle cx="520" cy="500" r="18" fill="none" stroke="#a855f7" stroke-width="2"/>
-  <path d="M512 500 L520 508 L532 492" stroke="#a855f7" stroke-width="2" fill="none"/>
-  <path d="M520 482 L520 475 M520 518 L520 525 M502 500 L495 500 M538 500 L545 500" stroke="#a855f7" stroke-width="1.5" fill="none"/>
-  <text x="555" y="508" fill="white" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">Complete Observability</text>
-  <text x="490" y="550" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">
-    <tspan x="490" dy="0">Complete observability demands full</tspan>
-    <tspan x="490" dy="22">decision chain transparency. Track</tspan>
-    <tspan x="490" dy="22">every action, decision, and data</tspan>
-    <tspan x="490" dy="22">access with immutable audit trails</tspan>
-    <tspan x="490" dy="22">for forensics and compliance.</tspan>
+  <!-- Card 4: Bottom Right -->
+  <rect x="480" y="460" width="370" height="280" rx="16" fill="url(#grad1)" stroke="#a855f7" stroke-width="2" filter="url(#glow1)"/>
+  <rect x="505" y="480" width="35" height="45" rx="4" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <path d="M512 490 L532 490 M512 498 L528 498 M512 506 L532 506 M512 514 L525 514" stroke="#a855f7" stroke-width="1.5" fill="none"/>
+  <path d="M540 495 L540 520 L555 520" stroke="#a855f7" stroke-width="2" fill="none"/>
+  <circle cx="555" cy="520" r="5" fill="#a855f7"/>
+  <text x="560" y="508" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">TAMPER-EVIDENT AUDIT</text>
+  <text x="500" y="550" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="500" dy="0">Maintain comprehensive, tamper-</tspan>
+    <tspan x="500" dy="22">evident audit trails capturing all</tspan>
+    <tspan x="500" dy="22">agent decisions, actions, and</tspan>
+    <tspan x="500" dy="22">data access with cryptographic</tspan>
+    <tspan x="500" dy="22">integrity verification.</tspan>
   </text>
-  <text x="490" y="700" fill="#a855f7" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">DECISION CHAIN TRANSPARENCY</text>
+  <text x="500" y="705" font-family="system-ui, sans-serif" font-size="11" fill="#a855f7">04</text>
   
-  <!-- Connecting arrows with arrowheads -->
-  <polygon points="478,316 468,320 478,324" fill="#a855f7"/>
-  <polygon points="478,576 468,580 478,584" fill="#00e0ff"/>
-  <polygon points="226,458 230,468 234,458" fill="#a855f7"/>
-  <polygon points="666,458 670,468 674,458" fill="#00e0ff"/>
+  <!-- Center Connection Hub -->
+  <circle cx="450" cy="455" r="20" fill="#05020d" stroke="#a855f7" stroke-width="2" filter="url(#glow2)"/>
+  <path d="M442 455 L458 455 M450 447 L450 463" stroke="#00e0ff" stroke-width="2"/>
   
-  <!-- Center diamond connector -->
-  <polygon points="450,400 470,420 450,440 430,420" fill="none" stroke="#a855f7" stroke-width="2" filter="url(#glow1)"/>
-  <polygon points="450,400 470,420 450,440 430,420" fill="#05020d"/>
-  <circle cx="450" cy="420" r="8" fill="#a855f7" opacity="0.5"/>
+  <!-- Connecting Lines -->
+  <line x1="420" y1="330" x2="420" y2="435" stroke="#a855f7" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <line x1="480" y1="330" x2="480" y2="435" stroke="#00e0ff" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <line x1="420" y1="475" x2="420" y2="460" stroke="#00e0ff" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+  <line x1="480" y1="475" x2="480" y2="460" stroke="#a855f7" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
   
-  <!-- Tag pills -->
-  <rect x="280" y="780" width="100" height="28" rx="14" fill="none" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="330" y="799" text-anchor="middle" fill="#a855f7" font-family="system-ui, sans-serif" font-size="12">agentic-ai</text>
+  <!-- Tag Pills -->
+  <rect x="195" y="790" width="160" height="32" rx="16" fill="none" stroke="#a855f7" stroke-width="1.5" filter="url(#glow1)"/>
+  <text x="275" y="811" font-family="system-ui, sans-serif" font-size="12" fill="#a855f7" text-anchor="middle">Agentic AI Security</text>
   
-  <rect x="395" y="780" width="100" height="28" rx="14" fill="none" stroke="#00e0ff" stroke-width="1.5"/>
-  <text x="445" y="799" text-anchor="middle" fill="#00e0ff" font-family="system-ui, sans-serif" font-size="12">ai-security</text>
+  <rect x="370" y="790" width="175" height="32" rx="16" fill="none" stroke="#00e0ff" stroke-width="1.5" filter="url(#glow1)"/>
+  <text x="457" y="811" font-family="system-ui, sans-serif" font-size="12" fill="#00e0ff" text-anchor="middle">Zero Trust Architecture</text>
   
-  <rect x="510" y="780" width="100" height="28" rx="14" fill="none" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="560" y="799" text-anchor="middle" fill="#a855f7" font-family="system-ui, sans-serif" font-size="12">zero-trust</text>
+  <rect x="560" y="790" width="140" height="32" rx="16" fill="none" stroke="#a855f7" stroke-width="1.5" filter="url(#glow1)"/>
+  <text x="630" y="811" font-family="system-ui, sans-serif" font-size="12" fill="#a855f7" text-anchor="middle">AI Governance</text>
   
-  <!-- Decorative elements -->
+  <!-- Decorative Elements -->
   <circle cx="50" cy="850" r="3" fill="#a855f7" opacity="0.5"/>
-  <circle cx="70" cy="855" r="2" fill="#00e0ff" opacity="0.5"/>
-  <circle cx="830" cy="850" r="3" fill="#00e0ff" opacity="0.5"/>
-  <circle cx="850" cy="845" r="2" fill="#a855f7" opacity="0.5"/>
+  <circle cx="70" cy="860" r="2" fill="#00e0ff" opacity="0.5"/>
+  <circle cx="830" cy="850" r="2" fill="#00e0ff" opacity="0.5"/>
+  <circle cx="850" cy="865" r="3" fill="#a855f7" opacity="0.5"/>
   
-  <!-- Bottom line -->
-  <line x1="100" y1="870" x2="800" y2="870" stroke="#94a3b8" stroke-width="1" opacity="0.3"/>
-  <text x="450" y="890" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10" opacity="0.6">Enterprise Security Framework for Autonomous AI Systems</text>
+  <!-- Corner Accents -->
+  <path d="M20 20 L60 20 M20 20 L20 60" stroke="#a855f7" stroke-width="2" opacity="0.5"/>
+  <path d="M880 20 L840 20 M880 20 L880 60" stroke="#00e0ff" stroke-width="2" opacity="0.5"/>
+  <path d="M20 880 L60 880 M20 880 L20 840" stroke="#00e0ff" stroke-width="2" opacity="0.5"/>
+  <path d="M880 880 L840 880 M880 880 L880 840" stroke="#a855f7" stroke-width="2" opacity="0.5"/>
 </svg>
