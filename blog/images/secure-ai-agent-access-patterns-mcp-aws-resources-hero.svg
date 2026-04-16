@@ -1,0 +1,22 @@
+<svg viewBox="0 0 1200 460" xmlns="http://www.w3.org/2000/svg" width="1200" height="460">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.08"/><stop offset="100%" stop-color="#020510" stop-opacity="1"/></radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00e0ff" stop-opacity="0.14"/><stop offset="100%" stop-color="#00e0ff" stop-opacity="0"/></radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="60"/></filter>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#020510" stop-opacity="0.1"/><stop offset="100%" stop-color="#020510" stop-opacity="0.9"/></linearGradient>
+    <style>@keyframes p1{0%,100%{opacity:.6}50%{opacity:1}}@keyframes p2{0%,100%{opacity:.4}50%{opacity:.8}}@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(-10px,-8px)}}.g1{animation:p1 3s ease-in-out infinite}.g2{animation:p2 4s ease-in-out infinite 0s}.dr{animation:dr 6s ease-in-out infinite}</style>
+  </defs>
+  <rect width="1200" height="460" fill="#020510"/>
+  <rect width="1200" height="460" fill="url(#bg1)"/>
+  <line x1="0" y1="0" x2="0" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="100" y1="0" x2="100" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="200" y1="0" x2="200" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="300" y1="0" x2="300" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="400" y1="0" x2="400" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="500" y1="0" x2="500" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="600" y1="0" x2="600" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="700" y1="0" x2="700" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="800" y1="0" x2="800" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="900" y1="0" x2="900" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="1000" y1="0" x2="1000" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="1100" y1="0" x2="1100" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="1200" y1="0" x2="1200" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="0" y1="0" x2="1200" y2="0" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="0" y1="92" x2="1200" y2="92" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="0" y1="184" x2="1200" y2="184" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="0" y1="276" x2="1200" y2="276" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="0" y1="368" x2="1200" y2="368" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><line x1="0" y1="460" x2="1200" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/>
+  <ellipse class="g1 dr" cx="200" cy="80" rx="300" ry="200" fill="url(#glow1)" filter="url(#blur1)"/>
+  <ellipse class="g2" cx="100" cy="50" rx="250" ry="180" fill="url(#glow2)" filter="url(#blur2)"/>
+  <circle cx="80" cy="60" r="3" fill="#3b82f6" fill-opacity="0.6"/>
+  <circle cx="100" cy="45" r="2" fill="#00e0ff" fill-opacity="0.4"/>
+  <circle cx="1100" cy="350" r="4" fill="#3b82f6" fill-opacity="0.5"/>
+  <line x1="0" y1="0" x2="100" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="800" y1="0" x2="600" y2="460" stroke="#00e0ff" stroke-opacity="0.06" stroke-width="1"/>
+  <rect width="1200" height="460" fill="url(#fade)"/>
+</svg>
