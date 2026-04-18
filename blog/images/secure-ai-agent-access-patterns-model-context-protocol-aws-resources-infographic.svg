@@ -1,0 +1,184 @@
+<svg viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="borderGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#00e0ff"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00e0ff;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="900" fill="#020510"/>
+  
+  <!-- Background grid pattern -->
+  <g opacity="0.1">
+    <line x1="0" y1="150" x2="900" y2="150" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="900" y2="300" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="450" x2="900" y2="450" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="600" x2="900" y2="600" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="750" x2="900" y2="750" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="150" y1="0" x2="150" y2="900" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="900" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="450" y1="0" x2="450" y2="900" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="900" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="750" y1="0" x2="750" y2="900" stroke="#3b82f6" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="450" y="55" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="bold" text-anchor="middle">Secure AI Agent Access Patterns</text>
+  <text x="450" y="90" fill="#00e0ff" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Using Model Context Protocol for AWS Resources</text>
+  
+  <!-- Connecting arrows -->
+  <g filter="url(#glow)">
+    <!-- Horizontal arrow top -->
+    <path d="M 420 320 L 480 320" stroke="url(#arrowGrad)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <!-- Horizontal arrow bottom -->
+    <path d="M 420 610 L 480 610" stroke="url(#arrowGrad)" stroke-width="2" fill="none"/>
+    <!-- Vertical arrow left -->
+    <path d="M 230 470 L 230 500" stroke="url(#arrowGrad)" stroke-width="2" fill="none"/>
+    <!-- Vertical arrow right -->
+    <path d="M 670 470 L 670 500" stroke="url(#arrowGrad)" stroke-width="2" fill="none"/>
+    <!-- Diagonal arrows -->
+    <path d="M 400 420 Q 450 465 500 420" stroke="#3b82f6" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M 400 550 Q 450 505 500 550" stroke="#00e0ff" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+  
+  <!-- Card 1: Zero Trust Brokers -->
+  <g filter="url(#glowStrong)">
+    <rect x="50" y="140" width="380" height="280" rx="16" fill="#020510" stroke="#3b82f6" stroke-width="2"/>
+  </g>
+  <rect x="50" y="140" width="380" height="280" rx="16" fill="#0a1020" stroke="none"/>
+  
+  <!-- Shield icon -->
+  <g transform="translate(80, 170)">
+    <path d="M40 5 L70 18 L70 42 C70 62 55 78 40 85 C25 78 10 62 10 42 L10 18 Z" fill="none" stroke="#3b82f6" stroke-width="2.5" filter="url(#glow)"/>
+    <path d="M30 45 L38 53 L52 35" fill="none" stroke="#00e0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <text x="170" y="200" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold">Zero Trust Brokers</text>
+  <text x="70" y="280" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">
+    <tspan x="70" dy="0">MCP servers act as Zero Trust brokers</tspan>
+    <tspan x="70" dy="22">between AI agents and AWS resources,</tspan>
+    <tspan x="70" dy="22">validating every request with strict</tspan>
+    <tspan x="70" dy="22">authentication and authorization checks.</tspan>
+  </text>
+  <circle cx="400" cy="180" r="20" fill="#3b82f6" opacity="0.1"/>
+  <text x="400" y="186" fill="#3b82f6" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">01</text>
+  
+  <!-- Card 2: Dynamic IAM Policies -->
+  <g filter="url(#glowStrong)">
+    <rect x="470" y="140" width="380" height="280" rx="16" fill="#020510" stroke="#00e0ff" stroke-width="2"/>
+  </g>
+  <rect x="470" y="140" width="380" height="280" rx="16" fill="#0a1020" stroke="none"/>
+  
+  <!-- Key/Lock icon -->
+  <g transform="translate(500, 170)">
+    <circle cx="30" cy="25" r="18" fill="none" stroke="#00e0ff" stroke-width="2.5" filter="url(#glow)"/>
+    <path d="M30 43 L30 70 M22 55 L38 55 M22 65 L38 65" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  
+  <text x="590" y="200" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold">Dynamic IAM Policies</text>
+  <text x="490" y="280" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">
+    <tspan x="490" dy="0">Implement dynamic IAM session policies</tspan>
+    <tspan x="490" dy="22">that scope permissions to the minimum</tspan>
+    <tspan x="490" dy="22">required for each AI agent task,</tspan>
+    <tspan x="490" dy="22">enforcing least-privilege access.</tspan>
+  </text>
+  <circle cx="820" cy="180" r="20" fill="#00e0ff" opacity="0.1"/>
+  <text x="820" y="186" fill="#00e0ff" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">02</text>
+  
+  <!-- Card 3: VPC Network Isolation -->
+  <g filter="url(#glowStrong)">
+    <rect x="50" y="460" width="380" height="280" rx="16" fill="#020510" stroke="#00e0ff" stroke-width="2"/>
+  </g>
+  <rect x="50" y="460" width="380" height="280" rx="16" fill="#0a1020" stroke="none"/>
+  
+  <!-- Network/Cloud icon -->
+  <g transform="translate(80, 490)">
+    <path d="M55 55 C75 55 80 40 70 30 C70 15 50 10 40 25 C25 15 5 30 15 45 C5 55 15 70 35 65 C45 75 65 70 55 55 Z" fill="none" stroke="#00e0ff" stroke-width="2.5" filter="url(#glow)"/>
+    <circle cx="40" cy="45" r="5" fill="#3b82f6"/>
+    <circle cx="55" cy="35" r="4" fill="#3b82f6"/>
+    <circle cx="25" cy="40" r="4" fill="#3b82f6"/>
+    <line x1="40" y1="45" x2="55" y2="35" stroke="#3b82f6" stroke-width="1.5"/>
+    <line x1="40" y1="45" x2="25" y2="40" stroke="#3b82f6" stroke-width="1.5"/>
+  </g>
+  
+  <text x="170" y="520" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold">VPC Network Isolation</text>
+  <text x="70" y="600" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">
+    <tspan x="70" dy="0">Deploy MCP servers in private subnets</tspan>
+    <tspan x="70" dy="22">using VPC endpoints with security</tspan>
+    <tspan x="70" dy="22">groups that restrict traffic to only</tspan>
+    <tspan x="70" dy="22">authorized services and ports.</tspan>
+  </text>
+  <circle cx="400" cy="500" r="20" fill="#00e0ff" opacity="0.1"/>
+  <text x="400" y="506" fill="#00e0ff" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">03</text>
+  
+  <!-- Card 4: Comprehensive Logging -->
+  <g filter="url(#glowStrong)">
+    <rect x="470" y="460" width="380" height="280" rx="16" fill="#020510" stroke="#3b82f6" stroke-width="2"/>
+  </g>
+  <rect x="470" y="460" width="380" height="280" rx="16" fill="#0a1020" stroke="none"/>
+  
+  <!-- Monitor/Chart icon -->
+  <g transform="translate(500, 490)">
+    <rect x="10" y="15" width="60" height="45" rx="5" fill="none" stroke="#3b82f6" stroke-width="2.5" filter="url(#glow)"/>
+    <path d="M20 45 L32 35 L44 42 L60 25" fill="none" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="30" y1="60" x2="50" y2="60" stroke="#3b82f6" stroke-width="2.5"/>
+    <line x1="40" y1="60" x2="40" y2="68" stroke="#3b82f6" stroke-width="2.5"/>
+  </g>
+  
+  <text x="590" y="520" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="bold">Comprehensive Logging</text>
+  <text x="490" y="600" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">
+    <tspan x="490" dy="0">Build comprehensive logging and</tspan>
+    <tspan x="490" dy="22">monitoring that enables correlation</tspan>
+    <tspan x="490" dy="22">of AI agent actions with CloudTrail</tspan>
+    <tspan x="490" dy="22">events for full audit trails.</tspan>
+  </text>
+  <circle cx="820" cy="500" r="20" fill="#3b82f6" opacity="0.1"/>
+  <text x="820" y="506" fill="#3b82f6" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">04</text>
+  
+  <!-- Central connector element -->
+  <circle cx="450" cy="465" r="25" fill="#020510" stroke="url(#borderGrad1)" stroke-width="2" filter="url(#glow)"/>
+  <path d="M440 465 L445 460 L450 465 L455 460 L460 465 M445 470 L455 470" fill="none" stroke="#00e0ff" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Tag pills -->
+  <g transform="translate(450, 820)">
+    <rect x="-280" y="0" width="130" height="32" rx="16" fill="#1a1a2e" stroke="#3b82f6" stroke-width="1"/>
+    <text x="-215" y="21" fill="#3b82f6" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" text-anchor="middle">AI Security</text>
+    
+    <rect x="-130" y="0" width="200" height="32" rx="16" fill="#1a1a2e" stroke="#00e0ff" stroke-width="1"/>
+    <text x="-30" y="21" fill="#00e0ff" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" text-anchor="middle">Model Context Protocol</text>
+    
+    <rect x="90" y="0" width="130" height="32" rx="16" fill="#1a1a2e" stroke="#3b82f6" stroke-width="1"/>
+    <text x="155" y="21" fill="#3b82f6" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" text-anchor="middle">AWS Security</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="50" cy="50" r="3" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="850" cy="50" r="3" fill="#00e0ff" opacity="0.5"/>
+  <circle cx="50" cy="850" r="3" fill="#00e0ff" opacity="0.5"/>
+  <circle cx="850" cy="850" r="3" fill="#3b82f6" opacity="0.5"/>
+  
+  <!-- Corner accents -->
+  <path d="M20 120 L20 100 L40 100" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+  <path d="M880 120 L880 100 L860 100" fill="none" stroke="#00e0ff" stroke-width="1" opacity="0.5"/>
+  <path d="M20 780 L20 800 L40 800" fill="none" stroke="#00e0ff" stroke-width="1" opacity="0.5"/>
+  <path d="M880 780 L880 800 L860 800" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+</svg>
