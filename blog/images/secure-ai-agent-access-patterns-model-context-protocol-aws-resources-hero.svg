@@ -1,0 +1,22 @@
+<svg viewBox="0 0 1200 460" xmlns="http://www.w3.org/2000/svg" width="1200" height="460">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.08"/><stop offset="100%" stop-color="#020510" stop-opacity="1"/></radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00e0ff" stop-opacity="0.14"/><stop offset="100%" stop-color="#00e0ff" stop-opacity="0"/></radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="60"/></filter>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#020510" stop-opacity="0.1"/><stop offset="100%" stop-color="#020510" stop-opacity="0.9"/></linearGradient>
+    <style>@keyframes p1{0%,100%{opacity:.6}50%{opacity:1}}@keyframes p2{0%,100%{opacity:.4}50%{opacity:.8}}@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(-4px,-2px)}}.g1{animation:p1 4s ease-in-out infinite}.g2{animation:p2 5s ease-in-out infinite 0.28s}.dr{animation:dr 9s ease-in-out infinite}</style>
+  </defs>
+  <rect width="1200" height="460" fill="#020510"/>
+  <rect width="1200" height="460" fill="url(#bg1)"/>
+  <ellipse cx="600" cy="230" rx="560" ry="224" fill="none" stroke="#3b82f6" stroke-opacity="0.12" stroke-width="1"/><ellipse cx="600" cy="230" rx="490" ry="196" fill="none" stroke="#3b82f6" stroke-opacity="0.11000000000000001" stroke-width="1"/><ellipse cx="600" cy="230" rx="420" ry="168" fill="none" stroke="#3b82f6" stroke-opacity="0.1" stroke-width="1"/><ellipse cx="600" cy="230" rx="350" ry="140" fill="none" stroke="#3b82f6" stroke-opacity="0.09" stroke-width="1"/><ellipse cx="600" cy="230" rx="280" ry="112" fill="none" stroke="#3b82f6" stroke-opacity="0.08" stroke-width="1"/><ellipse cx="600" cy="230" rx="210" ry="84" fill="none" stroke="#3b82f6" stroke-opacity="0.07" stroke-width="1"/><ellipse cx="600" cy="230" rx="140" ry="56" fill="none" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/><ellipse cx="600" cy="230" rx="70" ry="28" fill="none" stroke="#3b82f6" stroke-opacity="0.05" stroke-width="1"/>
+  <ellipse class="g1 dr" cx="456" cy="188" rx="300" ry="200" fill="url(#glow1)" filter="url(#blur1)"/>
+  <ellipse class="g2" cx="352" cy="324" rx="250" ry="180" fill="url(#glow2)" filter="url(#blur2)"/>
+  <circle cx="93" cy="71" r="3" fill="#3b82f6" fill-opacity="0.6"/>
+  <circle cx="113" cy="56" r="2" fill="#00e0ff" fill-opacity="0.4"/>
+  <circle cx="1117" cy="396" r="4" fill="#3b82f6" fill-opacity="0.5"/>
+  <line x1="128" y1="0" x2="172" y2="460" stroke="#3b82f6" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="912" y1="0" x2="828" y2="460" stroke="#00e0ff" stroke-opacity="0.06" stroke-width="1"/>
+  <rect width="1200" height="460" fill="url(#fade)"/>
+</svg>
