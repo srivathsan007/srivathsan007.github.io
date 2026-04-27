@@ -1,0 +1,22 @@
+<svg viewBox="0 0 1200 460" xmlns="http://www.w3.org/2000/svg" width="1200" height="460">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#ff3030" stop-opacity="0.08"/><stop offset="100%" stop-color="#0d0205" stop-opacity="1"/></radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff3030" stop-opacity="0.18"/><stop offset="100%" stop-color="#ff3030" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff6b00" stop-opacity="0.14"/><stop offset="100%" stop-color="#ff6b00" stop-opacity="0"/></radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="60"/></filter>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0d0205" stop-opacity="0.1"/><stop offset="100%" stop-color="#0d0205" stop-opacity="0.9"/></linearGradient>
+    <style>@keyframes p1{0%,100%{opacity:.6}50%{opacity:1}}@keyframes p2{0%,100%{opacity:.4}50%{opacity:.8}}@keyframes dr{0%,100%{transform:translate(0,0)}50%{transform:translate(-9px,-6px)}}.g1{animation:p1 3s ease-in-out infinite}.g2{animation:p2 5s ease-in-out infinite 0.45s}.dr{animation:dr 7s ease-in-out infinite}</style>
+  </defs>
+  <rect width="1200" height="460" fill="#0d0205"/>
+  <rect width="1200" height="460" fill="url(#bg1)"/>
+  <circle cx="150" cy="80" r="8" fill="#ff3030" fill-opacity="0.04" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="150" cy="80" r="16" fill="#ff3030" fill-opacity="0.015"/><circle cx="350" cy="200" r="15" fill="#ff3030" fill-opacity="0.06" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="350" cy="200" r="30" fill="#ff3030" fill-opacity="0.015"/><circle cx="550" cy="100" r="22" fill="#ff3030" fill-opacity="0.08" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="550" cy="100" r="44" fill="#ff3030" fill-opacity="0.015"/><circle cx="750" cy="320" r="29" fill="#ff3030" fill-opacity="0.1" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="750" cy="320" r="58" fill="#ff3030" fill-opacity="0.015"/><circle cx="950" cy="150" r="11" fill="#ff3030" fill-opacity="0.04" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="950" cy="150" r="22" fill="#ff3030" fill-opacity="0.015"/><circle cx="1100" cy="280" r="18" fill="#ff3030" fill-opacity="0.06" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="1100" cy="280" r="36" fill="#ff3030" fill-opacity="0.015"/><circle cx="200" cy="350" r="25" fill="#ff3030" fill-opacity="0.08" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="200" cy="350" r="50" fill="#ff3030" fill-opacity="0.015"/><circle cx="700" cy="60" r="32" fill="#ff3030" fill-opacity="0.1" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="700" cy="60" r="64" fill="#ff3030" fill-opacity="0.015"/><circle cx="900" cy="380" r="14" fill="#ff3030" fill-opacity="0.04" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="900" cy="380" r="28" fill="#ff3030" fill-opacity="0.015"/><circle cx="450" cy="330" r="21" fill="#ff3030" fill-opacity="0.06" stroke="#ff3030" stroke-opacity="0.15" stroke-width="1"/><circle cx="450" cy="330" r="42" fill="#ff3030" fill-opacity="0.015"/>
+  <ellipse class="g1 dr" cx="240" cy="125" rx="300" ry="200" fill="url(#glow1)" filter="url(#blur1)"/>
+  <ellipse class="g2" cx="505" cy="104" rx="250" ry="180" fill="url(#glow2)" filter="url(#blur2)"/>
+  <circle cx="82" cy="65" r="3" fill="#ff3030" fill-opacity="0.6"/>
+  <circle cx="102" cy="50" r="2" fill="#ff6b00" fill-opacity="0.4"/>
+  <circle cx="1127" cy="359" r="4" fill="#ff3030" fill-opacity="0.5"/>
+  <line x1="20" y1="0" x2="130" y2="460" stroke="#ff3030" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="980" y1="0" x2="645" y2="460" stroke="#ff6b00" stroke-opacity="0.06" stroke-width="1"/>
+  <rect width="1200" height="460" fill="url(#fade)"/>
+</svg>
