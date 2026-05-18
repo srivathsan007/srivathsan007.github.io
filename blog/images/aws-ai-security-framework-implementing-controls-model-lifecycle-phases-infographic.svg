@@ -1,0 +1,133 @@
+<svg viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feFlood flood-color="#a855f7" flood-opacity="0.5"/>
+      <feComposite in2="coloredBlur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feFlood flood-color="#00e0ff" flood-opacity="0.5"/>
+      <feComposite in2="coloredBlur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#00e0ff"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="900" fill="#05020d"/>
+  
+  <!-- Title -->
+  <text x="450" y="55" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="white">AWS AI Security Framework</text>
+  <text x="450" y="90" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#94a3b8">Implementing Controls Across Model Lifecycle Phases</text>
+  
+  <!-- Connecting Arrows -->
+  <path d="M 430 340 L 470 340" stroke="url(#arrowGrad)" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 430 590 L 470 590" stroke="url(#arrowGrad)" stroke-width="2" fill="none"/>
+  <path d="M 225 420 L 225 460" stroke="url(#arrowGrad)" stroke-width="2" fill="none"/>
+  <path d="M 675 420 L 675 460" stroke="url(#arrowGrad)" stroke-width="2" fill="none"/>
+  
+  <!-- Card 1: Top Left -->
+  <rect x="40" y="140" width="390" height="260" rx="16" fill="#0a0515" stroke="#a855f7" stroke-width="2" filter="url(#glow2)"/>
+  <circle cx="90" cy="190" r="28" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <path d="M 78 190 L 90 178 L 102 190 M 90 178 L 90 202 M 75 202 L 105 202" stroke="#a855f7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="130" y="198" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">Security Framework</text>
+  <text x="60" y="240" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="60" dy="0">AWS AI security framework establishes</tspan>
+    <tspan x="60" dy="22">three interconnected security pillars:</tspan>
+    <tspan x="60" dy="22">Infrastructure, Data, and Model layers</tspan>
+    <tspan x="60" dy="22">working together for comprehensive</tspan>
+    <tspan x="60" dy="22">protection across all AI workloads.</tspan>
+  </text>
+  
+  <!-- Card 2: Top Right -->
+  <rect x="470" y="140" width="390" height="260" rx="16" fill="#0a0515" stroke="#00e0ff" stroke-width="2" filter="url(#glow3)"/>
+  <circle cx="520" cy="190" r="28" fill="none" stroke="#00e0ff" stroke-width="2"/>
+  <path d="M 508 185 L 520 175 L 532 185 L 532 200 L 508 200 Z M 515 200 L 515 192 L 525 192 L 525 200" stroke="#00e0ff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="560" y="198" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">Training Pipeline Security</text>
+  <text x="490" y="240" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="490" dy="0">Training pipeline security is critical—</tspan>
+    <tspan x="490" dy="22">implement input validation, data</tspan>
+    <tspan x="490" dy="22">sanitization, and access controls at</tspan>
+    <tspan x="490" dy="22">every stage to prevent data poisoning</tspan>
+    <tspan x="490" dy="22">and unauthorized model manipulation.</tspan>
+  </text>
+  
+  <!-- Card 3: Bottom Left -->
+  <rect x="40" y="480" width="390" height="260" rx="16" fill="#0a0515" stroke="#00e0ff" stroke-width="2" filter="url(#glow3)"/>
+  <circle cx="90" cy="530" r="28" fill="none" stroke="#00e0ff" stroke-width="2"/>
+  <path d="M 80 520 L 100 520 L 100 540 L 80 540 Z M 85 525 L 95 525 M 85 530 L 92 530 M 85 535 L 90 535" stroke="#00e0ff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="130" y="538" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">CSPM Integration</text>
+  <text x="60" y="580" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="60" dy="0">Integrate AI security controls with</tspan>
+    <tspan x="60" dy="22">existing CSPM tools by aligning</tspan>
+    <tspan x="60" dy="22">policies, automating compliance</tspan>
+    <tspan x="60" dy="22">checks, and enabling unified threat</tspan>
+    <tspan x="60" dy="22">detection across cloud environments.</tspan>
+  </text>
+  
+  <!-- Card 4: Bottom Right -->
+  <rect x="470" y="480" width="390" height="260" rx="16" fill="#0a0515" stroke="#a855f7" stroke-width="2" filter="url(#glow2)"/>
+  <circle cx="520" cy="530" r="28" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <path d="M 510 540 L 510 525 L 520 520 L 530 525 L 530 540 M 515 535 L 515 528 L 520 525 L 525 528 L 525 535" stroke="#a855f7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="560" y="538" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">Phased Adoption</text>
+  <text x="490" y="580" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="490" dy="0">Implement phased adoption starting</tspan>
+    <tspan x="490" dy="22">with infrastructure controls, then</tspan>
+    <tspan x="490" dy="22">progressively add data governance,</tspan>
+    <tspan x="490" dy="22">model security, and monitoring for</tspan>
+    <tspan x="490" dy="22">sustainable security maturity growth.</tspan>
+  </text>
+  
+  <!-- Connection arrows with arrowheads -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a855f7"/>
+    </marker>
+  </defs>
+  
+  <!-- Horizontal arrows -->
+  <line x1="430" y1="270" x2="468" y2="270" stroke="#a855f7" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="430" y1="610" x2="468" y2="610" stroke="#00e0ff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Vertical arrows -->
+  <line x1="235" y1="400" x2="235" y2="478" stroke="url(#arrowGrad)" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="665" y1="400" x2="665" y2="478" stroke="url(#arrowGrad)" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Tag Pills -->
+  <rect x="220" y="800" width="130" height="32" rx="16" fill="#1a1025" stroke="#a855f7" stroke-width="1"/>
+  <text x="285" y="822" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#a855f7">AWS Security</text>
+  
+  <rect x="370" y="800" width="110" height="32" rx="16" fill="#1a1025" stroke="#00e0ff" stroke-width="1"/>
+  <text x="425" y="822" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#00e0ff">AI Security</text>
+  
+  <rect x="500" y="800" width="130" height="32" rx="16" fill="#1a1025" stroke="#a855f7" stroke-width="1"/>
+  <text x="565" y="822" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#a855f7">Cloud Security</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="50" cy="50" r="3" fill="#a855f7" opacity="0.5"/>
+  <circle cx="850" cy="50" r="3" fill="#00e0ff" opacity="0.5"/>
+  <circle cx="50" cy="850" r="3" fill="#00e0ff" opacity="0.5"/>
+  <circle cx="850" cy="850" r="3" fill="#a855f7" opacity="0.5"/>
+  
+  <!-- Subtle grid pattern -->
+  <line x1="450" y1="120" x2="450" y2="770" stroke="#a855f7" stroke-width="0.5" opacity="0.1"/>
+  <line x1="30" y1="445" x2="870" y2="445" stroke="#00e0ff" stroke-width="0.5" opacity="0.1"/>
+</svg>
