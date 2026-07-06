@@ -1,0 +1,118 @@
+<svg viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1400;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0d0800;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff9900;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ffcc44;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="900" height="900" fill="#060400"/>
+  
+  <text x="450" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="bold" fill="white" text-anchor="middle">AWS Egress Controls and Data Exfiltration Prevention</text>
+  <text x="450" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">A Complete Guide for Cloud Workloads</text>
+  
+  <rect x="60" y="130" width="360" height="280" rx="16" fill="url(#cardGrad1)" stroke="#ff9900" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="100" cy="175" r="28" fill="none" stroke="#ff9900" stroke-width="2" filter="url(#glow)"/>
+  <path d="M88 175 L100 163 L112 175 M100 163 L100 187 M88 183 L112 183" stroke="#ff9900" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="140" y="182" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="white">VPC Endpoints</text>
+  <text x="80" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="80" dy="0">Implement VPC Endpoints with</tspan>
+    <tspan x="80" dy="22">restrictive policies to eliminate</tspan>
+    <tspan x="80" dy="22">public internet exposure for AWS</tspan>
+    <tspan x="80" dy="22">service calls. Use endpoint policies</tspan>
+    <tspan x="80" dy="22">to restrict access to specific</tspan>
+    <tspan x="80" dy="22">resources and actions only.</tspan>
+  </text>
+  <text x="80" y="385" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffcc44">1</text>
+  
+  <rect x="480" y="130" width="360" height="280" rx="16" fill="url(#cardGrad1)" stroke="#ffcc44" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="520" cy="175" r="28" fill="none" stroke="#ffcc44" stroke-width="2" filter="url(#glow)"/>
+  <path d="M508 168 L532 168 M508 175 L532 175 M508 182 L532 182 M515 160 L515 190 M525 160 L525 190" stroke="#ffcc44" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="560" y="182" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="white">Network Firewall</text>
+  <text x="500" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="500" dy="0">Deploy AWS Network Firewall with</tspan>
+    <tspan x="500" dy="22">domain allowlists and Route 53</tspan>
+    <tspan x="500" dy="22">Resolver DNS Firewall. Configure</tspan>
+    <tspan x="500" dy="22">stateful inspection rules to block</tspan>
+    <tspan x="500" dy="22">unauthorized outbound traffic</tspan>
+    <tspan x="500" dy="22">and potential data exfiltration.</tspan>
+  </text>
+  <text x="500" y="385" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffcc44">2</text>
+  
+  <rect x="60" y="470" width="360" height="280" rx="16" fill="url(#cardGrad1)" stroke="#ffcc44" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="100" cy="515" r="28" fill="none" stroke="#ffcc44" stroke-width="2" filter="url(#glow)"/>
+  <path d="M90 505 L110 505 L110 525 L90 525 Z M95 510 L105 510 M95 515 L105 515 M95 520 L105 520" stroke="#ffcc44" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="140" y="522" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="white">Service Control Policies</text>
+  <text x="80" y="565" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="80" dy="0">Use Service Control Policies at the</tspan>
+    <tspan x="80" dy="22">AWS Organizations level to enforce</tspan>
+    <tspan x="80" dy="22">guardrails across all accounts.</tspan>
+    <tspan x="80" dy="22">Restrict regions, services, and</tspan>
+    <tspan x="80" dy="22">actions to minimize attack surface</tspan>
+    <tspan x="80" dy="22">and prevent policy bypass.</tspan>
+  </text>
+  <text x="80" y="725" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffcc44">3</text>
+  
+  <rect x="480" y="470" width="360" height="280" rx="16" fill="url(#cardGrad1)" stroke="#ff9900" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="520" cy="515" r="28" fill="none" stroke="#ff9900" stroke-width="2" filter="url(#glow)"/>
+  <path d="M510 508 L530 508 L530 522 L510 522 Z M515 522 L515 528 M525 522 L525 528 M512 528 L528 528" stroke="#ff9900" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="560" y="522" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="bold" fill="white">Automated Detection</text>
+  <text x="500" y="565" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8">
+    <tspan x="500" dy="0">Build automated detection and</tspan>
+    <tspan x="500" dy="22">response pipelines using GuardDuty,</tspan>
+    <tspan x="500" dy="22">Security Hub, and EventBridge.</tspan>
+    <tspan x="500" dy="22">Implement real-time alerting and</tspan>
+    <tspan x="500" dy="22">automated remediation for</tspan>
+    <tspan x="500" dy="22">suspicious egress patterns.</tspan>
+  </text>
+  <text x="500" y="725" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#ffcc44">4</text>
+  
+  <path d="M420 270 L480 270" stroke="url(#arrowGrad)" stroke-width="2" fill="none" marker-end="url(#arrowhead)" filter="url(#glow)"/>
+  <polygon points="475,265 485,270 475,275" fill="#ffcc44"/>
+  
+  <path d="M240 410 L240 470" stroke="url(#arrowGrad)" stroke-width="2" fill="none" filter="url(#glow)"/>
+  <polygon points="235,465 240,475 245,465" fill="#ffcc44"/>
+  
+  <path d="M660 410 L660 470" stroke="url(#arrowGrad)" stroke-width="2" fill="none" filter="url(#glow)"/>
+  <polygon points="655,465 660,475 665,465" fill="#ffcc44"/>
+  
+  <path d="M420 610 L480 610" stroke="url(#arrowGrad)" stroke-width="2" fill="none" filter="url(#glow)"/>
+  <polygon points="475,605 485,610 475,615" fill="#ffcc44"/>
+  
+  <path d="M420 430 L480 430 L480 470" stroke="#ff9900" stroke-width="1" stroke-dasharray="4,4" fill="none" opacity="0.5"/>
+  <path d="M420 430 L420 470" stroke="#ff9900" stroke-width="1" stroke-dasharray="4,4" fill="none" opacity="0.5"/>
+  
+  <rect x="195" y="800" width="130" height="32" rx="16" fill="none" stroke="#ff9900" stroke-width="1" filter="url(#glow)"/>
+  <text x="260" y="821" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#ff9900" text-anchor="middle">AWS Security</text>
+  
+  <rect x="345" y="800" width="210" height="32" rx="16" fill="none" stroke="#ffcc44" stroke-width="1" filter="url(#glow)"/>
+  <text x="450" y="821" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#ffcc44" text-anchor="middle">Data Exfiltration Prevention</text>
+  
+  <rect x="575" y="800" width="130" height="32" rx="16" fill="none" stroke="#ff9900" stroke-width="1" filter="url(#glow)"/>
+  <text x="640" y="821" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#ff9900" text-anchor="middle">Zero Trust</text>
+  
+  <circle cx="50" cy="850" r="3" fill="#ff9900" opacity="0.3"/>
+  <circle cx="850" cy="120" r="4" fill="#ffcc44" opacity="0.2"/>
+  <circle cx="750" cy="850" r="2" fill="#ff9900" opacity="0.4"/>
+  <circle cx="150" cy="120" r="3" fill="#ffcc44" opacity="0.3"/>
+  
+  <text x="450" y="875" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle" opacity="0.6">Enterprise Cloud Security Framework</text>
+</svg>
