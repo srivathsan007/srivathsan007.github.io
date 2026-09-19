@@ -1,249 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Srivathsan Vivekanandhan | Enterprise AI Security Architect</title>
-  <meta name="description" content="Senior Cloud Security Architect & AI Adoption Specialist. CISSP. M365, Azure, AWS. MCP Expert.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg: #060810; --bg2: #0a0c14; --surface: rgba(255,255,255,0.025);
-      --border: rgba(255,255,255,0.06); --border-h: rgba(255,255,255,0.14);
-      --text: #b8bcc8; --dim: #5e6374; --bright: #eef0f6;
-      --accent: #00e0ff; --accent2: #a855f7;
-      --glow: rgba(0,224,255,0.12); --grad: linear-gradient(135deg, #00e0ff 0%, #a855f7 100%);
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Libre Baskerville', Georgia, serif; line-height: 1.8; overflow-x: hidden; }
-    ::selection { background: rgba(0,224,255,0.2); color: #fff; }
-    #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-    .cursor { position: fixed; width: 24px; height: 24px; border: 1.5px solid rgba(0,224,255,0.5); border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.12s ease; mix-blend-mode: difference; }
-    .cursor-dot { position: fixed; width: 4px; height: 4px; background: var(--accent); border-radius: 50%; pointer-events: none; z-index: 9999; }
-    .loader { position: fixed; inset: 0; background: var(--bg); z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.8s, visibility 0.8s; }
-    .loader.done { opacity: 0; visibility: hidden; pointer-events: none; }
-    .loader-name { font: 700 28px 'Playfair Display', serif; color: var(--bright); letter-spacing: 0.08em; margin-bottom: 20px; opacity: 0; animation: fadeIn 0.6s ease forwards 0.2s; }
-    .loader-bar { width: 140px; height: 2px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; }
-    .loader-fill { width: 0; height: 100%; background: var(--grad); border-radius: 2px; animation: loadBar 1.4s ease forwards; }
-    @keyframes loadBar { to { width: 100%; } }
-    @keyframes fadeIn { to { opacity: 1; } }
-    nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 18px 0; transition: all 0.5s; }
-    nav.scrolled { background: rgba(6,8,16,0.92); backdrop-filter: blur(30px); border-bottom: 1px solid var(--border); padding: 12px 0; }
-    .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
-    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-    .nav-mark { width: 40px; height: 40px; border-radius: 10px; background: var(--grad); display: flex; align-items: center; justify-content: center; font: 700 14px 'Fira Code', monospace; color: #000; box-shadow: 0 0 20px var(--glow); transition: transform 0.3s; flex-shrink: 0; }
-    .nav-mark:hover { transform: rotate(5deg) scale(1.05); }
-    .nav-brand { font: 800 20px 'Playfair Display', serif; color: var(--bright); letter-spacing: 0.04em; font-style: italic; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: var(--dim); text-decoration: none; font: 500 12px 'Space Grotesk', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; position: relative; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--grad); transition: width 0.4s; }
-    .nav-links a:hover::after { width: 100%; }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--bright); margin: 5px 0; transition: all 0.3s; }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
-    section { position: relative; z-index: 1; }
-    .hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 0 80px; position: relative; }
-    .hero::before { content: ''; position: absolute; top: -200px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,224,255,0.05), transparent 70%); pointer-events: none; animation: drift1 20s ease-in-out infinite; }
-    .hero::after { content: ''; position: absolute; bottom: -100px; right: -50px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(168,85,247,0.04), transparent 70%); pointer-events: none; animation: drift2 24s ease-in-out infinite; }
-    @keyframes drift1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(60px,40px); } }
-    @keyframes drift2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-50px,-30px); } }
-    .hero-grid { display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center; }
-    .hero-label { font: 400 12px 'Fira Code', monospace; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 20px; opacity: 0; animation: slideUp 0.9s forwards 0.4s; }
-    .hero-name { font: 900 22px 'Playfair Display', serif; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 16px; opacity: 0; animation: slideUp 0.9s forwards 0.5s; }
-    .hero h1 { font: 800 52px 'Space Grotesk', sans-serif; line-height: 1.08; color: var(--bright); margin-bottom: 28px; letter-spacing: -0.04em; opacity: 0; animation: slideUp 0.9s forwards 0.6s; }
-    .hero h1 em { font-style: normal; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-desc { font: 400 17px 'Libre Baskerville', serif; color: var(--dim); line-height: 2; max-width: 540px; margin-bottom: 32px; opacity: 0; animation: slideUp 0.9s forwards 0.75s; }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; opacity: 0; animation: slideUp 0.9s forwards 0.9s; }
-    .chip { font: 400 11px 'Fira Code', monospace; padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); color: var(--dim); transition: all 0.4s; }
-    .chip:hover { border-color: var(--accent); color: var(--accent); background: var(--glow); transform: translateY(-2px); }
-    .hero-btns { display: flex; gap: 14px; opacity: 0; animation: slideUp 0.9s forwards 1.05s; }
-    .btn { padding: 13px 28px; border-radius: 10px; font: 600 14px 'Space Grotesk', sans-serif; text-decoration: none; transition: all 0.4s; }
-    .btn-pri { background: var(--grad); color: #000; box-shadow: 0 0 28px var(--glow); }
-    .btn-pri:hover { transform: translateY(-3px); box-shadow: 0 8px 40px rgba(0,224,255,0.25); }
-    .btn-sec { background: transparent; color: var(--text); border: 1px solid var(--border); }
-    .btn-sec:hover { border-color: var(--accent); color: var(--accent); }
-    .hero-photo { opacity: 0; animation: slideUp 0.9s forwards 0.65s; }
-    .photo-wrap { position: relative; }
-    .photo-frame { width: 360px; height: 460px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); position: relative; }
-    .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block; filter: contrast(1.05); transition: all 0.6s; }
-    .photo-frame:hover img { filter: contrast(1.1) brightness(1.05); transform: scale(1.03); }
-    .photo-frame::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(6,8,16,0.6)); pointer-events: none; }
-    .glow-orb { position: absolute; border-radius: 50%; pointer-events: none; }
-    .glow-a { top: -24px; right: -24px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(0,224,255,0.1), transparent 70%); animation: pulse 4s ease-in-out infinite; }
-    .glow-b { bottom: -30px; left: -30px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(168,85,247,0.08), transparent 70%); animation: pulse 5s ease-in-out infinite 1s; }
-    @keyframes pulse { 0%,100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } }
-    .marquee { padding: 48px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; background: var(--bg2); }
-    .marquee-track { display: flex; gap: 48px; animation: marq 30s linear infinite; width: max-content; }
-    .marq-item { font: 600 13px 'Space Grotesk', sans-serif; color: var(--dim); white-space: nowrap; display: flex; align-items: center; gap: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .marq-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 6px var(--glow); }
-    @keyframes marq { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .s-label { font: 400 11px 'Fira Code', monospace; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
-    .s-title { font: 700 44px 'Space Grotesk', sans-serif; color: var(--bright); margin-bottom: 16px; line-height: 1.12; letter-spacing: -0.03em; }
-    .s-sub { font: 400 16px 'Libre Baskerville', serif; color: var(--dim); max-width: 580px; margin-bottom: 52px; line-height: 1.9; }
-    .rv { opacity: 0; transform: translateY(36px); transition: all 0.85s; }
-    .rv.vis { opacity: 1; transform: translateY(0); }
-    .rv-d1{transition-delay:.08s} .rv-d2{transition-delay:.16s} .rv-d3{transition-delay:.24s}
-    .rv-d4{transition-delay:.32s} .rv-d5{transition-delay:.4s} .rv-d6{transition-delay:.48s}
-    .about { padding: 140px 0; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; }
-    .about-text { font-size: 17px; line-height: 2; }
-    .about-text p { margin-bottom: 20px; }
-    .about-text strong { color: var(--bright); }
-    .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .exp-card { padding: 22px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); transition: all 0.4s; }
-    .exp-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 16px var(--glow); }
-    .exp-icon { font-size: 22px; margin-bottom: 10px; }
-    .exp-name { font: 700 14px 'Space Grotesk', sans-serif; color: var(--bright); margin-bottom: 4px; }
-    .exp-desc { font: 400 12px 'Fira Code', monospace; color: var(--dim); line-height: 1.6; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srivathsan Vivekanandhan | Enterprise AI Security Architect</title>
+<meta name="description" content="Senior Cloud Security Architect &amp; AI Adoption Specialist. CISSP. Microsoft 365, Azure, AWS. MCP architecture.">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Srivathsan Vivekanandhan | Enterprise AI Security Architect">
+<meta property="og:description" content="Senior Cloud Security Architect &amp; AI Adoption Specialist. CISSP. Microsoft 365, Azure, AWS. MCP architecture.">
+<meta property="og:image" content="https://srivathsan007.github.io/assets/img/profile.jpeg">
+<meta property="og:url" content="https://srivathsan007.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
-    /* ── BLOG CARDS — fully clickable ── */
-    .blog { padding: 140px 0; background: var(--bg2); }
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .blog-card {
-      border-radius: 14px; overflow: hidden;
-      background: rgba(255,255,255,0.015);
-      border: 1px solid var(--border);
-      transition: all 0.5s;
-      text-decoration: none; color: inherit;
-      display: block; cursor: pointer;
-      
-    }
-    .blog-card * { pointer-events: none; }
-    .blog-card:hover { border-color: var(--border-h); transform: translateY(-5px); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 24px var(--glow); }
-    /* Children don't intercept clicks — the <a> tag handles everything */
-    .blog-card * { pointer-events: none; }
-    .bc-img { height: 190px; overflow: hidden; background: #0a0b12; }
-    .bc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-    .blog-card:hover .bc-img img { transform: scale(1.06); }
-    .bc-body { padding: 22px 22px 26px; }
-    .bc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-    .bc-tag-pill { font: 400 10px 'Fira Code', monospace; color: var(--dim); background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
-    .bc-title { font: 700 16px 'Space Grotesk', sans-serif; color: var(--bright); line-height: 1.45; margin-bottom: 10px; }
-    .bc-excerpt { font: 400 14px 'Libre Baskerville', serif; color: var(--dim); line-height: 1.7; }
-    .bc-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
-    .bc-arrow { font: 400 12px 'Fira Code', monospace; color: var(--accent); transition: transform 0.3s; display: inline-block; }
-    .blog-card:hover .bc-arrow { transform: translateX(6px); }
-    .bc-read { font: 400 11px 'Fira Code', monospace; color: var(--dim); }
-    .blog-empty { text-align: center; color: var(--dim); font: italic 15px 'Libre Baskerville', serif; padding: 48px 0; grid-column: 1/-1; }
+:root{
+  /* black gradient canvas */
+  --ink:#0a0a0a; --ink-2:#0e0e0e; --ink-3:#131313;
+  --card-edge:#242424; --card-border:#5a5a5a;
+  /* minhpham palette */
+  --cream:#b7ab98; --cream-2:#d7cdbb; --ember:#eb5939;
+  --fg:#f2f0ec; --fg-body:rgba(242,240,236,.74); --fg-dim:rgba(242,240,236,.62); --fg-faint:rgba(242,240,236,.52);
+  --line:rgba(242,240,236,.14); --line-h:rgba(242,240,236,.3);
+  --r:22px; --r-m:12px; --r-pill:4.375rem;
+  --content-max:1440px;
+  --sp:clamp(84px,10vw,168px);
+  /* type scale (ref: minhpham .display) */
+  --t-display:clamp(2.75rem,7.4vw,7rem);
+  --t-section:clamp(2.2rem,5vw,4.4rem);
+  --t-row:clamp(1.5rem,2.9vw,2.6rem);
+  --t-body:clamp(1rem,.35vw + .92rem,1.125rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-mask:cubic-bezier(.22,.61,.36,1);
+  --ease-card:cubic-bezier(.44,0,.56,1); --card-dur:800ms; --card-off:30px;
+  --font-d:'Jost',Arial,sans-serif; --font-b:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+@media (max-width:760px){ :root{ --card-dur:1050ms; --ease-card:cubic-bezier(.4,0,.2,1); --card-off:56px } }
 
-    .certs { padding: 140px 0; }
-    .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .cert-card { padding: 26px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); transition: all 0.4s; position: relative; overflow: hidden; }
-    .cert-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 0 28px var(--glow); }
-    .cert-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad); opacity: 0; transition: opacity 0.4s; }
-    .cert-card:hover::before { opacity: 1; }
-    .cert-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--glow); border: 1px solid rgba(0,224,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 14px; }
-    .cert-name { font: 700 15px 'Space Grotesk', sans-serif; color: var(--bright); line-height: 1.35; margin-bottom: 6px; }
-    .cert-org { font: 400 12px 'Fira Code', monospace; color: var(--dim); }
-    .projects { padding: 140px 0; background: var(--bg2); }
-    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .proj-card { padding: 34px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); transition: all 0.4s; }
-    .proj-card:hover { border-color: var(--accent); box-shadow: 0 0 36px var(--glow); transform: translateY(-4px); }
-    .proj-num { font: 700 11px 'Fira Code', monospace; color: var(--accent); letter-spacing: 0.14em; margin-bottom: 12px; }
-    .proj-name { font: 700 20px 'Space Grotesk', sans-serif; color: var(--bright); margin-bottom: 10px; letter-spacing: -0.02em; }
-    .proj-desc { font: 400 15px 'Libre Baskerville', serif; color: var(--dim); line-height: 1.85; margin-bottom: 16px; }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .proj-tags span { font: 400 10px 'Fira Code', monospace; padding: 5px 12px; border-radius: 20px; background: rgba(0,224,255,0.04); border: 1px solid rgba(0,224,255,0.08); color: var(--accent); }
-    .contact { padding: 140px 0; text-align: center; position: relative; }
-    .contact::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,224,255,0.03), transparent 70%); pointer-events: none; }
-    .ct-title { font: 700 50px 'Space Grotesk', sans-serif; color: var(--bright); letter-spacing: -0.04em; margin-bottom: 16px; line-height: 1.1; }
-    .ct-desc { font: 400 17px 'Libre Baskerville', serif; color: var(--dim); max-width: 480px; margin: 0 auto 40px; line-height: 1.9; }
-    .ct-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-    footer { border-top: 1px solid var(--border); padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; font: 400 12px 'Fira Code', monospace; color: var(--dim); }
-    footer a { color: var(--accent); text-decoration: none; }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 1024px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-      .hero-desc { margin-left: auto; margin-right: auto; }
-      .hero-chips { justify-content: center; }
-      .hero-btns { justify-content: center; }
-      .photo-frame { width: 280px; height: 360px; margin: 0 auto; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .proj-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-links.open { display: flex; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(6,8,16,0.97); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 28px; z-index: 999; }
-      .nav-links.open a { font-size: 18px; }
-      .hamburger { display: block; z-index: 1001; }
-      .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-      .hamburger.active span:nth-child(2) { opacity: 0; }
-      .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-      .container { padding: 0 20px; }
-      .hero { padding-top: 80px; }
-      .hero h1 { font-size: 32px; }
-      .s-title { font-size: 30px; }
-      .ct-title { font-size: 32px; }
-      .blog-grid { grid-template-columns: 1fr; }
-      .cert-grid { grid-template-columns: 1fr; }
-      .exp-grid { grid-template-columns: 1fr; }
-      .photo-frame { width: 240px; height: 310px; }
-      .about, .blog, .certs, .projects, .contact { padding: 80px 0; }
-      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px 20px; }
-    }
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 26px; }
-      .s-title { font-size: 26px; }
-      .ct-title { font-size: 26px; }
-      .btn { padding: 11px 22px; font-size: 13px; }
-    }
-  </style>
+html{scroll-behavior:auto}
+body{
+  color:var(--fg-body);font-family:var(--font-b);font-size:var(--t-body);line-height:1.65;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  background:linear-gradient(180deg,#121212 0%,#0a0a0a 38%,#060606 68%,#0d0d0d 100%) fixed,#0a0a0a;
+}
+::selection{background:rgba(183,171,152,.3);color:#fff}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--cream);outline-offset:3px;border-radius:4px}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+h1,h2,h3{font-weight:inherit}
+
+.skip-link{position:absolute;left:16px;top:-60px;background:var(--ink-3);color:var(--fg);padding:12px 20px;border-radius:var(--r-m);border:1px solid var(--line-h);z-index:10001;font:600 15px var(--font-b);transition:top .3s var(--ease)}
+.skip-link:focus{top:16px}
+
+#progress{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--ember);z-index:9990;transform:scaleX(0);transform-origin:0 0;transition:transform .08s linear}
+#grain{position:fixed;inset:-10%;z-index:3;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ===== loader with counting number (ref: minhpham page transition) ===== */
+.loader{position:fixed;inset:0;background:#080808;z-index:10000;display:flex;align-items:flex-end;justify-content:space-between;padding:clamp(24px,4vw,56px);transition:opacity .8s var(--ease),visibility .8s}
+.loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.loader-mark{font:700 13px var(--font-b);letter-spacing:.5em;text-transform:uppercase;color:var(--fg-faint)}
+.loader-count{font:400 clamp(4rem,16vw,13rem) var(--font-d);line-height:.8;letter-spacing:-.05em;color:var(--fg);font-variant-numeric:tabular-nums}
+.loader-bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--ember);transform:scaleX(0);transform-origin:0 50%}
+
+/* ===== custom cursor (ref: minhpham .vj-cursor / .label_sample) ===== */
+.vj-cursor{position:fixed;top:0;left:0;z-index:9995;pointer-events:none;display:none;will-change:transform}
+html.no-system-cursor,html.no-system-cursor *{cursor:none !important}
+html.no-system-cursor .vj-cursor{display:block}
+.vj-cursor_inner{width:94px;height:94px;margin:-47px 0 0 -47px;border-radius:50%;background:var(--ember);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font:700 11px var(--font-b);letter-spacing:.4em;text-transform:uppercase;color:#0d0d0d;text-indent:.4em;
+  transform:scale(.149);transition:transform .38s var(--ease),background .38s var(--ease)}
+.vj-cursor_inner span{opacity:0;transition:opacity .25s ease;padding:0 8px;line-height:1.2}
+.vj-cursor.is-extend .vj-cursor_inner{transform:scale(1)}
+.vj-cursor.is-extend .vj-cursor_inner span{opacity:1}
+.vj-cursor.is-contract .vj-cursor_inner{transform:scale(.489);background:var(--cream)}
+
+/* ===== header ===== */
+.header{position:fixed;top:0;width:100%;z-index:1000;padding:26px 0;transition:background .45s ease,border-color .45s ease}
+.header.scrolled{background:rgba(8,8,8,.7);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid var(--line)}
+.header-inner{max-width:var(--content-max);margin:0 auto;padding:0 clamp(20px,3.4vw,48px);display:flex;justify-content:space-between;align-items:center;gap:20px}
+.header_logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-avatar{width:38px;height:38px;border-radius:50%;overflow:hidden;border:1px solid var(--line-h);flex-shrink:0;transition:border-color .3s}
+.logo-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.header_logo:hover .logo-avatar{border-color:var(--cream)}
+.logo-name{font:700 13px var(--font-b);letter-spacing:.2em;text-transform:uppercase;color:var(--fg)}
+.header_menu{display:flex;gap:30px;list-style:none;align-items:center}
+.header_menu_item{text-decoration:none;color:var(--fg);font:700 12px var(--font-b);letter-spacing:.16em;text-transform:uppercase;transition:color .25s ease}
+.header_menu_item:hover{color:var(--fg-dim)}
+.header_menu_item.active{color:var(--ember)}
+.menu-cta{border:1px solid var(--line-h);border-radius:var(--r-pill);padding:11px 22px;transition:border-color .25s ease,background .25s ease,color .25s ease}
+.menu-cta:hover{border-color:var(--cream);background:rgba(183,171,152,.1);color:var(--fg)}
+.hamburger{display:none;padding:8px;z-index:1001}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--fg);margin:5px 0;transition:transform .35s var(--ease),opacity .35s var(--ease)}
+.hamburger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+.container{max-width:var(--content-max);margin:0 auto;padding:0 clamp(20px,3.4vw,48px)}
+section{position:relative;z-index:1}
+
+/* ===== masked text reveal (ref: minhpham heading-mask) ===== */
+.mask{overflow:hidden;display:block}
+.mask > *{display:block;transform:translateY(105%);transition:transform 1.05s var(--ease-mask)}
+.mask.vis > *{transform:translateY(0)}
+.md1 > *{transition-delay:.06s}.md2 > *{transition-delay:.14s}.md3 > *{transition-delay:.22s}
+.md4 > *{transition-delay:.3s}.md5 > *{transition-delay:.38s}
+
+.rv{opacity:0;transform:translateY(var(--card-off));transition:opacity var(--card-dur) var(--ease-card),transform var(--card-dur) var(--ease-card)}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.06s}.rv-d2{transition-delay:.12s}.rv-d3{transition-delay:.18s}
+.rv-d4{transition-delay:.24s}.rv-d5{transition-delay:.3s}
+
+/* ===== display type (ref: minhpham .display) ===== */
+.display{font-family:var(--font-d);font-weight:400;font-size:var(--t-display);letter-spacing:-.05em;line-height:.85;text-transform:uppercase;color:var(--fg)}
+.display em{font-style:normal;color:var(--ember)}
+.display .thin{color:var(--cream)}
+.label{font:700 12px var(--font-b);letter-spacing:.4em;text-transform:uppercase;color:var(--cream)}
+.desc{font:700 var(--t-body)/1.5 var(--font-b);color:var(--fg-body)}
+
+/* ===== hero ===== */
+.hero{min-height:100svh;display:flex;align-items:flex-end;padding:180px 0 60px;position:relative;overflow:hidden}
+.hero_bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero_ring{position:absolute;border-radius:50%;border:1px solid rgba(183,171,152,.13)}
+.ring-a{width:680px;height:680px;top:-190px;right:-230px}
+.ring-b{width:430px;height:430px;top:80px;right:-70px;border-color:rgba(242,240,236,.06)}
+.hero_content{position:relative;z-index:1;width:100%}
+.hero_top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:clamp(30px,5vw,64px)}
+.hero_desc{max-width:44ch}
+.hero h1{margin-bottom:clamp(30px,4vw,52px)}
+.hero_foot{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px}
+.hero_btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero_photo{width:clamp(88px,9vw,128px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid var(--line-h);flex-shrink:0}
+.hero_photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:grayscale(.5)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:var(--r-pill);font:700 12px var(--font-b);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s ease,color .25s ease,border-color .25s ease,transform .3s var(--ease)}
+.btn-pri{background:var(--cream);color:#0d0d0d;border:1px solid var(--cream)}
+.btn-pri:hover{background:var(--cream-2);border-color:var(--cream-2);transform:translateY(-2px)}
+.btn-sec{background:transparent;color:var(--fg);border:1px solid var(--line-h)}
+.btn-sec:hover{border-color:var(--cream);background:rgba(183,171,152,.1);transform:translateY(-2px)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform .25s ease}
+.btn:hover svg.arrow{transform:translateX(3px)}
+
+/* ===== marquee ===== */
+.marquee{padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;background:rgba(255,255,255,.015)}
+.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,#0a0a0a,transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,#0a0a0a,transparent)}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:marq 40s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marq-item{font:700 12px var(--font-b);letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);white-space:nowrap;display:flex;align-items:center;gap:12px;transform:skewX(var(--vskew,0deg))}
+.marq-dot{width:5px;height:5px;border-radius:50%;background:var(--ember)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ===== sections ===== */
+.sec{padding:var(--sp) 0}
+.sec_head{margin-bottom:clamp(42px,5vw,76px)}
+.sec_label{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.sec_label::before{content:'';width:34px;height:1px;background:var(--ember)}
+.sec_title{font-family:var(--font-d);font-weight:400;font-size:var(--t-section);letter-spacing:-.045em;line-height:.9;text-transform:uppercase;color:var(--fg);max-width:18ch}
+.sec_title em{font-style:normal;color:var(--ember)}
+.sec_sub{margin-top:22px;max-width:56ch;font-weight:400;color:var(--fg-body);line-height:1.75}
+
+/* ===== heading-mask rows (ref: minhpham work_history) ===== */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:76px 1fr minmax(0,34ch) 50px;gap:28px;align-items:center;
+  padding:clamp(24px,2.6vw,42px) 0;border-bottom:1px solid var(--line);position:relative}
+.row > *{transition:transform .5s var(--ease)}
+.row:hover > *:not(.row_arrow){transform:translateX(16px)}
+.row::after{content:'';position:absolute;inset:0 -16px;background:rgba(255,255,255,.03);opacity:0;transition:opacity .4s ease;z-index:-1;border-radius:6px}
+.row:hover::after{opacity:1}
+.row_num{font:400 14px var(--font-d);letter-spacing:.1em;color:var(--fg-faint)}
+.row_name{font-family:var(--font-d);font-weight:400;font-size:var(--t-row);letter-spacing:-.04em;line-height:.95;text-transform:uppercase;color:var(--fg);transition:color .35s ease}
+.row:hover .row_name{color:var(--ember)}
+.row_meta{font:400 15px/1.6 var(--font-b);color:var(--fg-dim)}
+.row_tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.row_tags span{font:700 11px var(--font-b);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);border:1px solid var(--line);padding:4px 10px;border-radius:var(--r-pill)}
+.row_links{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px}
+.row_link{font:700 11px var(--font-b);letter-spacing:.1em;text-transform:uppercase;color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(183,171,152,.35);padding-bottom:3px;transition:color .3s ease,border-color .3s ease}
+.row_link:hover{color:var(--ember);border-color:var(--ember)}
+.row_arrow{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;justify-self:end;transition:border-color .35s ease,background .35s ease,transform .35s var(--ease)}
+.row_arrow svg{width:15px;height:15px;stroke:var(--fg);fill:none;stroke-width:1.6;transition:stroke .35s ease}
+.row:hover .row_arrow{border-color:var(--ember);background:var(--ember);transform:rotate(-45deg)}
+.row:hover .row_arrow svg{stroke:#0d0d0d}
+
+/* ===== spotlight glass cards (ref: jestsee.com) ===== */
+.cards{display:grid;gap:14px}
+.card{position:relative;padding:1px;border-radius:var(--r);background-color:var(--card-edge);display:flex;flex-direction:column;text-decoration:none}
+.card::before,.card::after{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .5s;pointer-events:none}
+.card::before{background:radial-gradient(760px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(255,255,255,.07),transparent 40%);z-index:3}
+.card::after{background:radial-gradient(560px circle at var(--mouse-x,50%) var(--mouse-y,50%),var(--card-border),transparent 50%);z-index:1}
+.card:hover::before,.card:focus-within::before{opacity:1}
+.cards:hover .card::after,.cards:focus-within .card::after{opacity:1}
+.card-content{position:relative;z-index:2;flex-grow:1;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,#131313,#0d0d0d);border-radius:calc(var(--r) - 1px);height:100%}
+
+/* stats */
+.stat-grid{grid-template-columns:repeat(4,1fr)}
+.stat .card-content{padding:32px 28px}
+.stat_num{font:400 clamp(2.6rem,4.4vw,3.8rem) var(--font-d);letter-spacing:-.05em;line-height:.85;color:var(--cream);display:flex;align-items:baseline}
+.stat_label{font:700 12px var(--font-b);letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim);margin-top:14px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,88px)}
+.about-text p{margin-bottom:22px;line-height:1.9;font-weight:400;max-width:62ch}
+.about-text strong{color:var(--fg);font-weight:700;text-decoration:underline;text-decoration-color:var(--ember);text-decoration-thickness:1px;text-underline-offset:4px}
+.exp-grid{grid-template-columns:1fr 1fr}
+.exp .card-content{padding:26px}
+.exp_icon{width:40px;height:40px;border-radius:11px;background:rgba(183,171,152,.12);border:1px solid rgba(183,171,152,.24);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.exp_icon svg{width:18px;height:18px;stroke:var(--cream);fill:none;stroke-width:1.6}
+.exp_name{font:700 15px var(--font-b);color:var(--fg);margin-bottom:6px}
+.exp_desc{font:400 14px/1.6 var(--font-b);color:var(--fg-dim)}
+
+/* tech stack */
+.stack-grid{grid-template-columns:repeat(6,1fr)}
+.tech .card-content{padding:22px 14px;align-items:center;justify-content:center;text-align:center;gap:12px}
+.tech_icon{width:32px;height:32px;stroke:var(--cream);fill:none;stroke-width:1.5;transition:stroke .3s ease,transform .3s var(--ease)}
+.tech:hover .tech_icon{stroke:var(--ember);transform:translateY(-2px)}
+.tech_name{font:700 13px var(--font-b);color:var(--fg);line-height:1.3}
+.tech_kind{font:400 12px var(--font-b);color:var(--fg-faint);margin-top:3px}
+
+/* credentials */
+.cert-grid{grid-template-columns:repeat(3,1fr)}
+.cert .card-content{padding:28px}
+.cert_top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+.cert_icon{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.cert_icon svg{width:19px;height:19px;stroke:var(--cream);fill:none;stroke-width:1.6}
+.cert_seal{width:24px;height:24px;border-radius:50%;border:1px solid rgba(235,89,57,.5);display:flex;align-items:center;justify-content:center}
+.cert_seal svg{width:12px;height:12px;stroke:var(--ember);fill:none;stroke-width:2}
+.cert_name{font:700 16px var(--font-b);color:var(--fg);line-height:1.35;margin-bottom:6px}
+.cert_org{font:400 13.5px var(--font-b);color:var(--fg-dim)}
+
+/* articles */
+.blog-grid{grid-template-columns:repeat(3,1fr)}
+.blog-card .card-content{overflow:hidden}
+.bc_img{height:184px;overflow:hidden;background:var(--ink-3);position:relative;border-radius:calc(var(--r) - 1px) calc(var(--r) - 1px) 0 0}
+.bc_img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(6,6,6,.65))}
+.bc_img img{position:absolute;inset:-9% 0;width:100%;height:118%;object-fit:cover;filter:grayscale(.4);transition:filter .5s ease}
+.blog-card:hover .bc_img img{filter:grayscale(0)}
+.bc_body{padding:24px 24px 26px;display:flex;flex-direction:column;flex-grow:1}
+.bc_tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.bc_tag{font:700 11px var(--font-b);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);background:rgba(255,255,255,.03);border:1px solid var(--line);padding:4px 10px;border-radius:var(--r-pill)}
+.bc_title{font:500 18px var(--font-d);color:var(--fg);line-height:1.3;margin-bottom:10px;letter-spacing:-.02em}
+.bc_excerpt{font:400 14.5px/1.65 var(--font-b);color:var(--fg-body)}
+.bc_meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}
+.bc_arrow{font:700 11px var(--font-b);letter-spacing:.14em;text-transform:uppercase;color:var(--ember);display:inline-flex;align-items:center;gap:6px;transition:gap .3s}
+.blog-card:hover .bc_arrow{gap:10px}
+.bc_read{font:400 12.5px var(--font-b);color:var(--fg-dim)}
+.blog-empty{text-align:center;color:var(--fg-dim);padding:60px 0;grid-column:1/-1}
+
+/* motto */
+.motto{padding:var(--sp) 0;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.motto .display{max-width:20ch;margin:0 auto;letter-spacing:-.03em}
+
+/* contact */
+.contact{padding:var(--sp) 0}
+.contact_info{display:block;text-decoration:none;border-top:1px solid var(--line);padding:clamp(22px,2.4vw,34px) 0;transition:color .35s ease}
+.contact_info:last-of-type{border-bottom:1px solid var(--line)}
+.contact_info:hover{color:var(--ember)}
+.contact_key{transition:transform .5s var(--ease)}
+.contact_info:hover .contact_key{transform:translateX(16px)}
+.contact_row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+.contact_key{font-family:var(--font-d);font-weight:400;font-size:var(--t-row);letter-spacing:-.04em;text-transform:uppercase;line-height:1}
+.contact_val{font:700 12px var(--font-b);letter-spacing:.16em;text-transform:uppercase;color:var(--fg-dim)}
+
+/* footer */
+.footer{padding:44px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  font:400 13px var(--font-b);letter-spacing:.01em;color:var(--fg-dim)}
+.footer_links a,.footer_sound{font:700 11px var(--font-b);letter-spacing:.16em;text-transform:uppercase}
+.footer a,.footer button{text-decoration:none;transition:color .3s}
+.footer a:hover,.footer button:hover{color:var(--cream)}
+.footer_links{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.footer_sound{display:inline-flex;align-items:center;gap:9px;font:inherit;letter-spacing:.16em;text-transform:uppercase}
+.sound_bars{display:flex;align-items:flex-end;gap:2px;height:12px}
+.sound_bars i{width:2px;background:var(--ember);height:4px;display:block}
+.footer_sound.on .sound_bars i{animation:eq .9s ease-in-out infinite}
+.footer_sound.on .sound_bars i:nth-child(2){animation-delay:.15s}
+.footer_sound.on .sound_bars i:nth-child(3){animation-delay:.3s}
+@keyframes eq{0%,100%{height:4px}50%{height:12px}}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .mask > *{transform:none !important}
+  .rv{opacity:1 !important;transform:none !important}
+  [data-parallax]{transform:none !important}
+}
+
+@media (max-width:1180px){ .stack-grid{grid-template-columns:repeat(4,1fr)} }
+@media (max-width:1080px){
+  .about-grid{grid-template-columns:1fr}
+  .sec_title{max-width:none}
+  .blog-grid,.cert-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:56px 1fr 46px}
+  .row_meta{grid-column:2/-1}
+  .hero_ring{opacity:.5}
+}
+@media (max-width:760px){
+  .header_menu{display:none;position:fixed;inset:0;background:rgba(8,8,8,.98);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:26px;z-index:999}
+  .header_menu.open{display:flex}
+  .header_menu.open .header_menu_item{font-size:16px}
+  .hamburger{display:block}
+  .exp-grid,.blog-grid,.cert-grid{grid-template-columns:1fr}
+  .stack-grid{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:1fr 42px;gap:16px}
+  .row_num{display:none}
+  .hero_ring{display:none}
+  .footer{flex-direction:column;text-align:center}
+}
+</style>
 </head>
 <body>
 
-<div class="loader" id="loader">
-  <div class="loader-name">SRIVATHSAN</div>
-  <div class="loader-bar"><div class="loader-fill"></div></div>
-</div>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-dot" id="cursorDot"></div>
-<canvas id="particles"></canvas>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="progress"></div>
+<div id="grain"></div>
+<div class="vj-cursor js-vj-cursor" id="cursor" aria-hidden="true"><div class="vj-cursor_inner"><span id="cursorLabel"></span></div></div>
 
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <div class="nav-mark">SV</div>
-      <span class="nav-brand">Srivathsan</span>
+<div class="loader" id="loader">
+  <div class="loader-mark">S &middot; V</div>
+  <div class="loader-count"><span id="loaderCount">0</span></div>
+  <div class="loader-bar" id="loaderBar"></div>
+</div>
+
+<header class="header js-header" id="header">
+  <div class="header-inner">
+    <a href="#" class="header_logo js-cursor-contract">
+      <span class="logo-avatar"><img src="assets/img/profile.jpeg" alt="" loading="lazy"></span>
+      <span class="logo-name">Srivathsan</span>
     </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" onclick="closeNav()">About</a></li>
-      <li><a href="#blog" onclick="closeNav()">Articles</a></li>
-      <li><a href="#certs" onclick="closeNav()">Credentials</a></li>
-      <li><a href="#projects" onclick="closeNav()">Projects</a></li>
-      <li><a href="Srivathsan_Vivekanandhan_Resume.pdf" target="_blank">Resume</a></li>
-      <li><a href="#contact" onclick="closeNav()">Connect</a></li>
+    <ul class="header_menu" id="headerMenu">
+      <li><a href="#about" class="header_menu_item js-cursor-contract" data-nav="about" onclick="closeNav()">About</a></li>
+      <li><a href="#work" class="header_menu_item js-cursor-contract" data-nav="work" onclick="closeNav()">Work</a></li>
+      <li><a href="#stack" class="header_menu_item js-cursor-contract" data-nav="stack" onclick="closeNav()">Stack</a></li>
+      <li><a href="#blog" class="header_menu_item js-cursor-contract" data-nav="blog" onclick="closeNav()">Articles</a></li>
+      <li><a href="#contact" class="header_menu_item menu-cta js-cursor-contract" data-nav="contact" onclick="closeNav()">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-</nav>
+</header>
+
+<main id="main">
 
 <section class="hero" id="hero">
+  <div class="hero_bg" aria-hidden="true">
+    <span class="hero_ring ring-a" data-parallax="0.10"></span>
+    <span class="hero_ring ring-b" data-parallax="0.22"></span>
+  </div>
   <div class="container">
-    <div class="hero-grid">
-      <div>
-        <p class="hero-label">// Enterprise AI Security Architect</p>
-        <p class="hero-name">Srivathsan Vivekanandhan</p>
-        <h1>Securing the<br>Future of<br><em>AI at Scale</em></h1>
-        <p class="hero-desc">Senior Cloud Security Architect and AI Adoption Specialist with 10+ years leading enterprise M365, Azure, and AWS environments. I build MCP servers, deploy data security governance, and safely roll out AI across global organizations.</p>
-        <div class="hero-chips">
-          <span class="chip">M365 & SharePoint</span><span class="chip">Azure & AWS Security</span>
-          <span class="chip">MCP Architecture</span><span class="chip">AI Security & Adoption</span>
-          <span class="chip">Purview / DLP / DSPM</span><span class="chip">Email Security & SSL</span>
-        </div>
-        <div class="hero-btns">
-          <a href="https://www.linkedin.com/in/srivathsanvivekanandhan/" target="_blank" class="btn btn-pri">Connect on LinkedIn</a>
-          <a href="#blog" class="btn btn-sec">Read Articles</a>
-        </div>
+    <div class="hero_content js-cursor-extend" data-cursor="scroll">
+      <div class="hero_top" data-parallax="0.04">
+        <div class="mask md1"><p class="label">Enterprise AI Security Architect</p></div>
+        <div class="mask md2"><p class="hero_desc desc">Senior Cloud Security Architect and AI Adoption Specialist — 10+ years across Microsoft 365, Azure and AWS.</p></div>
       </div>
-      <div class="hero-photo">
-        <div class="photo-wrap">
-          <div class="glow-orb glow-a"></div>
-          <div class="glow-orb glow-b"></div>
-          <div class="photo-frame"><img src="assets/img/profile.jpeg" alt="Srivathsan Vivekanandhan"></div>
-        </div>
+      <h1 class="display">
+        <span class="mask md2"><span>Securing</span></span>
+        <span class="mask md3"><span class="thin">the future of</span></span>
+        <span class="mask md4"><span><em>AI at scale</em></span></span>
+      </h1>
+      <div class="hero_foot">
+        <div class="mask md5"><div class="hero_btns">
+          <a href="#contact" class="btn btn-pri js-cursor-contract">Let's talk
+            <svg class="arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="Srivathsan_Vivekanandhan_Resume.pdf" target="_blank" rel="noopener" class="btn btn-sec js-cursor-contract">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Resume
+          </a>
+        </div></div>
+        <span class="hero_photo" data-parallax="0.07"><img src="assets/img/profile.jpeg" alt="Portrait of Srivathsan Vivekanandhan"></span>
       </div>
     </div>
   </div>
@@ -252,19 +383,7 @@
 <div class="marquee">
   <div class="marquee-track">
     <span class="marq-item"><span class="marq-dot"></span>Microsoft 365</span>
-    <span class="marq-item"><span class="marq-dot"></span>SharePoint & Exchange</span>
-    <span class="marq-item"><span class="marq-dot"></span>Azure Architecture</span>
-    <span class="marq-item"><span class="marq-dot"></span>AWS Cloud</span>
-    <span class="marq-item"><span class="marq-dot"></span>Zero Trust</span>
-    <span class="marq-item"><span class="marq-dot"></span>MCP Servers</span>
-    <span class="marq-item"><span class="marq-dot"></span>AI Security</span>
-    <span class="marq-item"><span class="marq-dot"></span>Copilot Governance</span>
-    <span class="marq-item"><span class="marq-dot"></span>Purview DLP</span>
-    <span class="marq-item"><span class="marq-dot"></span>Email Gateway</span>
-    <span class="marq-item"><span class="marq-dot"></span>SSL Management</span>
-    <span class="marq-item"><span class="marq-dot"></span>Enterprise PM</span>
-    <span class="marq-item"><span class="marq-dot"></span>Microsoft 365</span>
-    <span class="marq-item"><span class="marq-dot"></span>SharePoint & Exchange</span>
+    <span class="marq-item"><span class="marq-dot"></span>SharePoint &amp; Exchange</span>
     <span class="marq-item"><span class="marq-dot"></span>Azure Architecture</span>
     <span class="marq-item"><span class="marq-dot"></span>AWS Cloud</span>
     <span class="marq-item"><span class="marq-dot"></span>Zero Trust</span>
@@ -278,106 +397,568 @@
   </div>
 </div>
 
-<section class="about" id="about">
+<section class="sec" id="stats">
   <div class="container">
-    <div class="rv"><p class="s-label">// About</p><h2 class="s-title">Architecture That<br>Scales Securely</h2><p class="s-sub">A decade of building, securing, and governing enterprise cloud infrastructure across global operations.</p></div>
+    <div class="cards stat-grid" data-parallax="0.03">
+      <div class="card stat rv"><div class="card-content"><div class="stat_num"><span data-count="10">0</span><span>+</span></div><div class="stat_label">Years experience</div></div></div>
+      <div class="card stat rv rv-d1"><div class="card-content"><div class="stat_num"><span data-count="6">0</span></div><div class="stat_label">Certifications</div></div></div>
+      <div class="card stat rv rv-d2"><div class="card-content"><div class="stat_num"><span data-count="3">0</span></div><div class="stat_label">Cloud platforms</div></div></div>
+      <div class="card stat rv rv-d3"><div class="card-content"><div class="stat_num"><span data-count="4">0</span></div><div class="stat_label">Systems in production</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="container">
+    <div class="sec_head js-cursor-extend" data-parallax="0.05" data-cursor="about">
+      <div class="sec_label"><span class="label">About</span></div>
+      <div class="mask"><h2 class="sec_title">Architecture that <em>scales securely</em></h2></div>
+      <div class="mask md1"><p class="sec_sub">A decade of building, securing, and governing enterprise cloud infrastructure across global operations.</p></div>
+    </div>
     <div class="about-grid">
-      <div class="about-text rv rv-d1">
-        <p>I architect and secure <strong>Microsoft 365, Azure, and AWS environments</strong> across multiple global tenants. My expertise spans <strong>SharePoint, Exchange, Entra ID, Conditional Access, and Zero Trust</strong> frameworks that protect organizations without slowing them down.</p>
-        <p>As an <strong>AI Security and Adoption Specialist</strong>, I safely roll out tools like Microsoft Copilot, Claude, Perplexity, ChatGPT, and custom MCP servers — ensuring every AI deployment has proper data governance through <strong>Microsoft Purview DLP, sensitivity labels, DSPM, and Adaptive Protection</strong>.</p>
-        <p>I specialize in <strong>email security architecture</strong> — gateway policies, threat detection, SSL certificate lifecycle management — and lead enterprise-scale projects including multi-tenant, multi-country migrations, <strong>RFP analysis</strong>, and vendor evaluations. I hold a Master's from Colorado State University and guest lecture on AI security topics.</p>
+      <div class="about-text rv">
+        <p>I architect and secure <strong>Microsoft 365, Azure, and AWS environments</strong> across multiple global tenants. My expertise spans <strong>SharePoint, Exchange, Entra ID, Conditional Access</strong>, and Zero Trust frameworks that protect organizations without slowing them down.</p>
+        <p>As an <strong>AI Security and Adoption Specialist</strong>, I safely roll out tools like Microsoft Copilot, Claude, Perplexity, ChatGPT, and custom MCP servers — ensuring every AI deployment has proper data governance through <strong>Purview DLP, sensitivity labels, DSPM</strong>, and Adaptive Protection.</p>
+        <p>I specialize in <strong>email security architecture</strong> — gateway policies, threat detection, SSL certificate lifecycle — and lead enterprise-scale projects including multi-tenant, multi-country migrations, RFP analysis, and vendor evaluations. I hold a Master's from Colorado State University and guest lecture on AI security topics.</p>
       </div>
-      <div class="exp-grid rv rv-d2">
-        <div class="exp-card"><div class="exp-icon">🏗</div><div class="exp-name">M365 & Cloud Architecture</div><div class="exp-desc">SharePoint, Exchange, Teams, Azure, AWS, multi-tenant governance</div></div>
-        <div class="exp-card"><div class="exp-icon">🛡</div><div class="exp-name">Data Security & Governance</div><div class="exp-desc">Purview DLP, DSPM, sensitivity labels, retention, eDiscovery</div></div>
-        <div class="exp-card"><div class="exp-icon">🤖</div><div class="exp-name">AI Security & Adoption</div><div class="exp-desc">Copilot, Claude, ChatGPT, Perplexity — secure enterprise rollout</div></div>
-        <div class="exp-card"><div class="exp-icon">⚡</div><div class="exp-name">MCP Architecture</div><div class="exp-desc">Custom MCP servers on Azure for agentic AI integrations</div></div>
-        <div class="exp-card"><div class="exp-icon">📧</div><div class="exp-name">Email Security & SSL</div><div class="exp-desc">Gateway policies, threat detection, certificate lifecycle</div></div>
-        <div class="exp-card"><div class="exp-icon">📋</div><div class="exp-name">Enterprise Projects & RFP</div><div class="exp-desc">Multi-tenant migrations, vendor evaluation, cost optimization</div></div>
+      <div class="cards exp-grid rv rv-d1">
+        <div class="card exp"><div class="card-content">
+          <div class="exp_icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <div class="exp_name">M365 &amp; Cloud Architecture</div>
+          <div class="exp_desc">SharePoint, Exchange, Teams, Azure, AWS, multi-tenant governance</div>
+        </div></div>
+        <div class="card exp"><div class="card-content">
+          <div class="exp_icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="exp_name">Data Security &amp; Governance</div>
+          <div class="exp_desc">Purview DLP, DSPM, sensitivity labels, retention, eDiscovery</div>
+        </div></div>
+        <div class="card exp"><div class="card-content">
+          <div class="exp_icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/><line x1="20" y1="15" x2="23" y2="15"/></svg></div>
+          <div class="exp_name">AI Security &amp; Adoption</div>
+          <div class="exp_desc">Copilot, Claude, ChatGPT, Perplexity — secure enterprise rollout</div>
+        </div></div>
+        <div class="card exp"><div class="card-content">
+          <div class="exp_icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div class="exp_name">MCP Architecture</div>
+          <div class="exp_desc">Custom MCP servers on Azure for agentic AI integrations</div>
+        </div></div>
+        <div class="card exp"><div class="card-content">
+          <div class="exp_icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 7 12 14 2 7"/></svg></div>
+          <div class="exp_name">Email Security &amp; SSL</div>
+          <div class="exp_desc">Gateway policies, threat detection, certificate lifecycle</div>
+        </div></div>
+        <div class="card exp"><div class="card-content">
+          <div class="exp_icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg></div>
+          <div class="exp_name">Enterprise Projects &amp; RFP</div>
+          <div class="exp_desc">Multi-tenant migrations, vendor evaluation, cost optimization</div>
+        </div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="blog" id="blog">
+<section class="sec work" id="work">
   <div class="container">
-    <div class="rv">
-      <p class="s-label">// Articles</p>
-      <h2 class="s-title">Field Notes from<br>Production</h2>
-      <p class="s-sub">Step-by-step guides from real enterprise deployments. No theory — only what works.</p>
+    <div class="sec_head js-cursor-extend" data-parallax="0.05" data-cursor="work">
+      <div class="sec_label"><span class="label">Selected work</span></div>
+      <div class="mask"><h2 class="sec_title">Systems running <em>in production</em></h2></div>
     </div>
-    <div class="blog-grid" id="blogGrid">
-      <p class="blog-empty" id="blogLoad">Loading articles...</p>
+    <div class="rows">
+      <div class="row rv">
+        <span class="row_num">01</span>
+        <div><h3 class="row_name">Helpdesk MCP Server</h3></div>
+        <div class="row_meta">Production MCP server for license management, provisioning, and service desk operations across multiple AI clients.
+          <div class="row_tags"><span>TypeScript</span><span>Azure</span><span>Graph API</span><span>MCP SDK</span></div>
+        </div>
+        <span class="row_arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+      <div class="row rv rv-d1">
+        <span class="row_num">02</span>
+        <div><h3 class="row_name">Zero-Touch Offboarding</h3></div>
+        <div class="row_meta">Automated employee offboarding via MCP tools and Logic Apps — mailbox conversion, license removal, data archival.
+          <div class="row_tags"><span>MCP</span><span>Logic Apps</span><span>Hybrid Worker</span><span>Azure Arc</span></div>
+        </div>
+        <span class="row_arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+      <div class="row rv rv-d2">
+        <span class="row_num">03</span>
+        <div><h3 class="row_name">AI Content Pipeline</h3></div>
+        <div class="row_meta">Automated blog and LinkedIn publishing with weekly content surfacing and one-click approval workflows.
+          <div class="row_tags"><span>Next.js</span><span>Vercel</span><span>LinkedIn API</span><span>Cron</span></div>
+        </div>
+        <span class="row_arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+      <div class="row rv rv-d3">
+        <span class="row_num">04</span>
+        <div><h3 class="row_name">M365 News Pipeline</h3></div>
+        <div class="row_meta">Converts Message Center announcements into branded SharePoint news with visual templates and Copilot Studio approval.
+          <div class="row_tags"><span>Power Automate</span><span>SharePoint</span><span>Copilot Studio</span></div>
+        </div>
+        <span class="row_arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+      <div class="row rv rv-d4">
+        <span class="row_num">05</span>
+        <div><h3 class="row_name">Engineering Decision Log</h3></div>
+        <div class="row_meta">A published ADR log — twelve platform and security decisions in MADR format, including the options rejected, one call later reversed on new evidence, and one still open.
+          <div class="row_tags"><span>ADR</span><span>MADR</span><span>Static Site</span><span>Node</span></div>
+          <div class="row_links">
+            <a href="https://srivathsan007.github.io/adr-log/" class="row_link js-cursor-contract" rel="noopener">Read the log</a>
+            <a href="https://github.com/srivathsan007/adr-log" class="row_link js-cursor-contract" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <span class="row_arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="certs" id="certs">
+<section class="sec stack" id="stack">
   <div class="container">
-    <div class="rv"><p class="s-label">// Credentials</p><h2 class="s-title">Certified &<br>Battle-Tested</h2><p class="s-sub">Industry-recognized certifications across security, cloud, and project management.</p></div>
-    <div class="cert-grid">
-      <div class="cert-card rv rv-d1"><div class="cert-icon">🔐</div><div class="cert-name">CISSP</div><div class="cert-org">ISC2 — Certified Information Systems Security Professional</div></div>
-      <div class="cert-card rv rv-d2"><div class="cert-icon">🏰</div><div class="cert-name">Cybersecurity Architect Expert</div><div class="cert-org">Microsoft — SC-100</div></div>
-      <div class="cert-card rv rv-d3"><div class="cert-icon">🔑</div><div class="cert-name">Identity & Access Administrator</div><div class="cert-org">Microsoft — SC-300</div></div>
-      <div class="cert-card rv rv-d4"><div class="cert-icon">☁️</div><div class="cert-name">Azure Architect Technologies</div><div class="cert-org">Microsoft — AZ-303</div></div>
-      <div class="cert-card rv rv-d5"><div class="cert-icon">🌐</div><div class="cert-name">AWS Developer Associate</div><div class="cert-org">Amazon Web Services</div></div>
-      <div class="cert-card rv rv-d6"><div class="cert-icon">📊</div><div class="cert-name">CAPM</div><div class="cert-org">PMI — Certified Associate in Project Management</div></div>
+    <div class="sec_head js-cursor-extend" data-parallax="0.05" data-cursor="stack">
+      <div class="sec_label"><span class="label">Tech stack</span></div>
+      <div class="mask"><h2 class="sec_title">Platforms I <em>build and secure with</em></h2></div>
+    </div>
+    <div class="cards stack-grid rv">
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.2 9.2 4.6 4.6 0 0 0 6.5 19z"/></svg>
+        <div><div class="tech_name">Microsoft 365</div><div class="tech_kind">Platform</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><polygon points="12 2 2 8 12 14 22 8 12 2"/><polyline points="2 16 12 22 22 16"/></svg>
+        <div><div class="tech_name">Azure</div><div class="tech_kind">Cloud</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><line x1="6" y1="7" x2="6.01" y2="7"/><line x1="6" y1="17" x2="6.01" y2="17"/></svg>
+        <div><div class="tech_name">AWS</div><div class="tech_kind">Cloud</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="17" y1="12" x2="17" y2="16"/><line x1="21" y1="12" x2="21" y2="15"/></svg>
+        <div><div class="tech_name">Entra ID</div><div class="tech_kind">Identity</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <div><div class="tech_name">Purview</div><div class="tech_kind">Data security</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="7 10 10 13 7 16"/><line x1="13" y1="16" x2="17" y2="16"/></svg>
+        <div><div class="tech_name">MCP servers</div><div class="tech_kind">Agentic AI</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><polyline points="8 7 3 12 8 17"/><polyline points="16 7 21 12 16 17"/></svg>
+        <div><div class="tech_name">TypeScript</div><div class="tech_kind">Language</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="6 9 9 12 6 15"/><line x1="12" y1="15" x2="18" y2="15"/></svg>
+        <div><div class="tech_name">PowerShell</div><div class="tech_kind">Automation</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div><div class="tech_name">Power Automate</div><div class="tech_kind">Workflow</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <div><div class="tech_name">SharePoint</div><div class="tech_kind">Collaboration</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 7 12 14 2 7"/></svg>
+        <div><div class="tech_name">Exchange</div><div class="tech_kind">Email security</div></div>
+      </div></div>
+      <div class="card tech"><div class="card-content">
+        <svg class="tech_icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div><div class="tech_name">Zero Trust</div><div class="tech_kind">Framework</div></div>
+      </div></div>
     </div>
   </div>
 </section>
 
-<section class="projects" id="projects">
+<section class="sec certs" id="certs">
   <div class="container">
-    <div class="rv"><p class="s-label">// Projects</p><h2 class="s-title">What I'm Building</h2><p class="s-sub">Production systems solving real enterprise problems with AI and automation.</p></div>
-    <div class="proj-grid">
-      <div class="proj-card rv rv-d1"><div class="proj-num">01</div><div class="proj-name">Helpdesk MCP Server</div><div class="proj-desc">Production MCP server for license management, provisioning, and service desk operations across multiple AI clients.</div><div class="proj-tags"><span>TypeScript</span><span>Azure</span><span>Graph API</span><span>MCP SDK</span></div></div>
-      <div class="proj-card rv rv-d2"><div class="proj-num">02</div><div class="proj-name">Zero-Touch Offboarding</div><div class="proj-desc">Automated employee offboarding via MCP tools and Logic Apps — mailbox conversion, license removal, data archival.</div><div class="proj-tags"><span>MCP</span><span>Logic Apps</span><span>Hybrid Worker</span><span>Azure Arc</span></div></div>
-      <div class="proj-card rv rv-d3"><div class="proj-num">03</div><div class="proj-name">AI Content Pipeline</div><div class="proj-desc">Automated blog and LinkedIn publishing with weekly content surfacing and one-click approval workflows.</div><div class="proj-tags"><span>Next.js</span><span>Vercel</span><span>LinkedIn API</span><span>Cron</span></div></div>
-      <div class="proj-card rv rv-d4"><div class="proj-num">04</div><div class="proj-name">M365 News Pipeline</div><div class="proj-desc">Converts Message Center announcements into branded SharePoint news with visual templates and Copilot Studio approval.</div><div class="proj-tags"><span>Power Automate</span><span>SharePoint</span><span>Copilot Studio</span></div></div>
+    <div class="sec_head js-cursor-extend" data-parallax="0.05" data-cursor="certs">
+      <div class="sec_label"><span class="label">Credentials</span></div>
+      <div class="mask"><h2 class="sec_title">Certified &amp; <em>battle-tested</em></h2></div>
     </div>
+    <div class="cards cert-grid">
+      <div class="card cert rv"><div class="card-content">
+        <div class="cert_top"><span class="cert_icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span class="cert_seal"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+        <div class="cert_name">CISSP</div><div class="cert_org">ISC2 — Certified Information Systems Security Professional</div>
+      </div></div>
+      <div class="card cert rv rv-d1"><div class="card-content">
+        <div class="cert_top"><span class="cert_icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span><span class="cert_seal"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+        <div class="cert_name">Cybersecurity Architect Expert</div><div class="cert_org">Microsoft — SC-100</div>
+      </div></div>
+      <div class="card cert rv rv-d2"><div class="card-content">
+        <div class="cert_top"><span class="cert_icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><line x1="12" y1="12" x2="21" y2="12"/><line x1="17" y1="12" x2="17" y2="16"/><line x1="21" y1="12" x2="21" y2="15"/></svg></span><span class="cert_seal"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+        <div class="cert_name">Identity &amp; Access Administrator</div><div class="cert_org">Microsoft — SC-300</div>
+      </div></div>
+      <div class="card cert rv rv-d3"><div class="card-content">
+        <div class="cert_top"><span class="cert_icon"><svg viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.2 9.2 4.6 4.6 0 0 0 6.5 19z"/></svg></span><span class="cert_seal"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+        <div class="cert_name">Azure Architect Technologies</div><div class="cert_org">Microsoft — AZ-303</div>
+      </div></div>
+      <div class="card cert rv rv-d4"><div class="card-content">
+        <div class="cert_top"><span class="cert_icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><line x1="6" y1="7" x2="6.01" y2="7"/><line x1="6" y1="17" x2="6.01" y2="17"/></svg></span><span class="cert_seal"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+        <div class="cert_name">AWS Developer Associate</div><div class="cert_org">Amazon Web Services</div>
+      </div></div>
+      <div class="card cert rv rv-d5"><div class="card-content">
+        <div class="cert_top"><span class="cert_icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span><span class="cert_seal"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></div>
+        <div class="cert_name">CAPM</div><div class="cert_org">PMI — Certified Associate in Project Management</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec blog" id="blog">
+  <div class="container">
+    <div class="sec_head js-cursor-extend" data-parallax="0.05" data-cursor="read">
+      <div class="sec_label"><span class="label">Articles</span></div>
+      <div class="mask"><h2 class="sec_title">Field notes from <em>production</em></h2></div>
+    </div>
+    <div class="cards blog-grid" id="blogGrid">
+      <p class="blog-empty" id="blogLoad">Loading articles…</p>
+    </div>
+  </div>
+</section>
+
+<section class="motto">
+  <div class="container" data-parallax="0.09">
+    <div class="mask"><p class="display">Security that <span class="thin">moves as fast as</span> <em>the business</em></p></div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="container rv">
-    <p class="s-label">// Connect</p>
-    <h2 class="ct-title">Let's Build<br>Something Secure</h2>
-    <p class="ct-desc">Interested in AI security, MCP architecture, or enterprise governance? Always open to connecting.</p>
-    <div class="ct-btns">
-      <a href="https://www.linkedin.com/in/srivathsanvivekanandhan/" target="_blank" class="btn btn-pri">Connect on LinkedIn</a>
-      <a href="mailto:srivathsanv7@gmail.com" class="btn btn-sec">Send Email</a>
-      <a href="Srivathsan_Vivekanandhan_Resume.pdf" target="_blank" class="btn btn-sec">Download Resume</a>
+  <div class="container">
+    <div class="sec_head js-cursor-extend" data-parallax="0.05" data-cursor="say hi">
+      <div class="sec_label"><span class="label">Contact</span></div>
+      <div class="mask"><h2 class="sec_title">Let's build <em>something secure</em></h2></div>
+    </div>
+    <div class="rv">
+      <a href="https://www.linkedin.com/in/srivathsanvivekanandhan/" target="_blank" rel="noopener" class="contact_info js-cursor-contract">
+        <span class="contact_row"><span class="contact_key">LinkedIn</span><span class="contact_val">Connect &rarr;</span></span>
+      </a>
+      <a href="mailto:srivathsanv7@gmail.com" class="contact_info js-cursor-contract">
+        <span class="contact_row"><span class="contact_key">Email</span><span class="contact_val">srivathsanv7@gmail.com</span></span>
+      </a>
+      <a href="https://github.com/srivathsan007" target="_blank" rel="noopener" class="contact_info js-cursor-contract">
+        <span class="contact_row"><span class="contact_key">GitHub</span><span class="contact_val">srivathsan007 &rarr;</span></span>
+      </a>
+      <a href="Srivathsan_Vivekanandhan_Resume.pdf" target="_blank" rel="noopener" class="contact_info js-cursor-contract">
+        <span class="contact_row"><span class="contact_key">Resume</span><span class="contact_val">Download PDF &rarr;</span></span>
+      </a>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
-  <span>© 2026 Srivathsan Vivekanandhan</span>
-  <span id="site-views" style="font:400 11px 'Fira Code',monospace;color:#5e6374;"></span>
-  <span><a href="https://www.linkedin.com/in/srivathsanvivekanandhan/" target="_blank">LinkedIn</a> · <a href="https://github.com/srivathsan007" target="_blank">GitHub</a></span>
+  <div class="container">
+    <div class="footer">
+      <span>&copy; 2026 Srivathsan Vivekanandhan</span>
+      <span id="site-views"></span>
+      <span class="footer_links">
+        <button class="footer_sound js-cursor-contract" id="soundBtn" aria-pressed="false">
+          <span class="sound_bars" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span id="soundLabel">Sound off</span>
+        </button>
+        <a href="https://www.linkedin.com/in/srivathsanvivekanandhan/" target="_blank" rel="noopener" class="js-cursor-contract">LinkedIn</a>
+        <a href="https://github.com/srivathsan007" target="_blank" rel="noopener" class="js-cursor-contract">GitHub</a>
+      </span>
+    </div>
+  </div>
 </footer>
 
 <script>
-window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('done'), 1500));
-const c = document.getElementById('particles'), x = c.getContext('2d'); let pts = [];
-function resize() { c.width = innerWidth; c.height = innerHeight; } resize(); addEventListener('resize', resize);
-class P { constructor() { this.x=Math.random()*c.width; this.y=Math.random()*c.height; this.r=Math.random()*1.8+0.4; this.sx=(Math.random()-.5)*.25; this.sy=(Math.random()-.5)*.25; this.o=Math.random()*.35+.08; } update() { this.x+=this.sx; this.y+=this.sy; if(this.x<0||this.x>c.width)this.sx*=-1; if(this.y<0||this.y>c.height)this.sy*=-1; } draw() { x.beginPath(); x.arc(this.x,this.y,this.r,0,Math.PI*2); x.fillStyle=`rgba(0,224,255,${this.o})`; x.fill(); } }
-for(let i=0;i<90;i++)pts.push(new P);
-function anim() { x.clearRect(0,0,c.width,c.height); pts.forEach(p=>{p.update();p.draw();}); for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<130){x.beginPath();x.moveTo(pts[i].x,pts[i].y);x.lineTo(pts[j].x,pts[j].y);x.strokeStyle=`rgba(0,224,255,${.04*(1-d/130)})`;x.stroke();}} requestAnimationFrame(anim);} anim();
-const cur=document.getElementById('cursor'),dot=document.getElementById('cursorDot'); let mx=0,my=0,cx2=0,cy2=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx-2+'px';dot.style.top=my-2+'px';});
-function ac(){cx2+=(mx-cx2)*.1;cy2+=(my-cy2)*.1;cur.style.left=cx2-12+'px';cur.style.top=cy2-12+'px';requestAnimationFrame(ac);}ac();
-document.querySelectorAll('a,button,.chip,.exp-card,.cert-card,.proj-card,.blog-card').forEach(el=>{el.addEventListener('mouseenter',()=>cur.style.transform='scale(1.8)');el.addEventListener('mouseleave',()=>cur.style.transform='scale(1)');});
-if('ontouchstart' in window){cur.style.display='none';dot.style.display='none';}
-addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
-function toggleNav(){document.getElementById('navLinks').classList.toggle('open');document.getElementById('hamburger').classList.toggle('active');}
-function closeNav(){document.getElementById('navLinks').classList.remove('open');document.getElementById('hamburger').classList.remove('active');}
-const obs=new IntersectionObserver(e=>e.forEach(n=>{if(n.isIntersecting)n.target.classList.add('vis');}),{threshold:.06,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pointerFine = matchMedia('(pointer: fine)').matches;
+document.documentElement.classList.remove('no-js');
 
+
+/* ===== reveal observers ===== */
+const revealObs = new IntersectionObserver(entries => entries.forEach(n => {
+  if (n.isIntersecting) { n.target.classList.add('vis'); revealObs.unobserve(n.target); }
+}), { threshold: .12, rootMargin: '0px 0px -60px 0px' });
+function revealInView(){
+  document.querySelectorAll('.mask, .rv').forEach(el => revealObs.observe(el));
+  /* failsafe: content must never stay stranded at opacity 0 if an observer never fires */
+  setTimeout(() => document.querySelectorAll('.mask, .rv').forEach(el => {
+    if (el.getBoundingClientRect().top < innerHeight) el.classList.add('vis');
+  }), 2500);
+}
+/* reveal above-the-fold content immediately, without waiting on the loader */
+document.addEventListener('DOMContentLoaded', revealInView);
+
+/* ===== loader: counting number → reveal (ref: minhpham page transition) ===== */
+window.addEventListener('load', () => {
+  const countEl = document.getElementById('loaderCount');
+  const barEl = document.getElementById('loaderBar');
+  const start = performance.now(), dur = reduceMotion ? 0 : 1100;
+  const tick = now => {
+    const p = dur ? Math.min((now - start) / dur, 1) : 1;
+    const eased = 1 - Math.pow(1 - p, 3);
+    countEl.textContent = Math.round(eased * 100);
+    barEl.style.transform = `scaleX(${eased})`;
+    if (p < 1) { requestAnimationFrame(tick); return; }
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('done');
+      revealInView();
+    }, 180);
+  };
+  requestAnimationFrame(tick);
+});
+
+/* ===== scroll engine + parallax =====================================
+   Lenis-model smooth scroll. One rAF loop owns the scroll position AND every
+   scroll-driven transform, so parallax can never lag a frame behind the page.
+   Note: CSS scroll-behavior must be `auto` — with `smooth`, every scrollTo()
+   below would spawn its own native animation and fight this loop.          */
+const headerEl = document.getElementById('header');
+const progressEl = document.getElementById('progress');
+const marqueeTrack = document.querySelector('.marquee-track');
+
+const SMOOTH = pointerFine && !reduceMotion;
+const maxScrollY = () => Math.max(0, document.documentElement.scrollHeight - innerHeight);
+const clampY = v => Math.max(0, Math.min(maxScrollY(), v));
+
+let target = scrollY, current = scrollY, velocity = 0, lastT = performance.now(), rafId = null;
+
+/* wheel deltas arrive as pixels, lines or pages depending on device/browser */
+function normalizeDelta(e){
+  if (e.deltaMode === 1) return e.deltaY * 16;
+  if (e.deltaMode === 2) return e.deltaY * innerHeight;
+  return e.deltaY;
+}
+
+/* --- parallax registry: any [data-parallax="<speed>"] element --- */
+const pxItems = [];
+function collectParallax(){
+  pxItems.length = 0;
+  document.querySelectorAll('[data-parallax]').forEach(el => {
+    const speed = parseFloat(el.dataset.parallax);
+    if (speed) pxItems.push({ el, speed, top: 0, h: 0, on: false });
+  });
+  measureParallax();
+}
+function measureParallax(){
+  if (!pxItems.length) return;
+  for (const p of pxItems) p.el.style.transform = '';   /* write pass */
+  const y = scrollY;
+  for (const p of pxItems) {                            /* then read pass */
+    const r = p.el.getBoundingClientRect();
+    p.top = r.top + y; p.h = r.height;
+  }
+}
+function applyParallax(y){
+  if (reduceMotion) return;
+  const vh = innerHeight, mid = y + vh / 2;
+  for (const p of pxItems) {
+    const rel = p.top - y;
+    if (rel > vh + 240 || rel + p.h < -240) {           /* cull offscreen */
+      if (p.on) { p.el.style.transform = ''; p.el.style.willChange = ''; p.on = false; }
+      continue;
+    }
+    if (!p.on) { p.el.style.willChange = 'transform'; p.on = true; }
+    const offset = (p.top + p.h / 2 - mid) * p.speed;
+    p.el.style.transform = `translate3d(0,${offset.toFixed(2)}px,0)`;
+  }
+}
+
+function render(y){
+  headerEl.classList.toggle('scrolled', y > 60);
+  const h = maxScrollY();
+  progressEl.style.transform = `scaleX(${h > 0 ? (y / h).toFixed(4) : 0})`;
+  applyParallax(y);
+  if (marqueeTrack && !reduceMotion) {                  /* velocity skew */
+    const v = Math.max(-2400, Math.min(2400, velocity));
+    marqueeTrack.style.setProperty('--vskew', (v * 0.0022).toFixed(2) + 'deg');
+  }
+}
+
+function frame(now){
+  const dt = Math.min((now - lastT) / 1000, 0.064);     /* clamp tab-switch spikes */
+  lastT = now;
+  let more = false;
+
+  if (SMOOTH) {
+    const diff = target - current;
+    if (Math.abs(diff) > 0.12) {
+      /* frame-rate independent damping: same convergence at 60Hz and 120Hz */
+      const step = diff * (1 - Math.exp(-9.2 * dt));
+      current += step;
+      velocity = step / Math.max(dt, 0.0001);
+      scrollTo(0, current);
+      more = true;
+    } else { current = target; velocity = 0; }
+  } else {
+    const prev = current;
+    current = scrollY;
+    velocity = (current - prev) / Math.max(dt, 0.0001);
+    if (Math.abs(velocity) > 1) more = true;
+  }
+
+  render(current);
+  if (more) { rafId = requestAnimationFrame(frame); }
+  else { rafId = null; velocity = 0; render(current); }
+}
+function ensureLoop(){ if (rafId === null) { lastT = performance.now(); rafId = requestAnimationFrame(frame); } }
+
+if (SMOOTH) {
+  addEventListener('wheel', e => {
+    if (e.ctrlKey) return;                              /* leave pinch-zoom alone */
+    e.preventDefault();
+    target = clampY(target + normalizeDelta(e));
+    ensureLoop();
+  }, { passive: false });
+
+  /* keyboard scrolling goes through the same easing instead of jumping */
+  addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = e.target, tag = (t.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || t.isContentEditable) return;
+    const vh = innerHeight;
+    let d = null;
+    if (e.key === 'ArrowDown') d = 90;
+    else if (e.key === 'ArrowUp') d = -90;
+    else if (e.key === 'PageDown') d = vh * 0.9;
+    else if (e.key === 'PageUp') d = -vh * 0.9;
+    else if (e.key === ' ') d = e.shiftKey ? -vh * 0.9 : vh * 0.9;
+    else if (e.key === 'Home') { e.preventDefault(); target = 0; ensureLoop(); return; }
+    else if (e.key === 'End') { e.preventDefault(); target = maxScrollY(); ensureLoop(); return; }
+    if (d === null) return;
+    e.preventDefault();
+    target = clampY(target + d);
+    ensureLoop();
+  });
+}
+
+/* resync when scroll comes from elsewhere (scrollbar drag, find-in-page, touch) */
+addEventListener('scroll', () => {
+  if (!SMOOTH) { ensureLoop(); return; }
+  if (rafId === null) { target = current = scrollY; render(current); }
+}, { passive: true });
+
+/* anchor links ride the engine so in-page nav matches the scroll feel */
+function scrollToY(y){
+  if (SMOOTH) { target = clampY(y); ensureLoop(); return; }
+  scrollTo({ top: clampY(y), behavior: reduceMotion ? 'auto' : 'smooth' });
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (!href || href === '#') { e.preventDefault(); scrollToY(0); return; }
+    const dest = document.querySelector(href);
+    if (!dest) return;
+    e.preventDefault();
+    scrollToY(dest.getBoundingClientRect().top + scrollY - 76);
+  });
+});
+
+let reflowTimer = null;
+addEventListener('resize', () => {
+  clearTimeout(reflowTimer);
+  reflowTimer = setTimeout(() => { measureParallax(); render(scrollY); }, 120);
+});
+collectParallax();
+render(scrollY);
+
+/* ===== custom cursor (ref: minhpham .vj-cursor + js-cursor-contract/extend) ===== */
+if (pointerFine && !reduceMotion) {
+  const cur = document.getElementById('cursor'), curLabel = document.getElementById('cursorLabel');
+  document.documentElement.classList.add('no-system-cursor');
+  let cx = innerWidth / 2, cy = innerHeight / 2, tx = cx, ty = cy;
+  addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; }, { passive: true });
+  (function curLoop(){
+    cx += (tx - cx) * 0.18; cy += (ty - cy) * 0.18;
+    cur.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+    requestAnimationFrame(curLoop);
+  })();
+  document.querySelectorAll('.js-cursor-contract').forEach(el => {
+    el.addEventListener('pointerenter', () => cur.classList.add('is-contract'));
+    el.addEventListener('pointerleave', () => cur.classList.remove('is-contract'));
+  });
+  document.querySelectorAll('.js-cursor-extend').forEach(el => {
+    el.addEventListener('pointerenter', () => { curLabel.textContent = el.dataset.cursor || ''; cur.classList.add('is-extend'); });
+    el.addEventListener('pointerleave', () => { cur.classList.remove('is-extend'); curLabel.textContent = ''; });
+  });
+}
+
+/* ===== spotlight glass hover (ref: jestsee.com) ===== */
+if (pointerFine) {
+  document.querySelectorAll('.cards').forEach(group => {
+    group.addEventListener('pointermove', e => {
+      for (const card of group.getElementsByClassName('card')) {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+      }
+    }, { passive: true });
+  });
+}
+
+/* ===== stat counters ===== */
+const countObs = new IntersectionObserver((entries, o) => entries.forEach(n => {
+  if (!n.isIntersecting) return;
+  o.unobserve(n.target);
+  const target = parseInt(n.target.dataset.count, 10);
+  if (reduceMotion) { n.target.textContent = target; return; }
+  const start = performance.now(), dur = 1400;
+  const step = now => {
+    const p = Math.min((now - start) / dur, 1);
+    n.target.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}), { threshold: .5 });
+document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+/* ===== scroll-spy ===== */
+const navMap = new Map([...document.querySelectorAll('[data-nav]')].map(a => [a.dataset.nav, a]));
+const spyObs = new IntersectionObserver(entries => entries.forEach(n => {
+  const link = navMap.get(n.target.id);
+  if (!link || !n.isIntersecting) return;
+  navMap.forEach(a => { a.classList.remove('active'); a.removeAttribute('aria-current'); });
+  link.classList.add('active'); link.setAttribute('aria-current', 'location');
+}), { rootMargin: '-45% 0px -45% 0px' });
+['about','work','stack','blog','contact'].forEach(id => { const el = document.getElementById(id); if (el) spyObs.observe(el); });
+
+/* ===== mobile nav ===== */
+function toggleNav(){
+  const menu = document.getElementById('headerMenu'), burger = document.getElementById('hamburger');
+  const open = menu.classList.toggle('open');
+  burger.classList.toggle('active', open);
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeNav(){
+  const menu = document.getElementById('headerMenu'), burger = document.getElementById('hamburger');
+  menu.classList.remove('open'); burger.classList.remove('active');
+  burger.setAttribute('aria-expanded', 'false');
+}
+
+/* ===== sound toggle (ref: minhpham footer_sound) — off by default ===== */
+let audioCtx = null, audioGain = null;
+document.getElementById('soundBtn').addEventListener('click', function(){
+  const on = this.classList.toggle('on');
+  this.setAttribute('aria-pressed', on ? 'true' : 'false');
+  document.getElementById('soundLabel').textContent = on ? 'Sound on' : 'Sound off';
+  if (on) {
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (!audioGain) {
+      audioGain = audioCtx.createGain();
+      audioGain.gain.value = 0;
+      audioGain.connect(audioCtx.destination);
+      [110, 164.81].forEach(f => {
+        const osc = audioCtx.createOscillator();
+        osc.type = 'sine'; osc.frequency.value = f;
+        osc.connect(audioGain); osc.start();
+      });
+    }
+    audioCtx.resume();
+    audioGain.gain.linearRampToValueAtTime(0.02, audioCtx.currentTime + 1.2);
+  } else if (audioGain) {
+    audioGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.6);
+  }
+});
+
+/* ===== blog feed ===== */
 async function loadPosts() {
-  const grid = document.getElementById('blogGrid');
-  const loader = document.getElementById('blogLoad');
+  const grid = document.getElementById('blogGrid'), loader = document.getElementById('blogLoad');
   try {
     const res = await fetch('https://linkedin-dashboard-nu-nine.vercel.app/api/blog');
     if (!res.ok) throw new Error('API error');
@@ -387,33 +968,34 @@ async function loadPosts() {
     posts.forEach((post, i) => {
       const card = document.createElement('a');
       card.href = post.blogUrl;
-      card.className = 'blog-card rv vis';
-      card.style.transitionDelay = (i * 0.07) + 's';
-      card.target = '_blank';
-      card.rel = 'noopener noreferrer';
-      const tagsHtml = (post.tags || []).slice(0, 3).map(t => `<span class="bc-tag-pill">${t}</span>`).join('');
+      card.className = 'card blog-card js-cursor-contract rv vis';
+      card.style.transitionDelay = (i * 0.06) + 's';
+      card.target = '_blank'; card.rel = 'noopener noreferrer';
+      const tagsHtml = (post.tags || []).slice(0, 3).map(t => `<span class="bc_tag">${t}</span>`).join('');
       const excerpt = (post.excerpt || '').slice(0, 115) + '...';
       card.innerHTML = `
-        <div class="bc-img"><img src="${post.heroImageUrl}" alt="${post.title}" loading="lazy" onerror="this.parentElement.style.background='#0a0b12';this.style.display='none'"></div>
-        <div class="bc-body">
-          <div class="bc-tags">${tagsHtml}</div>
-          <div class="bc-title">${post.title}</div>
-          <div class="bc-excerpt">${excerpt}</div>
-          <div class="bc-meta"><span class="bc-arrow">Read article →</span><span class="bc-read">${post.readTime || ''}</span></div>
+        <div class="card-content">
+          <div class="bc_img"><img src="${post.heroImageUrl}" alt="${post.title}" loading="lazy" data-parallax="0.06" onerror="this.parentElement.style.background='var(--ink-3)';this.style.display='none'"></div>
+          <div class="bc_body">
+            <div class="bc_tags">${tagsHtml}</div>
+            <div class="bc_title">${post.title}</div>
+            <div class="bc_excerpt">${excerpt}</div>
+            <div class="bc_meta"><span class="bc_arrow">Read article &rarr;</span><span class="bc_read">${post.readTime || ''}</span></div>
+          </div>
         </div>`;
       grid.appendChild(card);
     });
+    /* new nodes changed page height and added parallax targets */
+    collectParallax();
+    render(scrollY);
   } catch (e) { loader.textContent = 'Articles coming soon.'; }
 }
 loadPosts();
 
-// Site total view counter
 fetch('https://linkedin-dashboard-nu-nine.vercel.app/api/views/total')
   .then(r => r.json())
-  .then(d => {
-    const el = document.getElementById('site-views');
-    if (el && d.total) el.textContent = d.total.toLocaleString() + ' total visits';
-  }).catch(() => {});
+  .then(d => { const el = document.getElementById('site-views'); if (el && d.total) el.textContent = d.total.toLocaleString() + ' visits'; })
+  .catch(() => {});
 </script>
 </body>
 </html>
