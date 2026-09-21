@@ -1,0 +1,223 @@
+[
+  {
+    "id": "four-security-principles-agentic-ai-systems",
+    "title": "Four Security Principles for Agentic AI Systems: A Cloud Security Architect's Framework",
+    "slug": "four-security-principles-agentic-ai-systems",
+    "excerpt": "As enterprises deploy autonomous AI agents at scale, Cloud Security Architects must implement robust guardrails. This framework outlines four critical security principles for governing agentic AI in production environments.",
+    "readTime": "12 min read",
+    "tags": [
+      "Agentic AI Security",
+      "Zero Trust Architecture",
+      "AI Governance",
+      "Cloud Security",
+      "Enterprise AI"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/four-security-principles-agentic-ai-systems-hero.svg?v=1776040629703",
+    "blogUrl": "https://srivathsan007.github.io/blog/four-security-principles-agentic-ai-systems.html",
+    "createdAt": "2026-04-13T12:00:00.000Z"
+  },
+  {
+    "id": "four-security-principles-agentic-ai-systems-zero-trust-governance",
+    "title": "Four Security Principles for Agentic AI Systems: A Cloud Architect's Guide to Zero Trust AI Governance",
+    "slug": "four-security-principles-agentic-ai-systems-zero-trust-governance",
+    "excerpt": "Explore the four foundational security principles essential for deploying agentic AI systems in enterprise cloud environments. Learn how to implement Zero Trust architecture, maintain AI governance, and secure autonomous agents at scale.",
+    "readTime": "9 min read",
+    "tags": [
+      "Agentic AI Security",
+      "Zero Trust Architecture",
+      "AI Governance",
+      "Cloud Security",
+      "Enterprise AI"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/four-security-principles-agentic-ai-systems-zero-trust-governance-hero.svg?v=1775915381199",
+    "blogUrl": "https://srivathsan007.github.io/blog/four-security-principles-agentic-ai-systems-zero-trust-governance.html",
+    "createdAt": "2026-04-11T12:00:00.000Z"
+  },
+  {
+    "id": "aws-landing-zone-accelerator-universal-configuration-cloud-security-posture",
+    "title": "AWS Landing Zone Accelerator Universal Configuration: Strengthening Cloud Security Posture at Scale",
+    "slug": "aws-landing-zone-accelerator-universal-configuration-cloud-security-posture",
+    "excerpt": "Explore how AWS Landing Zone Accelerator's Universal Configuration revolutionizes enterprise cloud governance and security posture management. Learn practical strategies for implementing compliant, scalable cloud architectures aligned with ISO/IEC 27001:2022 and other frameworks.",
+    "readTime": "9 min read",
+    "tags": [
+      "AWS",
+      "Cloud Security",
+      "Landing Zone",
+      "CSPM",
+      "ISO 27001"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/aws-landing-zone-accelerator-universal-configuration-cloud-security-posture.html",
+    "createdAt": "2026-04-06T12:00:00.000Z"
+  },
+  {
+    "id": "four-security-principles-agentic-ai-systems-enterprise",
+    "title": "Four Security Principles Every Enterprise Must Adopt for Agentic AI Systems",
+    "slug": "four-security-principles-agentic-ai-systems-enterprise",
+    "excerpt": "As enterprises rapidly deploy autonomous AI agents, four critical security principles have emerged as essential guardrails. Learn how to implement Zero Trust architecture for agentic AI while maintaining operational efficiency and compliance.",
+    "readTime": "8 min read",
+    "tags": [
+      "Agentic AI Security",
+      "Zero Trust Architecture",
+      "AI Governance",
+      "Enterprise Security",
+      "Azure OpenAI"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/four-security-principles-agentic-ai-systems-enterprise.html",
+    "createdAt": "2026-04-06T12:00:00.000Z"
+  },
+  {
+    "id": "supply-chain-attack-trivy-lessons-cloud-security-posture-management",
+    "title": "Supply Chain Attack on Trivy: Critical Lessons for Cloud Security Posture Management",
+    "slug": "supply-chain-attack-trivy-lessons-cloud-security-posture-management",
+    "excerpt": "The recent supply chain attack on Trivy exposes fundamental vulnerabilities in security tooling that enterprises depend on daily. Learn how to fortify your CSPM strategy and implement robust tool validation processes to prevent similar compromises.",
+    "readTime": "8 min read",
+    "tags": [
+      "Supply Chain Security",
+      "CSPM",
+      "DevSecOps",
+      "Cloud Security",
+      "Vulnerability Management"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/supply-chain-attack-trivy-lessons-cloud-security-posture-management.html",
+    "createdAt": "2026-04-06T12:00:00.000Z"
+  },
+  {
+    "id": "supply-chain-security-trivy-open-source-compromise-lessons",
+    "title": "Supply Chain Security Alert: Lessons from the Trivy Open Source Tool Compromise",
+    "slug": "supply-chain-security-trivy-open-source-compromise-lessons",
+    "excerpt": "The recent supply chain attack on Trivy, a popular cloud security scanning tool, exposes critical vulnerabilities in DevSecOps toolchains. Learn essential strategies to protect your organization from compromised security tools and strengthen your software supply chain defenses.",
+    "readTime": "9 min read",
+    "tags": [
+      "Supply Chain Security",
+      "DevSecOps",
+      "Cloud Security",
+      "Open Source Security",
+      "CSPM"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/supply-chain-security-trivy-open-source-compromise-lessons.html",
+    "createdAt": "2026-04-06T12:00:00.000Z"
+  },
+  {
+    "id": "ai-assistants-shifting-security-landscape-governance-strategies-copilot-studio-enterprise-ai",
+    "title": "AI Assistants and the Shifting Security Landscape: Governance Strategies for Copilot Studio and Enterprise AI",
+    "slug": "ai-assistants-shifting-security-landscape-governance-strategies-copilot-studio-enterprise-ai",
+    "excerpt": "As organizations deploy Microsoft Copilot Studio at scale, the security landscape is fundamentally shifting. Learn the governance strategies and frameworks needed to secure enterprise AI assistants while enabling innovation.",
+    "readTime": "12 min read",
+    "tags": [
+      "AI Security",
+      "Microsoft Copilot Studio",
+      "Power Platform Governance",
+      "Enterprise AI",
+      "Cloud Security"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/ai-assistants-shifting-security-landscape-governance-strategies-copilot-studio-enterprise-ai.html",
+    "createdAt": "2026-04-05T12:00:00.000Z"
+  },
+  {
+    "id": "forticlient-ems-zero-day-exploitation-microsoft-sentinel-detection-response",
+    "title": "FortiClient EMS Zero-Day Exploitation: Emergency Response and Detection Strategies with Microsoft Sentinel",
+    "slug": "forticlient-ems-zero-day-exploitation-microsoft-sentinel-detection-response",
+    "excerpt": "Critical FortiClient EMS vulnerability CVE-2026-35616 is under active exploitation, demanding immediate security response. Learn how to build Microsoft Sentinel detection rules and automated response playbooks for this enterprise endpoint management zero-day.",
+    "readTime": "12 min read",
+    "tags": [
+      "Zero-Day Response",
+      "Microsoft Sentinel",
+      "FortiClient EMS",
+      "Threat Detection",
+      "Security Operations"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/forticlient-ems-zero-day-exploitation-microsoft-sentinel-detection-response.html",
+    "createdAt": "2026-04-05T12:00:00.000Z"
+  },
+  {
+    "id": "four-security-principles-enterprise-agentic-ai-systems",
+    "title": "Four Security Principles Every Enterprise Must Implement for Agentic AI Systems",
+    "slug": "four-security-principles-enterprise-agentic-ai-systems",
+    "excerpt": "As autonomous AI agents proliferate across enterprise environments, implementing robust security principles becomes non-negotiable. Learn the four foundational security controls that Cloud Security Architects must enforce to govern agentic AI systems effectively.",
+    "readTime": "8 min read",
+    "tags": [
+      "Agentic AI Security",
+      "Zero Trust Architecture",
+      "AI Governance",
+      "Cloud Security",
+      "Enterprise AI"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/four-security-principles-enterprise-agentic-ai-systems.html",
+    "createdAt": "2026-04-05T12:00:00.000Z"
+  },
+  {
+    "id": "microsoft-cookie-controlled-php-web-shells-linux-persistence-sentinel-detection",
+    "title": "Analyzing Microsoft's Cookie-Controlled PHP Web Shells: Linux Server Persistence Techniques and Detection with Sentinel",
+    "slug": "microsoft-cookie-controlled-php-web-shells-linux-persistence-sentinel-detection",
+    "excerpt": "Microsoft has exposed sophisticated cookie-controlled PHP web shells leveraging cron job persistence on Linux servers. Learn how to detect these stealthy attacks using Microsoft Sentinel and implement robust hardening strategies for hybrid cloud environments.",
+    "readTime": "12 min read",
+    "tags": [
+      "Cloud Security",
+      "Microsoft Sentinel",
+      "Linux Security",
+      "Threat Detection",
+      "PHP Web Shells"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/microsoft-cookie-controlled-php-web-shells-linux-persistence-sentinel-detection.html",
+    "createdAt": "2026-04-05T12:00:00.000Z"
+  },
+  {
+    "id": "microsoft-cookie-controlled-php-web-shells-linux-server-security-cloud",
+    "title": "Analyzing Microsoft's Cookie-Controlled PHP Web Shells: A Deep Dive into Linux Server Security for Cloud Environments",
+    "slug": "microsoft-cookie-controlled-php-web-shells-linux-server-security-cloud",
+    "excerpt": "Microsoft has uncovered a sophisticated persistence technique using cookie-controlled PHP web shells deployed via cron jobs on Linux servers. Cloud security architects must understand this attack vector to protect Azure and hybrid infrastructure.",
+    "readTime": "12 min read",
+    "tags": [
+      "Cloud Security",
+      "Azure Security",
+      "Linux Hardening",
+      "Web Shell Detection",
+      "Threat Intelligence"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/microsoft-cookie-controlled-php-web-shells-linux-server-security-cloud.html",
+    "createdAt": "2026-04-05T12:00:00.000Z"
+  },
+  {
+    "id": "oauth-based-phishing-enterprise-ta416-entra-id-security",
+    "title": "OAuth-Based Phishing in the Enterprise: Lessons from TA416's European Government Attacks for Entra ID Security",
+    "slug": "oauth-based-phishing-enterprise-ta416-entra-id-security",
+    "excerpt": "China-linked threat actor TA416 is weaponizing OAuth consent phishing against European governments. Learn how to leverage Microsoft Entra ID Conditional Access and token protection to defend your enterprise against these sophisticated identity-based attacks.",
+    "readTime": "12 min read",
+    "tags": [
+      "Entra ID Security",
+      "OAuth Phishing",
+      "Conditional Access",
+      "Cloud Security",
+      "Threat Intelligence"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/oauth-based-phishing-enterprise-ta416-entra-id-security.html",
+    "createdAt": "2026-04-05T12:00:00.000Z"
+  },
+  {
+    "id": "trivy-supply-chain-attack-cloud-security-open-source-governance",
+    "title": "Trivy Supply Chain Attack: Critical Lessons for Cloud Security Posture and Open Source Tool Governance",
+    "slug": "trivy-supply-chain-attack-cloud-security-open-source-governance",
+    "excerpt": "The Trivy supply chain attack exposes critical vulnerabilities in how enterprises manage open source security tools within their DevSecOps pipelines. Learn essential strategies for securing your cloud security posture and implementing robust open source governance frameworks.",
+    "readTime": "12 min read",
+    "tags": [
+      "Supply Chain Security",
+      "Cloud Security",
+      "DevSecOps",
+      "Open Source Governance",
+      "CSPM"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/placeholder.png",
+    "blogUrl": "https://srivathsan007.github.io/blog/trivy-supply-chain-attack-cloud-security-open-source-governance.html",
+    "createdAt": "2026-04-05T12:00:00.000Z"
+  }
+]

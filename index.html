@@ -968,43 +968,68 @@ document.getElementById('soundBtn').addEventListener('click', function(){
   }
 });
 
-/* ===== blog feed ===== */
+/* ===== blog feed =====
+   blog/index.json is committed next to the articles, so this section renders
+   from the same origin with no API, no token and no cold start. The dashboard
+   API is only a secondary source for anything not yet in the static index. */
+const DASHBOARD_API = 'https://linkedin-dashboard-nu-nine.vercel.app';
+
+async function fetchPosts() {
+  try {
+    const res = await fetch('blog/index.json', { cache: 'no-cache' });
+    if (res.ok) {
+      const posts = await res.json();
+      if (Array.isArray(posts) && posts.length) return posts;
+    }
+  } catch (e) { /* fall through to the API */ }
+
+  try {
+    const res = await fetch(DASHBOARD_API + '/api/blog');
+    if (res.ok) {
+      const posts = await res.json();
+      if (Array.isArray(posts)) return posts;
+    }
+  } catch (e) { /* no sources left */ }
+
+  return [];
+}
+
 async function loadPosts() {
   const grid = document.getElementById('blogGrid'), loader = document.getElementById('blogLoad');
-  try {
-    const res = await fetch('https://linkedin-dashboard-nu-nine.vercel.app/api/blog');
-    if (!res.ok) throw new Error('API error');
-    const posts = await res.json();
-    if (!posts || !posts.length) { loader.textContent = 'Articles coming soon.'; return; }
-    loader.style.display = 'none';
-    posts.forEach((post, i) => {
-      const card = document.createElement('a');
-      card.href = post.blogUrl;
-      card.className = 'card blog-card js-cursor-contract rv vis';
-      card.style.transitionDelay = (i * 0.06) + 's';
-      card.target = '_blank'; card.rel = 'noopener noreferrer';
-      const tagsHtml = (post.tags || []).slice(0, 3).map(t => `<span class="bc_tag">${t}</span>`).join('');
-      const excerpt = (post.excerpt || '').slice(0, 115) + '...';
-      card.innerHTML = `
-        <div class="card-content">
-          <div class="bc_img"><img src="${post.heroImageUrl}" alt="${post.title}" loading="lazy" data-parallax="0.06" onerror="this.parentElement.style.background='var(--ink-3)';this.style.display='none'"></div>
-          <div class="bc_body">
-            <div class="bc_tags">${tagsHtml}</div>
-            <div class="bc_title">${post.title}</div>
-            <div class="bc_excerpt">${excerpt}</div>
-            <div class="bc_meta"><span class="bc_arrow">Read article &rarr;</span><span class="bc_read">${post.readTime || ''}</span></div>
-          </div>
-        </div>`;
-      grid.appendChild(card);
-    });
-    /* new nodes changed page height and added parallax targets */
-    collectParallax();
-    render(scrollY);
-  } catch (e) { loader.textContent = 'Articles coming soon.'; }
+  const posts = await fetchPosts();
+
+  if (!posts.length) { loader.textContent = 'Articles coming soon.'; return; }
+  loader.style.display = 'none';
+
+  posts.forEach((post, i) => {
+    const card = document.createElement('a');
+    card.href = post.blogUrl || ('blog/' + post.slug + '.html');
+    card.className = 'card blog-card js-cursor-contract rv vis';
+    card.style.transitionDelay = (i * 0.06) + 's';
+    card.target = '_blank'; card.rel = 'noopener noreferrer';
+    const tagsHtml = (post.tags || []).slice(0, 3).map(t => `<span class="bc_tag">${t}</span>`).join('');
+    const raw = post.excerpt || '';
+    const excerpt = raw.length > 115 ? raw.slice(0, 115).trimEnd() + '…' : raw;
+    card.innerHTML = `
+      <div class="card-content">
+        <div class="bc_img"><img src="${post.heroImageUrl}" alt="${post.title}" loading="lazy" data-parallax="0.06" onerror="this.parentElement.style.background='var(--ink-3)';this.style.display='none'"></div>
+        <div class="bc_body">
+          <div class="bc_tags">${tagsHtml}</div>
+          <div class="bc_title">${post.title}</div>
+          <div class="bc_excerpt">${excerpt}</div>
+          <div class="bc_meta"><span class="bc_arrow">Read article &rarr;</span><span class="bc_read">${post.readTime || ''}</span></div>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+
+  /* new nodes changed page height and added parallax targets */
+  collectParallax();
+  render(scrollY);
 }
 loadPosts();
 
-fetch('https://linkedin-dashboard-nu-nine.vercel.app/api/views/total')
+fetch(DASHBOARD_API + '/api/views/total')
   .then(r => r.json())
   .then(d => { const el = document.getElementById('site-views'); if (el && d.total) el.textContent = d.total.toLocaleString() + ' visits'; })
   .catch(() => {});
