@@ -1,5 +1,22 @@
 [
   {
+    "id": "blog_aws_egress_controls",
+    "title": "AWS Egress Controls and Data Exfiltration Prevention for Cloud Workloads",
+    "slug": "aws-egress-controls-data-exfiltration-prevention-cloud-workloads",
+    "excerpt": "Most cloud data leaves through paths nobody deliberately opened. Egress control is the difference between a contained incident and a breach notification — here is how to build it in layers that survive a compromised credential.",
+    "readTime": "11 min read",
+    "tags": [
+      "AWS Security",
+      "Data Exfiltration",
+      "Zero Trust",
+      "Network Security",
+      "Cloud Governance"
+    ],
+    "heroImageUrl": "https://srivathsan007.github.io/blog/images/aws-egress-controls-data-exfiltration-prevention-cloud-workloads-hero.svg",
+    "blogUrl": "https://srivathsan007.github.io/blog/aws-egress-controls-data-exfiltration-prevention-cloud-workloads.html",
+    "createdAt": "2026-09-21T02:29:35.974Z"
+  },
+  {
     "id": "four-security-principles-agentic-ai-systems",
     "title": "Four Security Principles for Agentic AI Systems: A Cloud Security Architect's Framework",
     "slug": "four-security-principles-agentic-ai-systems",
